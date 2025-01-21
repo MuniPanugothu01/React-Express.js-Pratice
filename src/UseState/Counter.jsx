@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Counter1 = () => {
+const Counter = () => {
   const [state, setState] = useState(0);
   function increament() {
     setState(state + 1);
@@ -17,4 +17,4 @@ const Counter1 = () => {
   );
 };
 
-export default Counter1;
+export default Counter;
