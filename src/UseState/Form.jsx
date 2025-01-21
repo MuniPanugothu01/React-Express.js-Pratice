@@ -6,6 +6,7 @@ const Form = () => {
 
   const FormSubmit = (event) => {
     event.preventdefault();
+    alert("from data successfully submited!")
   };
 
   const UpdateForm = (event) => {
