@@ -1,5 +1,12 @@
+import { useState } from "react";
+
 function App() {
-  return <></>;
+  const [state, setState] = useState(0);
+  
+  return (
+  <>
+
+  </>)
 }
 
 export default App;
