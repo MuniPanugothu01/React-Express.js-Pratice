@@ -5,26 +5,28 @@ const Form = () => {
   const [input, setInput] = useState(inputData);
 
   const FormSubmit = (event) => {
-    event.preventdefault();
-    alert("from data successfully submited!")
+    event.preventDefault();
+    alert("from data successfully submited!");
+    console.log(input); // user data
   };
 
   const UpdateForm = (event) => {
-    setInput({ [event.target.name]: event.target.value });
+    setInput({ ...input, [event.target.name]: event.target.value });
   };
+  setInput("");
 
   return (
     <>
       <form action="" onSubmit={FormSubmit}>
-        User Name: -{" "}
+        User Name: -
         <input
           type="text"
           name="name"
           value={input.state}
           onChange={UpdateForm}
         />
-        
       </form>
+      <button value="submit">Submit</button>
     </>
   );
 };
