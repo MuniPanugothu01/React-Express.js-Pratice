@@ -1,11 +1,11 @@
 import React from "react";
 import Counter1 from "./UseState/Counter";
-
+import Counter from "./UseState/Counter";
 function App() {
   return (
     <>
-      {/* Render Counter1 component */}
-      <Counter1 />
+      <Counter />
+      {/* <Counter1/> */}
     </>
   );
 }
