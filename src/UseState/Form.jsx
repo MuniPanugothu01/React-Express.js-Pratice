@@ -8,14 +8,20 @@ const Form = () => {
     event.preventdefault();
   };
 
-  const UpdateForm = (event) =>{
-    setInput({[event.target.name] : event.target.value})
-  }
+  const UpdateForm = (event) => {
+    setInput({ [event.target.name]: event.target.value });
+  };
 
   return (
     <>
       <form action="" onSubmit={FormSubmit}>
-        User Name: - <input type="text" name="name" value={input.state} onChange={UpdateForm} />
+        User Name: -{" "}
+        <input
+          type="text"
+          name="name"
+          value={input.state}
+          onChange={UpdateForm}
+        />
       </form>
     </>
   );
