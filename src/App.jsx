@@ -1,12 +1,10 @@
-import { useState } from "react";
-
+import Counter from "./UseState/Counter";
 function App() {
-  const [state, setState] = useState(0);
-  
   return (
-  <>
-
-  </>)
+    <>
+      <Counter />
+    </>
+  );
 }
 
 export default App;
