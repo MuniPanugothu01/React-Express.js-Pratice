@@ -7,7 +7,7 @@ const UserName = () => {
 
   //   username update
   const UserNameUpdate = (event) => {
-    setUserName(...userName, event.target.value);
+    setUserName(event.target.value);
   };
   const ErrorValidate = (event) => {
     if (userName === "" || userName === null) {
@@ -32,8 +32,6 @@ const UserName = () => {
         />
         <span style={{ color: "red" }}>{errorName}</span>
         <button onClick={ErrorValidate}>Validateusername</button>
-     
-
       <p>{errorName}</p>
     </>
   );
