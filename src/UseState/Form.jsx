@@ -1,78 +1,97 @@
 import React, { useState } from "react";
+import "./Form.css";
 
 const Form = () => {
-  const initialData = { name: "", age: 0, email: "", city: "", state: "" };
+  const initialData = { name: "", age: "", email: "", city: "", state: "" };
   const [input, setInput] = useState(initialData);
 
   const FormSubmit = (event) => {
-    event.preventDefault(); // Corrected typo
+    event.preventDefault();
     alert("Form data successfully submitted!");
-    console.log(input); // Log the form data for debugging
+    console.log(input); // Log the form data
   };
 
   const UpdateForm = (event) => {
-    // Update only the specific field in the state
+    // Update the specific field in the state
     setInput({ ...input, [event.target.name]: event.target.value });
   };
 
   return (
-    <>
+    <div className="form-container">
       <form onSubmit={FormSubmit}>
-        <div>
+        <div className="form-group">
           <label>
-            User Name: -
+            User Name:
             <input
               type="text"
               name="name"
-              value={input.name} // Correct field binding
+              value={input.name}
               onChange={UpdateForm}
+              className="form-input"
             />
           </label>
         </div>
-        <div>
+        <div className="form-group">
           <label>
-            Age: -
+            Age:
             <input
               type="number"
               name="age"
               value={input.age}
               onChange={UpdateForm}
+              className="form-input"
             />
           </label>
         </div>
-        Email :
-        <input type="email" name="email" value={input.email} />
-        <div>
+        <div className="form-group">
           <label>
-            City: -
+            Email:
+            <input
+              type="email"
+              name="email"
+              value={input.email}
+              onChange={UpdateForm}
+              className="form-input"
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            City:
             <input
               type="text"
               name="city"
               value={input.city}
               onChange={UpdateForm}
+              className="form-input"
             />
           </label>
         </div>
-        <div>
+        <div className="form-group">
           <label>
-            State: -
+            State:
             <input
               type="text"
               name="state"
               value={input.state}
               onChange={UpdateForm}
+              className="form-input"
             />
           </label>
         </div>
-        <button type="submit">Submit</button> {/* Submit button inside form */}
+        <button type="submit" className="form-button">
+          Submit
+        </button>
       </form>
 
-      <h1>{input.name}</h1>
-      <h1>{input.age}</h1>
-      <h1>{input.email}</h1>
-      <h1>{input.city}</h1>
-      <h1>{input.state}</h1>
-    </>
+      <div className="output-container">
+        <h1>{input.name}</h1>
+        <h1>{input.age}</h1>
+        <h1>{input.email}</h1>
+        <h1>{input.city}</h1>
+        <h1>{input.state}</h1>
+      </div>
+    </div>
   );
 };
 
