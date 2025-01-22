@@ -8,25 +8,33 @@ const UserName = () => {
   //   username update
   const UserNameUpdate = (event) => {
     setUserName(...userName, event.target.value);
-
-    const ErrorValidate = (event) =>{
-        if(userName === "" || userName === null){
-            setErrorName("userName can't be blank!")
-        }
+  };
+  const ErrorValidate = (event) => {
+    if (userName === "" || userName === null) {
+      setErrorName("userName can't be blank!");
+    } else if (userName.length < 3 || userName.length > Infinity) {
+      setErrorName(`${userName} can't be lessthan 3 characters!`);
+    } 
+    else {
+      setErrorName(`healthy ${userName}`);
     }
   };
+
   return (
     <>
-      <label htmlFor="username">UserName</label>
-      <input
-        type="text"
-        name="username" 
-        value={userName}
-        onChange={UserNameUpdate}
-      />
-      <span style={{color:"red"}}>{errorName}</span>
+      <label htmlFor="username"> </label>
+        UserName
+        <input
+          type="text"
+          name="username"
+          value={userName}
+          onChange={UserNameUpdate}
+        />
+        <span style={{ color: "red" }}>{errorName}</span>
+        <button onClick={ErrorValidate}>Validateusername</button>
+     
 
-      <button onClick={ErrorValidate}>Validateusername</button>
+      <p>{errorName}</p>
     </>
   );
 };
