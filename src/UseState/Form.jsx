@@ -1,39 +1,3 @@
-// import React, { useState } from "react";
-
-// const Form = () => {
-//   let inputData = { name: "", age: 0, city: "", state: "" };
-//   const [input, setInput] = useState(inputData);
-
-//   const FormSubmit = (event) => {
-//     event.preventDefault();
-//     alert("from data successfully submited!");
-//     console.log(input)
-//   };
-
-//   const UpdateForm = (event) => {
-//     setInput({ [event.target.name]: event.target.value });
-//   };
-
-//   return (
-//     <>
-//       <form action="" onSubmit={FormSubmit}>
-//         User Name: -
-//         <input
-//           type="text"
-//           name="name"
-//           value={input.state}
-//           onChange={UpdateForm}
-//         />
-//         <button value="submit">Submit</button>
-//       </form>
-
-//       <h1>{input.name}</h1>
-//     </>
-//   );
-// };
-
-// export default Form;
-
 import React, { useState } from "react";
 
 const Form = () => {
