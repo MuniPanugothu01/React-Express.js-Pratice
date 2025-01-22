@@ -12,9 +12,7 @@ const Form = () => {
 
   const UpdateForm = (event) => {
     // Update only the specific field in the state
-    setInput({
-      [event.target.name]: event.target.value,
-    });
+    setInput({ ...input, [event.target.name]: event.target.value });
   };
 
   return (
