@@ -20,10 +20,11 @@ const UserName = () => {
       <label htmlFor="username">UserName</label>
       <input
         type="text"
-        name="username"
+        name="username" 
         value={userName}
         onChange={UserNameUpdate}
       />
+      <span style={{color:"red"}}>{errorName}</span>
 
       <button onClick={ErrorValidate}>Validateusername</button>
     </>
