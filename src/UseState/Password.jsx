@@ -10,17 +10,19 @@ const Password = () => {
   };
 
   const ValidPassword = (event) => {
-    const regularExpression = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^\w\s]).{5,8}$/;
+    const regularExpression = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^\w\s]).{1,8}$/;
+    // const regax = /^(?=.*\d)(?=(.\*W){2})(?=.*[a-zA-Z])(?!.*\s).{1,8}$/
     if (password === "" || password === null) {
       setErrorPassword("please enter the valid here!");
-    } else if (password.length < 5 || password.length > 8) {
+    } else if (password.length < 5) {
       setErrorPassword(`please ${password} enter the more than 3 character!`);
     } else if (!regularExpression.test(password)) {
       setErrorPassword(
         `${password} Password must contain at least one letter, one digit, and one special character! `
       );
     } else {
-      setErrorPassword(`${password} is valid!`);
+      // setErrorPassword(`${password} is valid!`);
+      setErrorPassword('strong password!')
     }
   };
   return (
