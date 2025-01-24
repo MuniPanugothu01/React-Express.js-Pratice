@@ -3,17 +3,12 @@ import React, { useState } from "react";
 const Password = () => {
   const [password, setPassword] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
-  // confirm password useState
-  const [confirmPassword, setConfirmPassword] = useState("");
+
 
   const PasswordUpdate = (event) => {
     setPassword(event.target.value);
   };
 
-  // confirm password handiler
-  const ConfirmPass = (event) => {
-    setConfirmPassword(event.target.value);
-  };
   const ValidPassword = (event) => {
     const regularExpression = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^\w\s]).{5,8}$/;
     if (password === "" || password === null) {
@@ -37,14 +32,7 @@ const Password = () => {
         value={password}
         onChange={PasswordUpdate}
       />
-      {/* conform password */}
-      <label htmlFor="conformPassword">Conform password!</label>
-      <input
-        type="password"
-        name="conformPassword"
-        value={confirmPassword}
-        onChange={ConfirmPass}
-      />
+      
 
       <p style={{ color: "red" }}>{errorPassword}</p>
       <button onClick={ValidPassword}>ValidPassword</button>
