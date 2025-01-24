@@ -12,6 +12,7 @@ const CompDidUpdate = () => {
   const Increment = (event) => {
     setCount((precount) => precount + 1);
   };
+ 
   return (
     <>
       <p>
