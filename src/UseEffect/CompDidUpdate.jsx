@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const CompDidUpdate = () => {
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
