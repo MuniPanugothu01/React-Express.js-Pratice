@@ -6,6 +6,7 @@ import Profile from "./UseState/object_form";
 import UserName from "./UseState/UserName";
 import Password from "./UseState/Password";
 import Count  from './UseEffect/Count'
+import CompDidUpdate from './UseEffect/CompDidUpdate'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <UserName/> */}
       {/* <Password /> */}
 
-      <Count/>
+      {/* <Count/> */}
+      <CompDidUpdate/>
     </>
   );
 }

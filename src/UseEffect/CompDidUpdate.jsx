@@ -9,7 +9,7 @@ const CompDidUpdate = () => {
                 setCount(count + 1)
             }
         },2000);
-    })
+    },[count])
   return (
     <>
     <p>when ever click the button count will increas, then after useEffect logic also changeed</p>
