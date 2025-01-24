@@ -19,7 +19,7 @@ const Password = () => {
       /^(?=.*\d)(?=(.\W){2})(?=.*[a-zA-Z])(?!.*\s).{1,8}$/;
     if (password === "" || password === null) {
       setErrorPassword("please enter the valid here!");
-    } else if (password.length < 5 || password.length > Infinity) {
+    } else if (password.length < 5) {
       setErrorPassword(`please ${password} enter the more than 3 character!`);
     } else if (regularExpression.test(password)) {
       setErrorPassword(`${password} `);
