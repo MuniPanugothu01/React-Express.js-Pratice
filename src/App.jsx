@@ -5,6 +5,8 @@ import Form from "./UseState/Form";
 import Profile from "./UseState/object_form";
 import UserName from "./UseState/UserName";
 import Password from "./UseState/Password";
+import Count  from './UseEffect/Count'
+
 function App() {
   return (
     <>
@@ -14,7 +16,9 @@ function App() {
       {/* <Profile /> */}
 
       {/* <UserName/> */}
-      <Password />
+      {/* <Password /> */}
+
+      <Count/>
     </>
   );
 }
