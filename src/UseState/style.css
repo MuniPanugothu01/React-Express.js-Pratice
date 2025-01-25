@@ -1,34 +1,89 @@
-/* style.css */
-
 /* General body styling */
 body {
   background-color: #f8f9fa; /* Light gray background */
-  font-family: Arial, sans-serif;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 /* Calculator container styling */
 .calculator-container {
   max-width: 400px;
+  width: 100%;
   margin: auto;
-  padding: 20px;
+  padding: 25px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Input box styling */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 2px solid #ced4da;
+  border-radius: 8px;
+  background-color: #fefefe;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 /* Custom button styling */
 button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button.btn-add {
+  background-color: #007bff; /* Blue */
+}
+
+button.btn-add:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+button.btn-subtract {
+  background-color: #28a745; /* Green */
+}
+
+button.btn-subtract:hover {
+  background-color: #1e7e34; /* Darker green */
+}
+
+button.btn-multiply {
+  background-color: #ffc107; /* Yellow */
+  color: #212529;
+}
+
+button.btn-multiply:hover {
+  background-color: #e0a800; /* Darker yellow */
 }
 
 /* Result text styling */
 .result-text {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #333;
-  text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-weight: bold;
 }
