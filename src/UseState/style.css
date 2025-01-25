@@ -54,30 +54,30 @@ button:hover {
 }
 
 button.btn-add {
-  background-color: #007bff; /* Blue */
+  background-color: #007bff; 
 }
 
 button.btn-add:hover {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #0056b3; 
 }
 
 button.btn-subtract {
-  background-color: #28a745; /* Green */
+  background-color: #28a745;
 }
 
 button.btn-subtract:hover {
-  background-color: #1e7e34; /* Darker green */
+  background-color: #1e7e34; 
 }
 
 button.btn-multiply {
-  background-color: #fd7e14; /* Orange */
+  background-color: #fd7e14; 
 }
 
 button.btn-multiply:hover {
-  background-color: #d65f08; /* Darker orange */
+  background-color: #d65f08;
 }
 
-/* Result text styling */
+
 .result-text {
   font-size: 1.75rem;
   color: #333;
