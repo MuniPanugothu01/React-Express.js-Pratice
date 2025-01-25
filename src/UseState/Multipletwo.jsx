@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+// Import in src/index.js
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// importing the style here
+import './style.css';
 
 function Multiply() {
   const [num1, setNum1] = useState();
