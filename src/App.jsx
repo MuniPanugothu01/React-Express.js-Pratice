@@ -7,6 +7,7 @@ import UserName from "./UseState/UserName";
 import Password from "./UseState/Password";
 import Count  from './UseEffect/Count'
 import CompDidUpdate from './UseEffect/CompDidUpdate'
+import Multiply from './UseState/Multipletwo' 
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       {/* <Password /> */}
 
       {/* <Count/> */}
-      <CompDidUpdate/>
+      {/* <CompDidUpdate/> */}
+<Multiply/>
+
     </>
   );
 }
