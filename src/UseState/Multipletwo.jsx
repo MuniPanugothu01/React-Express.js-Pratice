@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function App() {
+function Multiply() {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [result, setResult] = useState(null);
@@ -64,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default Multiply;
