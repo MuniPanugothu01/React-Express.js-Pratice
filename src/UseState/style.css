@@ -1,45 +1,41 @@
-/* General body styling */
 body {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #e3f2fd;
   font-family: "Arial", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
 }
 
-/* Calculator container styling */
 .calculator-container {
-  max-width: 400px;
   width: 100%;
-  margin: auto;
+  max-width: 400px;
   padding: 25px;
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-/* Input box styling */
 input {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 15px;
   font-size: 16px;
-  border: 2px solid #ced4da;
+  border: 2px solid #007bff;
   border-radius: 8px;
-  background-color: #fefefe;
+  background-color: #f8f9fa;
+  color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 91, 187, 0.5);
   outline: none;
 }
 
-/* Custom button styling */
 button {
   padding: 12px 20px;
   font-size: 16px;
@@ -48,11 +44,13 @@ button {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  background-color: #007bff;
+  margin-left: 20px;
 }
 
 button:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button.btn-add {
@@ -72,12 +70,11 @@ button.btn-subtract:hover {
 }
 
 button.btn-multiply {
-  background-color: #ffc107; /* Yellow */
-  color: #212529;
+  background-color: #fd7e14; /* Orange */
 }
 
 button.btn-multiply:hover {
-  background-color: #e0a800; /* Darker yellow */
+  background-color: #d65f08; /* Darker orange */
 }
 
 /* Result text styling */
