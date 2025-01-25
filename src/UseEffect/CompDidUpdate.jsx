@@ -12,6 +12,10 @@ const CompDidUpdate = () => {
   const Increment = (event) => {
     setCount((precount) => precount + 1);
   };
+
+  const Decrement = (evnt) =>{
+    
+  }
  
   return (
     <>
@@ -21,6 +25,7 @@ const CompDidUpdate = () => {
       </p>
       <p>count: {count}</p>
       <button onClick={Increment}>Increment</button>
+      <button onClick={Decrement}>Decrement</button>
     </>
   );
 };
