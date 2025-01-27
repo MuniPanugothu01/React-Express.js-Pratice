@@ -10,6 +10,7 @@ const Twoinputs = () => {
   const Number1 = (event) => {
     setNum1(event.target.value);
   };
+
   const Number2 = (event) => {
     setNum2(event.target.value);
   };
