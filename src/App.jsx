@@ -8,7 +8,7 @@ import Password from "./UseState/Password";
 import Count from "./UseEffect/Count";
 import CompDidUpdate from "./UseEffect/CompDidUpdate";
 // import Multiply from "./UseState/Multipletwo";
-import MultipleTwoInput from './UseState/MultipleTwoInput.jsx'
+import Twoinputs from './UseState/Twoinputs.jsx'
 function App() {
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
       {/* <Count/> */}
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
-      <MultipleTwoInput/>
+      <Twoinputs/>
     </>
   );
 }

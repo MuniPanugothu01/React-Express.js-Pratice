@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MultipleTwoInput = () => {
+const Twoinputs = () => {
   const [num1, setNum1] = useState();
   const [num2, setNum2] = useState();
 
@@ -19,13 +19,23 @@ const MultipleTwoInput = () => {
   };
   return (
     <>
+      <br /> <br /> <br />
       Enter the numebr:{" "}
-      <input type="number" name="number" value={num1} onChange={Number1} />
-      Enetr the number2: <input type="number" value={num2} onChange={Number2} />
+      <input type="number" name="number" value={num1} onChange={Number1} />{" "}
+      <br /> <br /> <br />
+      Enetr the number2: <input
+        type="number"
+        value={num2}
+        onChange={Number2}
+      />{" "}
+      <br /> <br />
       <button onClick={Addition}>+</button>
+      <button onClick={Sub}>-</button>
+      <button onClick={Multiple}>*</button>
+      <button onClick={Division}>%</button>
       <p>{result}</p>
     </>
   );
 };
 
-export default MultipleTwoInput;
+export default Twoinputs;
