@@ -44,7 +44,7 @@ const Twoinputs = () => {
       <button onClick={Multiple}>*</button>
       <button onClick={Division}>%</button>
 
-      <p>{result}</p>
+      <p>Result of :{result}</p>
     </>
   );
 };
