@@ -17,6 +17,16 @@ const Twoinputs = () => {
   const Addition = (event) => {
     setResult(Number(num1) + Number(num2));
   };
+
+  const Sub = (event) =>{
+    setResult(Number(num1) - Number(num2))
+  }
+  const Multiple = (event) =>{
+    setResult(Number(num1) * Number(num2))
+  }
+  const Division =(event) =>{
+    setResult(Number(num1) % Number(num2))
+  }
   return (
     <>
       <br /> <br /> <br />
@@ -33,7 +43,7 @@ const Twoinputs = () => {
       <button onClick={Sub}>-</button>
       <button onClick={Multiple}>*</button>
       <button onClick={Division}>%</button>
-      
+
       <p>{result}</p>
     </>
   );
