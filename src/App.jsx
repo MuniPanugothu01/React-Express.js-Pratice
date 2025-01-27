@@ -5,9 +5,9 @@ import Form from "./UseState/Form";
 import Profile from "./UseState/object_form";
 import UserName from "./UseState/UserName";
 import Password from "./UseState/Password";
-import Count  from './UseEffect/Count'
-import CompDidUpdate from './UseEffect/CompDidUpdate'
-import Multiply from './UseState/Multipletwo' 
+import Count from "./UseEffect/Count";
+import CompDidUpdate from "./UseEffect/CompDidUpdate";
+import Multiply from "./UseState/Multipletwo";
 
 function App() {
   return (
@@ -22,8 +22,7 @@ function App() {
 
       {/* <Count/> */}
       {/* <CompDidUpdate/> */}
-<Multiply/>
-
+      <Multiply />
     </>
   );
 }
