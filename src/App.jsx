@@ -23,6 +23,8 @@ function App() {
       {/* <Count/> */}
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
+      {/* <Twoinputs/> */}
+
       <Twoinputs/>
     </>
   );
