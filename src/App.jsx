@@ -10,6 +10,7 @@ import CompDidUpdate from "./UseEffect/CompDidUpdate";
 // import Multiply from "./UseState/Multipletwo";
 import Twoinputs from './UseState/Twoinputs.jsx';
 import Inputs from './UseEffect/Inputs.jsx';
+import SwitchCase from './UseEffect/SwitchCase.jsx'
 function App() {
   return (
     <>
@@ -27,7 +28,9 @@ function App() {
       {/* <Twoinputs/> */}
 
       {/* <Twoinputs/> */}
-      <Inputs/>
+      {/* <Inputs/> */}
+
+      <SwitchCase/>
     </>
   );
 }
