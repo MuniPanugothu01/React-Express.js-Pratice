@@ -33,6 +33,7 @@ const Twoinputs = () => {
       <button onClick={Sub}>-</button>
       <button onClick={Multiple}>*</button>
       <button onClick={Division}>%</button>
+      
       <p>{result}</p>
     </>
   );
