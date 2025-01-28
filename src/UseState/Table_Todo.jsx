@@ -10,7 +10,20 @@ const Table_Todo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (input == " ") {
+      alert("spaces are not allowed");
+      setInput("");
+      return;
+    } else if (store.includes(input)) {
+      alert("data alredy exist!");
+      return;
+    } else {
+      setStore([...store, input]);
+    }
+    setInput("");
+
     setStore([...store, input]);
+    setInput("");
   };
 
   //   handleDelete function
@@ -62,7 +75,7 @@ const Table_Todo = () => {
 
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="name">Enter the text : </label>
-        <input type="text" name="name" onChange={handleInput} />
+        <input type="text" name="name" onChange={handleInput} value={input} />
         <input type="submit" value="ADD" />
       </form>
 
