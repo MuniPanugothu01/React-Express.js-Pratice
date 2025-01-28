@@ -5,13 +5,14 @@ const FakeStore = () => {
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
-      .then((resonse) => {
-        resonse.json;
+      .then((response) => {
+        response.json();
       })
-      .then((data) => {
-        console.log(data);
+      .then((res) => {
+        setDisplay(res);
+        console.log(res);
       });
-  }, [display]);
+  }, []);
   return <></>;
 };
 

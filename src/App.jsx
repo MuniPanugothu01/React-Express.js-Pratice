@@ -8,15 +8,15 @@ import Password from "./UseState/Password";
 import Count from "./UseEffect/Count";
 import CompDidUpdate from "./UseEffect/CompDidUpdate";
 // import Multiply from "./UseState/Multipletwo";
-import Twoinputs from './UseState/Twoinputs.jsx';
-import Inputs from './UseEffect/Inputs.jsx';
-import SwitchCase from './UseEffect/SwitchCase.jsx';
-import ThemeToggle from './UseEffect/Theme.jsx';
-import FakeStore from './UseEffect/FakeStore.jsx';
-import TodoList from './UseState/TodoList.jsx';
-import Table_Todo from './UseState/Table_Todo.jsx';
-import UserInput from './UseState/UserInput.jsx';
-
+import Twoinputs from "./UseState/Twoinputs.jsx";
+import Inputs from "./UseEffect/Inputs.jsx";
+import SwitchCase from "./UseEffect/SwitchCase.jsx";
+import ThemeToggle from "./UseEffect/Theme.jsx";
+import FakeStore from "./UseEffect/FakeStore.jsx";
+import TodoList from "./UseState/TodoList.jsx";
+import Table_Todo from "./UseState/Table_Todo.jsx";
+import UserInput from "./UseState/UserInput.jsx";
+import StopC from "./UseEffect/StopC.jsx";
 
 function App() {
   return (
@@ -33,13 +33,11 @@ function App() {
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
-{/* <TodoList/> */}
-{/* <Table_Todo/> */}
-<UserInput/>
+      {/* <TodoList/> */}
+      {/* <Table_Todo/> */}
+      {/* <UserInput/> */}
 
-
-
-{/* UseEffect */}
+      {/* UseEffect */}
       {/* <Twoinputs/> */}
       {/* <Inputs/> */}
 
@@ -47,6 +45,7 @@ function App() {
       {/* <ThemeToggle/> */}
 
       {/* <FakeStore/> */}
+      <StopC />
     </>
   );
 }
