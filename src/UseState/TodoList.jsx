@@ -12,12 +12,23 @@ const TodoList = () => {
         event.preventDefalut();
         setStore([...store,input])
     }
+
+    {
+        const data = store.map((item)=>
+     <li>{item}</li> 
+        )
+    }
   return (
     <>
       <form action=""  onSubmit={Submit}>
         <input type="text" onChange={handleInput} value={input} />
         <input type="submit" />
       </form>
+      
+        <ul>
+            {data}
+        </ul>
+      
     </>
   )
 }
