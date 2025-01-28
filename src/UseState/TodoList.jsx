@@ -22,10 +22,20 @@ const TodoList = () => {
   };
   console.log(store);
 
+  // handleEdit
+  let handleEdit = (value, index) => {
+    let newValue = prompt("edite the value here!" + value);
+    if (newValue !== null && newValue.trim() !== "") {
+      store.splice(index, 1, newValue);
+      console.log(store);
+      setStore([...store]);
+    }
+  };
+
   var data = store.map((item, index) => {
     return (
       <div key={index}>
-        <li >
+        <li>
           {item}{" "}
           <button
             onClick={() => {
@@ -33,6 +43,13 @@ const TodoList = () => {
             }}
           >
             delete
+          </button>
+          <button
+            onClick={() => {
+              handleEdit(item, index);
+            }}
+          >
+            Edit
           </button>
         </li>
       </div>
