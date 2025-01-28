@@ -12,12 +12,11 @@ import Twoinputs from "./UseState/Twoinputs.jsx";
 import Inputs from "./UseEffect/Inputs.jsx";
 import SwitchCase from "./UseEffect/SwitchCase.jsx";
 import ThemeToggle from "./UseEffect/Theme.jsx";
-import FakeStore from "./UseEffect/FakeStore.jsx";
 import TodoList from "./UseState/TodoList.jsx";
 import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
 import StopC from "./UseEffect/StopC.jsx";
-
+import FakeStore from './UseEffect/FakeStore.jsx';
 function App() {
   return (
     <>
@@ -44,8 +43,9 @@ function App() {
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      {/* <FakeStore/> */}
-      <StopC />
+      <FakeStore/>
+      {/* <StopC /> */}
+ 
     </>
   );
 }

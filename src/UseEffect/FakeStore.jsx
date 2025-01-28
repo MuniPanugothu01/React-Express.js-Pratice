@@ -13,7 +13,11 @@ const FakeStore = () => {
         console.log(res);
       });
   }, []);
-  return <></>;
+  return (
+    <>
+      <li> {display}</li>
+    </>
+  );
 };
 
 export default FakeStore;
