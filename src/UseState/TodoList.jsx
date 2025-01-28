@@ -5,6 +5,8 @@ const TodoList = () => {
   // to store the values while entering in input box
   const [store, setStore] = useState([]);
 
+  const [isEditing, setEditing] = useState(false);
+
   const handleInput = (event) => {
     setinput(event.target.value);
   };
@@ -35,14 +37,15 @@ const TodoList = () => {
   console.log(store);
 
   // handleEdit
-  let handleEdit = (value, index) => {
-    let newValue = prompt("edite the value here!" + value);
-    if (newValue !== null && newValue.trim() !== "") {
-      store.splice(index, 1, newValue);
-      console.log(store);
-      setStore([...store]);
-    }
-  };
+  // let handleEdit = (value, index) => {
+  //   let newValue = prompt("edite the value here!" + value);
+  //   if (newValue !== null && newValue.trim() !== "") {
+  //     store.splice(index, 1, newValue);
+  //     console.log(store);
+  //     setStore([...store]);
+
+  //   }
+  // };
 
   var data = store.map((item, index) => {
     return (
@@ -56,13 +59,7 @@ const TodoList = () => {
           >
             delete
           </button>
-          <button
-            onClick={() => {
-              handleEdit(item, index);
-            }}
-          >
-            Edit
-          </button>
+          <button onClick={() => setEditing(true)}>Edit</button>
         </li>
       </div>
     );

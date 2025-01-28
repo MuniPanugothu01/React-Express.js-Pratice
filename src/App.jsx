@@ -32,18 +32,19 @@ function App() {
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
-      {/* <TodoList/> */}
+      <TodoList/>
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
+    
 
       {/* UseEffect */}
       {/* <Twoinputs/> */}
       {/* <Inputs/> */}
 
       {/* <SwitchCase/> */}
-      {/* <ThemeToggle/> */}
+      <ThemeToggle/>
 
-      <FakeStore/>
+      {/* <FakeStore/> */}
       {/* <StopC /> */}
  
     </>
