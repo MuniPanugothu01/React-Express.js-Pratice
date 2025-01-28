@@ -10,7 +10,12 @@ const TodoList = () => {
   };
   const Submit = (event) => {
     event.preventDefault();
-    setStore([...store, input]);
+    if (input !== "") {
+      setStore([...store, input]);
+      setinput("");
+    } else {
+      alert("enter the valid text");
+    }
   };
 
   //   handleDelete button
