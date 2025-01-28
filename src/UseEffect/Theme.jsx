@@ -10,7 +10,7 @@ const ThemeToggle = () => {
 
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((theme) => (theme === "light" ? "dark" : "light"));
   };
 
   return (
