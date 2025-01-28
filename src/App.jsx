@@ -13,7 +13,7 @@ import Inputs from './UseEffect/Inputs.jsx';
 import SwitchCase from './UseEffect/SwitchCase.jsx';
 import ThemeToggle from './UseEffect/Theme.jsx';
 import FakeStore from './UseEffect/FakeStore.jsx';
-
+import TodoList from './UseState/TodoList.jsx';
 
 function App() {
   return (
@@ -30,14 +30,18 @@ function App() {
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
+<TodoList/>
 
+
+
+{/* UseEffect */}
       {/* <Twoinputs/> */}
       {/* <Inputs/> */}
 
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      <FakeStore/>
+      {/* <FakeStore/> */}
     </>
   );
 }
