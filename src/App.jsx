@@ -32,7 +32,7 @@ function App() {
       {/* <Inputs/> */}
 
       {/* <SwitchCase/> */}
-      <ThemeToggle/>
+      {/* <ThemeToggle/> */}
     </>
   );
 }
