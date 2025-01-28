@@ -10,18 +10,12 @@ const TodoList = () => {
   };
   const Submit = (event) => {
     event.preventDefault();
-
-    // let inputData = store.includes(input);
-    // if (inputData) {
-    //   alert("data already exist!");
-    // } else {
-    //   setStore([...store, input]);
-    // }
- 
-  
+    let inputData = store.includes(input);
     if (input !== "") {
       setStore([...store, input]);
       setinput("");
+    } else if (inputData) {
+      alert("data already exists!");
     } else {
       alert("enter the valid text");
     }
