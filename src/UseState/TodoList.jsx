@@ -11,8 +11,9 @@ const TodoList = () => {
   const Submit = (event) => {
     event.preventDefault();
 
-    if (input !== "") {
-      alert("enter valid text1111111");
+    if (input == " ") {
+      setStore([...store, input]);
+      setinput("");
       return;
     } else if (store.includes(input)) {
       alert("data already exists!");
