@@ -10,6 +10,15 @@ const TodoList = () => {
   };
   const Submit = (event) => {
     event.preventDefault();
+
+    // let inputData = store.includes(input);
+    // if (inputData) {
+    //   alert("data already exist!");
+    // } else {
+    //   setStore([...store, input]);
+    // }
+ 
+  
     if (input !== "") {
       setStore([...store, input]);
       setinput("");
@@ -70,7 +79,7 @@ const TodoList = () => {
           value={input}
           placeholder="enter the character"
         />
-        <input type="submit" value="register" />
+        <input type="submit" value="ADD" />
       </form>
 
       <ul>{data}</ul>
