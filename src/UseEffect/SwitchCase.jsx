@@ -16,6 +16,11 @@ const SwitchCase = () => {
     setNum2(event.target.value);
   };
 
+  const handleOperation = (event) =>{
+    let OperatonType = event.target.name
+    setOperation(OperatonType);
+  }
+
   useEffect(
     () => {
       if (operation) {
@@ -36,6 +41,7 @@ const SwitchCase = () => {
       Enter the Number1:{" "}
       <input type="number" name="add" onChange={handleInput} />
       Enter the Number2: <input type="number" onChange={handleInput2} />
+      <button name="add" onClick={handleOperation}>+</button>
       <p>result is!{result}</p>
     </>
   );
