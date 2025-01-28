@@ -13,11 +13,14 @@ const Table_Todo = () => {
     setStore([...store, input]);
   };
 
-//   handleDelete function
+  //   handleDelete function
 
-const handleDelete = (event) =>{
-
-}
+  const handleDelete = (item, index) => {
+    let InputDelte = store.filter((value, index) => {
+      return value != item;
+    });
+    setStore(InputDelte);
+  };
 
   let Data = store.map((item, index) => {
     return (
@@ -25,9 +28,13 @@ const handleDelete = (event) =>{
         <tr key={index}>
           <td>{item}</td>
           <td>
-            <button onChange={()=>{
-                handleDelete(item,index)
-            }}>Delete</button>
+            <button
+              onChange={() => {
+                handleDelete(item, index);
+              }}
+            >
+              Delete
+            </button>
           </td>
           <td>
             <button>Edit</button>
