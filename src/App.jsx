@@ -11,7 +11,10 @@ import CompDidUpdate from "./UseEffect/CompDidUpdate";
 import Twoinputs from './UseState/Twoinputs.jsx';
 import Inputs from './UseEffect/Inputs.jsx';
 import SwitchCase from './UseEffect/SwitchCase.jsx';
-import ThemeToggle from './UseEffect/Theme.jsx'
+import ThemeToggle from './UseEffect/Theme.jsx';
+import FakeStore from './UseEffect/FakeStore.jsx';
+
+
 function App() {
   return (
     <>
@@ -33,6 +36,8 @@ function App() {
 
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
+
+      <FakeStore/>
     </>
   );
 }
