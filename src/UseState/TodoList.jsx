@@ -13,18 +13,32 @@ const TodoList = () => {
     setStore([...store, input]);
   };
 
-  {
-    var data = store.map((item, index) => {
-      return (
-        <>
-          <li key={index}>
-            {item} <button>delete</button>
-            <button>Edit</button>{" "}
-          </li>
-        </>
-      );
+  //   handleDelete button
+  const handleDelete = (item, index) => {
+    let Updated = store.filter((value, index) => {
+      return value != item;
     });
-  }
+    setStore(Updated);
+  };
+  console.log(store);
+
+  var data = store.map((item, index) => {
+    return (
+      <div key={index}>
+        <li >
+          {item}{" "}
+          <button
+            onClick={() => {
+              handleDelete(item, index);
+            }}
+          >
+            delete
+          </button>
+        </li>
+      </div>
+    );
+  });
+
   return (
     <>
       <form action="" onSubmit={Submit}>
