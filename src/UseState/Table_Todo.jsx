@@ -13,13 +13,21 @@ const Table_Todo = () => {
     setStore([...store, input]);
   };
 
+//   handleDelete function
+
+const handleDelete = (event) =>{
+
+}
+
   let Data = store.map((item, index) => {
     return (
       <div>
         <tr key={index}>
           <td>{item}</td>
           <td>
-            <button>Delete</button>
+            <button onChange={()=>{
+                handleDelete(item,index)
+            }}>Delete</button>
           </td>
           <td>
             <button>Edit</button>
