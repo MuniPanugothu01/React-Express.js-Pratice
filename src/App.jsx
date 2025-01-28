@@ -15,6 +15,9 @@ import ThemeToggle from './UseEffect/Theme.jsx';
 import FakeStore from './UseEffect/FakeStore.jsx';
 import TodoList from './UseState/TodoList.jsx';
 import Table_Todo from './UseState/Table_Todo.jsx';
+import UserInput from './UseState/UserInput.jsx';
+
+
 function App() {
   return (
     <>
@@ -31,7 +34,8 @@ function App() {
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
 {/* <TodoList/> */}
-<Table_Todo/>
+{/* <Table_Todo/> */}
+<UserInput/>
 
 
 
