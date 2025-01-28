@@ -22,6 +22,13 @@ const Table_Todo = () => {
     setStore(InputDelte);
   };
 
+  // handleEdit function
+  const handleEdit = (item, index) => {
+    let InputUpdate = prompt("enter the text!");
+    store.splice(index, 1, InputUpdate);
+    setStore([...store]);
+  };
+
   let Data = store.map((item, index) => {
     return (
       <div>
@@ -29,7 +36,7 @@ const Table_Todo = () => {
           <td>{item}</td>
           <td>
             <button
-              onChange={() => {
+              onClick={() => {
                 handleDelete(item, index);
               }}
             >
@@ -37,7 +44,13 @@ const Table_Todo = () => {
             </button>
           </td>
           <td>
-            <button>Edit</button>
+            <button
+              onClick={() => {
+                handleEdit(item, index);
+              }}
+            >
+              Edit
+            </button>
           </td>
         </tr>
       </div>
