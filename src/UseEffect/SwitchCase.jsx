@@ -32,9 +32,9 @@ const SwitchCase = () => {
         }
       }
     },
-    operation,
+    [operation,
     num1,
-    num2
+    num2]
   );
   return (
     <>
@@ -42,6 +42,9 @@ const SwitchCase = () => {
       <input type="number" name="add" onChange={handleInput} />
       Enter the Number2: <input type="number" onChange={handleInput2} />
       <button name="add" onClick={handleOperation}>+</button>
+      <button name="sub" onClick={handleOperation} >-</button>
+      <button name="mul" onClick={handleOperation} >*</button>
+      <button name="div" onClick={handleOperation}>%</button>
       <p>result is!{result}</p>
     </>
   );
