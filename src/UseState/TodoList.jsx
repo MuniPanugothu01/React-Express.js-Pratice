@@ -11,17 +11,17 @@ const TodoList = () => {
   const Submit = (event) => {
     event.preventDefault();
 
-    if (input == " ") {
-      setStore([...store, input]);
+    if (input !== " ") {
+      alert("spaces are not allowed!");
       setinput("");
       return;
     } else if (store.includes(input)) {
       alert("data already exists!");
       return;
     } else {
-      alert("enter the valid text");
+      setStore([...store, input]);
     }
-    setStore([...store, input]);
+
     setinput("");
   };
 
