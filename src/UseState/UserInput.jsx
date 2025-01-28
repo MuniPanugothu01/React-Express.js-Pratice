@@ -30,13 +30,21 @@ const UserInput = () => {
     setStoreData(inputDelete);
   };
 
-
-//   handleEdit function
-const handleEdit = (item,index) =>{
-    let InputData = prompt('enter the value' + item)
-    storeData.splice(index,1,InputData);
-    setStoreData([...storeData]);
-}
+  //   handleEdit function
+  const handleEdit = (item, index) => {
+    let newName = prompt("enter the name", storeData[index].name);
+    let newAge = prompt("enter the age!", storeData[index].age);
+    if (
+      newAge !== null &&
+      newName !== null &&
+      newName.trim() !== "" &&
+      newAge.trim() !== ""
+    ) {
+      let updatedList = [...storeData];
+      updatedList.splice(index, 1, { name: newName, age: newAge });
+      setStoreData(updatedList);
+    }
+  };
 
   let Data = storeData.map((item, index) => {
     return (
@@ -50,9 +58,13 @@ const handleEdit = (item,index) =>{
           >
             Delete
           </button>
-          <button onClick={()=>{
-            handleEdit(item,index)
-          }}>Edit</button>
+          <button
+            onClick={() => {
+              handleEdit(item, index);
+            }}
+          >
+            Edit
+          </button>
         </li>
       </div>
     );
