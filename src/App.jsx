@@ -14,7 +14,7 @@ import SwitchCase from './UseEffect/SwitchCase.jsx';
 import ThemeToggle from './UseEffect/Theme.jsx';
 import FakeStore from './UseEffect/FakeStore.jsx';
 import TodoList from './UseState/TodoList.jsx';
-
+import Table_Todo from './UseState/Table_Todo.jsx';
 function App() {
   return (
     <>
@@ -30,7 +30,8 @@ function App() {
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
-<TodoList/>
+{/* <TodoList/> */}
+<Table_Todo/>
 
 
 
