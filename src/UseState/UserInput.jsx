@@ -49,23 +49,28 @@ const UserInput = () => {
   let Data = storeData.map((item, index) => {
     return (
       <div key={index}>
-        <li>
-          Name: {item.name}, Age:{item.age}
-          <button
-            onClick={() => {
-              handleDelete(item, index);
-            }}
-          >
-            Delete
-          </button>
-          <button
-            onClick={() => {
-              handleEdit(item, index);
-            }}
-          >
-            Edit
-          </button>
-        </li>
+        <tr>
+          <td> Name: {item.name}</td>
+          <td> Age:{item.age}</td>
+          <td>
+            <button
+              onClick={() => {
+                handleDelete(item, index);
+              }}
+            >
+              Delete
+            </button>
+          </td>
+          <td>
+            <button
+              onClick={() => {
+                handleEdit(item, index);
+              }}
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
       </div>
     );
   });
@@ -90,7 +95,17 @@ const UserInput = () => {
         />
         <input type="submit" value="Submit" />
       </form>
-      <ul>{Data}</ul>
+
+      <table>
+        <tr>
+          <thead>
+            <th>UserName</th>
+            <th>UserAge</th>
+            <th>Buttons</th>
+          </thead>
+          <tbody>{Data}</tbody>
+        </tr>
+      </table>
     </>
   );
 };
