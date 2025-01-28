@@ -17,13 +17,6 @@ const UserInput = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (input1.trim() == " " && input2.trim() == " ") {
-      alert("spaces are not allowed");
-      setInput1('')
-      setInput2('') 
-    return;
-    }
-    else if(storeData.includes(input1))
     setStoreData([...storeData, { name: input1, age: input2 }]);
     setInput1("");
     setInput2("");
