@@ -11,7 +11,7 @@ const TodoList = () => {
   const Submit = (event) => {
     event.preventDefault();
 
-    if (input !== " ") {
+    if (input == " ") {
       alert("spaces are not allowed!");
       setinput("");
       return;
