@@ -10,15 +10,18 @@ const TodoList = () => {
   };
   const Submit = (event) => {
     event.preventDefault();
-    let inputData = store.includes(input);
+
     if (input !== "") {
-      setStore([...store, input]);
-      setinput("");
-    } else if (inputData) {
+      alert("enter valid text1111111");
+      return;
+    } else if (store.includes(input)) {
       alert("data already exists!");
+      return;
     } else {
       alert("enter the valid text");
     }
+    setStore([...store, input]);
+    setinput("");
   };
 
   //   handleDelete button
