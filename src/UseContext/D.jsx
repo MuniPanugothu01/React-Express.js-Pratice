@@ -1,7 +1,7 @@
 import React from "react";
 
-const D = () => {
-  let Final = { C };
+const D = ({ C }) => {
+  let Final = C;
   return (
     <div>
       <h1>D- component</h1>

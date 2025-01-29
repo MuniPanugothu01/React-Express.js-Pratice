@@ -1,7 +1,7 @@
 import React from "react";
 import D from "./D";
-const C = () => {
-  let C = { B };
+const C = ({ B }) => {
+  let C = B;
   return (
     <div>
       <h1>C - component</h1>

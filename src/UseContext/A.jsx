@@ -1,7 +1,7 @@
 import React from "react";
 import B from "./B";
-const A = () => {
-  let data1 = { value };
+const A = ({value}) => {
+  let data1 = value ;
   return (
     <>
       <h1>A - component</h1>
