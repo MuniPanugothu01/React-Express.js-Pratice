@@ -5,8 +5,8 @@ const B = () => {
   return (
     <div>
       <h1>B - component</h1>
-      <p>B = {data1}</p>
-      <C />
+      <p></p>
+      <C B={data1} />
     </div>
   );
 };

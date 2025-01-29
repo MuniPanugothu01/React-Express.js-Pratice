@@ -1,14 +1,14 @@
-import React from 'react'
-import B from './B'
+import React from "react";
+import B from "./B";
 const A = () => {
-    let data1 = {value}
+  let data1 = { value };
   return (
     <>
-    <h1>A - component</h1>
-      <p> A = {data1}</p>
-      <B/>
+      <h1>A - component</h1>
+      <p> </p>
+      <B A={data1} />
     </>
-  )
-}
+  );
+};
 
-export default A
+export default A;

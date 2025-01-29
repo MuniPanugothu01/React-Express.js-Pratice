@@ -1,13 +1,13 @@
-import React from 'react'
-import A from './A'
+import React from "react";
+import A from "./A";
 const PropDriling = () => {
-    const data = "this is the prop sending to another component!"
+  const data = "this is the prop sending to another component!";
   return (
     <>
-      <p>value={data}</p>
-      <A/>
+      <p></p>
+      <A value={data} />
     </>
-  )
-}
+  );
+};
 
 export default PropDriling;
