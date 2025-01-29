@@ -24,6 +24,15 @@ const TodoList = () => {
       setStore([...store, input]);
     }
 
+    if (isEditing !== null) {
+      let updatedString = [...store];
+      updatedString[isEditing] = input;
+      setStore(updatedString);
+      setEditing(null);
+    } else {
+      [...store, input];
+    }
+
     setinput("");
   };
 
@@ -36,16 +45,10 @@ const TodoList = () => {
   };
   console.log(store);
 
-  // handleEdit
-  // let handleEdit = (value, index) => {
-  //   let newValue = prompt("edite the value here!" + value);
-  //   if (newValue !== null && newValue.trim() !== "") {
-  //     store.splice(index, 1, newValue);
-  //     console.log(store);
-  //     setStore([...store]);
-
-  //   }
-  // };
+  const handleEdit = (index) => {
+    setinput(store[index]);
+    setEditing(index);
+  };
 
   var data = store.map((item, index) => {
     return (
@@ -59,7 +62,7 @@ const TodoList = () => {
           >
             delete
           </button>
-          <button onClick={() => setEditing(true)}>Edit</button>
+          <button onClick={() => handleEdit(index)}>Edit</button>
         </li>
       </div>
     );
