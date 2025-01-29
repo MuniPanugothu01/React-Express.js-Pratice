@@ -11,3 +11,8 @@ body.dark {
   background-color: #121212;
   color: #ffffff;
 }
+
+body.red {
+  background-color: hsl(0, 91%, 47%);
+  color: #ffffff;
+}
