@@ -6,7 +6,7 @@ const FakeStore = () => {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => {
-       return response.json();
+        return response.json();
       })
       .then((res) => {
         setDisplay(res);
@@ -14,16 +14,25 @@ const FakeStore = () => {
       });
   }, []);
 
-  let FakeData =  display.map((item,index)=>{
-    return(
+  let FakeData = display.map((item, index) => {
+    return (
       <div key={index}>
-      <li>{item.title}</li>
+        <tr>
+          <td>{item.id}</td>
+          <td>{item.title}</td>
+          <td>{item.price}</td>
+          <td>{item.description}</td>
+          <td>{item.category}</td>
+          <td>{item.image}</td>
+          <td>{item["rating"]["rate"]}</td>
+          <td>{item["rating"]["count"]}</td>
+        </tr>
       </div>
-    )
-  })
+    );
+  });
   return (
     <>
-    <h1>Fake store Data!</h1>
+      <h1>Fake store Data!</h1>
       <li> {FakeData}</li>
     </>
   );
