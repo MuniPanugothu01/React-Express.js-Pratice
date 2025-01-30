@@ -34,7 +34,7 @@ function App() {
       {/* <CompDidUpdate/> */}
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
-      <TodoList/>
+      {/* <TodoList/> */}
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
     
@@ -44,15 +44,15 @@ function App() {
       {/* <Inputs/> */}
 
       {/* <SwitchCase/> */}
-      <ThemeToggle/>
+      {/* <ThemeToggle/> */}
 
-      {/* <FakeStore/> */}
+      <FakeStore/>
       {/* <StopC /> */}
 
 
 
       {/* UseContext */}
-      <PropDriling/>
+      {/* <PropDriling/> */}
  
     </>
   );
