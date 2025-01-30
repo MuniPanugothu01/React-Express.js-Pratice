@@ -18,7 +18,7 @@ import UserInput from "./UseState/UserInput.jsx";
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from "./UseEffect/FakeStore.jsx";
 import ProductsApi from "./UseEffect/ProductsApi.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 import SeeMore from './UseEffect/SeeMore.jsx';
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -52,13 +52,10 @@ function App() {
       {/* <StopC /> */}
 
       <ProductsApi />
-
-      <BrowserRouter>
         <Routes>
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes>
-      </BrowserRouter>
-
+      
       {/* UseContext */}
       {/* <PropDriling/> */}
     </>
