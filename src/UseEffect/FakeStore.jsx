@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './StyleFakeStore.css'
 const FakeStore = () => {
   const [display, setDisplay] = useState([]);
 
