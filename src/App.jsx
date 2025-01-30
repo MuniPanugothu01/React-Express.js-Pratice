@@ -47,7 +47,7 @@ function App() {
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      <FakeStore/>
+      {/* <FakeStore/> */}
       {/* <StopC /> */}
 
 <ProductsApi/>
