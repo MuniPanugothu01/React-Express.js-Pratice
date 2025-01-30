@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 const ProductsApi = () => {
   const [store, setStore] = useState([]);
 
@@ -19,7 +19,7 @@ const ProductsApi = () => {
         <td>{val.title}</td>
         <td>{val.price}</td>
         <td>
-          <button>SeeMore</button>
+          <button><Link to={`/products/${val.id}`}></Link></button>
         </td>
       </tr>
     );

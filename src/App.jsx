@@ -16,8 +16,9 @@ import TodoList from "./UseState/TodoList.jsx";
 import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
 import StopC from "./UseEffect/StopC.jsx";
-import FakeStore from './UseEffect/FakeStore.jsx';
-import ProductsApi from './UseEffect/ProductsApi.jsx';
+import FakeStore from "./UseEffect/FakeStore.jsx";
+import ProductsApi from "./UseEffect/ProductsApi.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
 function App() {
@@ -38,7 +39,6 @@ function App() {
       {/* <TodoList/> */}
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
-    
 
       {/* UseEffect */}
       {/* <Twoinputs/> */}
@@ -50,11 +50,16 @@ function App() {
       {/* <FakeStore/> */}
       {/* <StopC /> */}
 
-<ProductsApi/>
+      <ProductsApi />
+
+      <BrowserRouter>
+        <Routes>
+          <Route />
+        </Routes>
+      </BrowserRouter>
 
       {/* UseContext */}
       {/* <PropDriling/> */}
- 
     </>
   );
 }
