@@ -16,20 +16,18 @@ const FakeStore = () => {
 
   let FakeData = display.map((item, index) => {
     return (
-      <div key={index}>
-        <tr>
-          <td>{item.id}</td>
-          <td>{item.title}</td>
-          <td>{item.price}</td>
-          <td>{item.description}</td>
-          <td>{item.category}</td>
-          <td>
-            <img src={item.image} alt={item.title} width="150" />
-          </td>
-          <td>{item["rating"]["rate"]}</td>
-          <td>{item["rating"]["count"]}</td>
-        </tr>
-      </div>
+      <tr key={index}>
+        <td>{item.id}</td>
+        <td>{item.title}</td>
+        <td>{item.price}</td>
+        <td>{item.description}</td>
+        <td>{item.category}</td>
+        <td>
+          <img src={item.image} alt={item.title} width="150" />
+        </td>
+        <td>{item.rating.rate}</td>
+        <td>{item.rating.count}</td>
+      </tr>
     );
   });
   return (
@@ -48,7 +46,7 @@ const FakeStore = () => {
             <th>Ratiing Count</th>
           </tr>
         </thead>
-        <tbody>{item}</tbody>
+        <tbody>{FakeData}</tbody>
       </table>
     </>
   );
