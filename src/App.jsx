@@ -17,6 +17,7 @@ import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from './UseEffect/FakeStore.jsx';
+import ProductsApi from './UseEffect/ProductsApi.jsx';
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
 function App() {
@@ -49,7 +50,7 @@ function App() {
       <FakeStore/>
       {/* <StopC /> */}
 
-
+<ProductsApi/>
 
       {/* UseContext */}
       {/* <PropDriling/> */}
