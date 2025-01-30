@@ -23,7 +23,9 @@ const FakeStore = () => {
           <td>{item.price}</td>
           <td>{item.description}</td>
           <td>{item.category}</td>
-          <td>{item.image}</td>
+          <td>
+            <img src={item.image} alt={item.title} width="150" />
+          </td>
           <td>{item["rating"]["rate"]}</td>
           <td>{item["rating"]["count"]}</td>
         </tr>
@@ -33,7 +35,21 @@ const FakeStore = () => {
   return (
     <>
       <h1>Fake store Data!</h1>
-      <li> {FakeData}</li>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Rating Rate</th>
+            <th>Ratiing Count</th>
+          </tr>
+        </thead>
+        <tbody>{item}</tbody>
+      </table>
     </>
   );
 };
