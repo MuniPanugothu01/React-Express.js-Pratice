@@ -18,30 +18,38 @@ const SeeMore = () => {
     <>
       <h1>SeeMore Component {i.id}</h1>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>price</th>
-            <th>description</th>
-            <th>category</th>
-            <th>image</th>
-            <th>Rating Rate</th>
-            <th>Rating Count</th>
-          </tr>
-        </thead>
-        <tbody>
-          <td>{dataSee.id}</td>
-          <td>{dataSee.title}</td>
-          <td>{dataSee.price}</td>
-          <td>{dataSee.description}</td>
-          <td>{dataSee.category}</td>
-          <td><img src={dataSee.image} alt={dataSee.image} width='150' /></td>
-          <td>{dataSee.rating?.rate}</td>
-          <td>{dataSee.rating?.count}</td>
-        </tbody>
-      </table>
+      {Object.keys(dataSee).length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>price</th>
+              <th>description</th>
+              <th>category</th>
+              <th>image</th>
+              <th>Rating Rate</th>
+              <th>Rating Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{dataSee?.id}</td>
+              <td>{dataSee?.title}</td>
+              <td>{dataSee?.price}</td>
+              <td>{dataSee?.description}</td>
+              <td>{dataSee?.category}</td>
+              <td>
+                <img src={dataSee?.image} alt={dataSee?.image} width="150" />
+              </td>
+              <td>{dataSee?.rating?.rate}</td>
+              <td>{dataSee?.rating?.count}</td>
+            </tr>
+          </tbody>
+        </table>
+      ) : (
+        ""
+      )}
     </>
   );
 };
