@@ -31,6 +31,17 @@ const ProductsApi = () => {
   return (
     <>
       <h1>FakeStore Data!</h1>
+
+      <form action="">
+        <select name="" id="">
+          <option value="">None</option>
+          <option value="">men's clothing</option>
+          <option value="">women's clothing</option>
+          <option value="">jewelery</option>
+          <option value="">electronics</option>
+        </select>
+      </form>
+
       <table>
         <thead>
           <tr>
