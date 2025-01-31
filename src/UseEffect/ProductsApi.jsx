@@ -28,11 +28,22 @@ const ProductsApi = () => {
     );
   });
 
+  // handleSubmit function
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value);
+    let filter = store.filter((value, index) => {
+      return value.category === event.target[0].value;
+    });
+    console.log(filter);
+    setStore(filter);
+  };
+
   return (
     <>
       <h1>FakeStore Data!</h1>
 
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <select name="" id="">
           <option value="">None</option>
           <option value="men's clothing">men's clothing</option>
