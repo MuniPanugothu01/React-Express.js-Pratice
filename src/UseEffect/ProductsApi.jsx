@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 const ProductsApi = () => {
   const [store, setStore] = useState([]);
+  const [fixedFilter, setFixedFilter] = useState([]);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
       console.log(response);
       setStore(response.data);
+      setFixedFilter(response.data);
     });
   }, []);
 
@@ -32,11 +34,12 @@ const ProductsApi = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target[0].value);
-    let filter = store.filter((value, index) => {
+    let filter = fixedFilter.filter((value, index) => {
       return value.category === event.target[0].value;
     });
     console.log(filter);
     setStore(filter);
+    // setFixedFilter(filter);
   };
 
   return (
