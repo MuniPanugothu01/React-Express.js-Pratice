@@ -48,14 +48,14 @@ function App() {
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      {/* <FakeStore/> */}
+      <FakeStore/>
       {/* <StopC /> */}
 
       {/* <ProductsApi /> */}
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<ProductsApi/>}/>
           <Route path="products/:id" element={<SeeMore/>} />
-        </Routes>
+        </Routes> */}
       
       {/* UseContext */}
       {/* <PropDriling/> */}

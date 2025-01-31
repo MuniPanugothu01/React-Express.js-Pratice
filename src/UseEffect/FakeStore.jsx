@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import './StyleFakeStore.css'
+import "./StyleFakeStore.css";
 const FakeStore = () => {
   const [display, setDisplay] = useState([]);
+  const [filterFixed, setFilterFixed] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -10,6 +11,7 @@ const FakeStore = () => {
       })
       .then((res) => {
         setDisplay(res);
+        setFilterFixed(res);
         console.log(res);
       });
   }, []);
@@ -30,9 +32,34 @@ const FakeStore = () => {
       </tr>
     );
   });
+
+  // handlesubmit function
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value);
+    var filter = filterFixed.filter((value, index) => {
+      return value.category === event.target[0].value;
+    });
+    console.log(filter);
+    setDisplay(filter);
+  };
+
   return (
     <>
       <h1>Fake store Data!</h1>
+
+      <form action="" onSubmit={handleSubmit}>
+        <select name="" id="">
+          <option value="">None</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="jewelery">jewelery</option>
+          <option value="electronics">electronics</option>
+        </select>
+        <input type="submit" value="submit" />
+      </form>
+
       <table>
         <thead>
           <tr>
