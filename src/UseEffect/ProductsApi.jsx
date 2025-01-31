@@ -35,11 +35,12 @@ const ProductsApi = () => {
       <form action="">
         <select name="" id="">
           <option value="">None</option>
-          <option value="">men's clothing</option>
-          <option value="">women's clothing</option>
-          <option value="">jewelery</option>
-          <option value="">electronics</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="jewelery">jewelery</option>
+          <option value="electronics">electronics</option>
         </select>
+        <input type="submit" value="submit" />
       </form>
 
       <table>
