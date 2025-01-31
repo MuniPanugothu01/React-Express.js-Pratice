@@ -51,8 +51,9 @@ function App() {
       {/* <FakeStore/> */}
       {/* <StopC /> */}
 
-      <ProductsApi />
+      {/* <ProductsApi /> */}
         <Routes>
+          <Route path="/" element={<ProductsApi/>}/>
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes>
       
