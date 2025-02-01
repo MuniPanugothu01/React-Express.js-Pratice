@@ -46,7 +46,7 @@ function App() {
       {/* <Inputs/> */}
 
       {/* <SwitchCase/> */}
-      <ThemeToggle/>
+      {/* <ThemeToggle/> */}
 
       <FakeStore/>
       {/* <StopC /> */}
