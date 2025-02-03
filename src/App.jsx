@@ -22,7 +22,8 @@ import {Routes, Route } from "react-router-dom";
 import SeeMore from './UseEffect/SeeMore.jsx';
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
-import Parent1 from './UseContext/Parent1.jsx'
+import Parent1 from './UseContext/Parent1.jsx';
+import ParentCount from './UseContext/ParentCount.jsx'
 function App() {
   return (
     <>
@@ -60,7 +61,8 @@ function App() {
       
       {/* UseContext */}
       {/* <PropDriling/> */}
-      <Parent1/>
+      {/* <Parent1/> */}
+      <ParentCount/>
     </>
   );
 }
