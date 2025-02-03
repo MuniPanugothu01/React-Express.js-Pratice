@@ -13,8 +13,8 @@ const CountChild = () => {
 
   const handleDecrment = () => {
     setCount(count - 1);
-    if(count === -15){
-        setCount(0)
+    if (count === -15) {
+      setCount(0);
     }
   };
   return (
