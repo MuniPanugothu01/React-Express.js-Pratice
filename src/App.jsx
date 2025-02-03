@@ -28,6 +28,7 @@ import Parent1 from "./UseContext/Parent1.jsx";
 import ParentCount from "./UseContext/ParentCount.jsx";
 import BackgroundTheme from "./UseEffect/BackgroundTheme.jsx";
 import MultipleColor from "./UseEffect/MultipleColor.jsx";
+import ThemeBackground from "./UseContext/ThemeBackground.jsx";
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
 
-      <ThemeColor />
+      {/* <ThemeColor /> */}
 
       {/* UseEffect */}
 
@@ -73,6 +74,7 @@ function App() {
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
       {/* <ParentCount /> */}
+      <ThemeBackground />
     </>
   );
 }
