@@ -52,7 +52,7 @@ const SetintervalMultiple = () => {
         clearInterval(intervalId);
       }
     };
-  }, [intervalId]);
+  });
 
   return (
     <>
