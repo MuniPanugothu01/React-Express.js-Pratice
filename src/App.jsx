@@ -15,6 +15,8 @@ import ThemeToggle from "./UseEffect/Theme.jsx";
 import TodoList from "./UseState/TodoList.jsx";
 import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
+import ThemeColor from "./UseState/ThemeColor.jsx";
+// useEffect
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from "./UseEffect/FakeStore.jsx";
 import ProductsApi from "./UseEffect/ProductsApi.jsx";
@@ -24,8 +26,8 @@ import SeeMore from "./UseEffect/SeeMore.jsx";
 import PropDriling from "./UseContext/PropDriling.jsx";
 import Parent1 from "./UseContext/Parent1.jsx";
 import ParentCount from "./UseContext/ParentCount.jsx";
-import BackgroundTheme from './UseEffect/BackgroundTheme.jsx';
-import MultipleColor from './UseEffect/MultipleColor.jsx';
+import BackgroundTheme from "./UseEffect/BackgroundTheme.jsx";
+import MultipleColor from "./UseEffect/MultipleColor.jsx";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
 
+      <ThemeColor />
+
       {/* UseEffect */}
 
       {/* <Twoinputs/> */}
@@ -63,12 +67,12 @@ function App() {
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
 
-        {/* <BackgroundTheme/> */}
-<MultipleColor/>
+      {/* <BackgroundTheme/> */}
+      {/* <MultipleColor/> */}
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
-      <ParentCount />
+      {/* <ParentCount /> */}
     </>
   );
 }
