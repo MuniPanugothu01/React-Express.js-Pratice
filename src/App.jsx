@@ -24,7 +24,9 @@ import SeeMore from "./UseEffect/SeeMore.jsx";
 import PropDriling from "./UseContext/PropDriling.jsx";
 import Parent1 from "./UseContext/Parent1.jsx";
 import ParentCount from "./UseContext/ParentCount.jsx";
-import BackgroundTheme from './UseEffect/BackgroundTheme.jsx'
+import BackgroundTheme from './UseEffect/BackgroundTheme.jsx';
+import MultipleColor from './UseEffect/MultipleColor.jsx';
+
 function App() {
   return (
     <>
@@ -61,9 +63,8 @@ function App() {
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
 
-
-        <BackgroundTheme/>
-
+        {/* <BackgroundTheme/> */}
+<MultipleColor/>
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
