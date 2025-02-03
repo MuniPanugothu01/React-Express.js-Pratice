@@ -47,7 +47,7 @@ const FakeStore = () => {
 
   return (
     <>
-      <h1>Fake store Data!</h1>
+      <h1>Fake store Data</h1>
 
       <form action="" onSubmit={handleSubmit}>
         <select name="" id="">
