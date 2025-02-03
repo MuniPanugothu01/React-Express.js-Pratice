@@ -7,12 +7,15 @@ const ThemeColor = () => {
   const handleTheme = () => {
     if (color === "white") {
       setColor("black");
+      document.body.style.color = "white";
       document.body.style.backgroundColor = "black";
     } else if (color === "black") {
       setColor("red");
       document.body.style.backgroundColor = "red";
-    } else {
+    }
+     else {
       setColor("white");
+      document.body.style.color = "black";
       document.body.style.backgroundColor = "white";
     }
   };
