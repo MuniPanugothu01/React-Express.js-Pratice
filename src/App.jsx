@@ -23,6 +23,10 @@ import ProductsApi from "./UseEffect/ProductsApi.jsx";
 import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
+import StartColorStop from './UseEffect/StartColorStop.jsx';
+
+
+
 
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -72,7 +76,13 @@ function App() {
 
       {/* <BackgroundTheme/> */}
       {/* <MultipleColor/> */}
-      <SetintervalMultiple />
+      {/* <SetintervalMultiple /> */}
+<StartColorStop/>
+
+
+
+
+
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
