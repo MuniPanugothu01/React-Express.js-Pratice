@@ -18,12 +18,13 @@ import UserInput from "./UseState/UserInput.jsx";
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from "./UseEffect/FakeStore.jsx";
 import ProductsApi from "./UseEffect/ProductsApi.jsx";
-import {Routes, Route } from "react-router-dom";
-import SeeMore from './UseEffect/SeeMore.jsx';
+import { Routes, Route } from "react-router-dom";
+import SeeMore from "./UseEffect/SeeMore.jsx";
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
-import Parent1 from './UseContext/Parent1.jsx';
-import ParentCount from './UseContext/ParentCount.jsx'
+import Parent1 from "./UseContext/Parent1.jsx";
+import ParentCount from "./UseContext/ParentCount.jsx";
+import BackgroundTheme from './UseEffect/BackgroundTheme.jsx'
 function App() {
   return (
     <>
@@ -44,6 +45,7 @@ function App() {
       {/* <UserInput/> */}
 
       {/* UseEffect */}
+
       {/* <Twoinputs/> */}
       {/* <Inputs/> */}
 
@@ -54,15 +56,18 @@ function App() {
       {/* <StopC /> */}
 
       {/* <ProductsApi /> */}
-        {/* <Routes>
+      {/* <Routes>
           <Route path="/" element={<ProductsApi/>}/>
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
-      
+
+
+        <BackgroundTheme/>
+
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
-      <ParentCount/>
+      <ParentCount />
     </>
   );
 }
