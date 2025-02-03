@@ -22,6 +22,7 @@ import {Routes, Route } from "react-router-dom";
 import SeeMore from './UseEffect/SeeMore.jsx';
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
+import Parent1 from './UseContext/Parent1.jsx'
 function App() {
   return (
     <>
@@ -48,7 +49,7 @@ function App() {
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      <FakeStore/>
+      {/* <FakeStore/> */}
       {/* <StopC /> */}
 
       {/* <ProductsApi /> */}
@@ -59,6 +60,7 @@ function App() {
       
       {/* UseContext */}
       {/* <PropDriling/> */}
+      <Parent1/>
     </>
   );
 }
