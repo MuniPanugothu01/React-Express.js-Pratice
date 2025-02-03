@@ -22,6 +22,8 @@ import FakeStore from "./UseEffect/FakeStore.jsx";
 import ProductsApi from "./UseEffect/ProductsApi.jsx";
 import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
+import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
+
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
 import Parent1 from "./UseContext/Parent1.jsx";
@@ -69,8 +71,8 @@ function App() {
         </Routes> */}
 
       {/* <BackgroundTheme/> */}
-      <MultipleColor/>
-
+      {/* <MultipleColor/> */}
+      <SetintervalMultiple />
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
