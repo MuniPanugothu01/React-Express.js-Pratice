@@ -69,12 +69,13 @@ function App() {
         </Routes> */}
 
       {/* <BackgroundTheme/> */}
-      {/* <MultipleColor/> */}
+      <MultipleColor/>
+
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
       {/* <ParentCount /> */}
-      <ThemeBackground />
+      {/* <ThemeBackground /> */}
     </>
   );
 }

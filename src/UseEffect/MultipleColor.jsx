@@ -21,6 +21,7 @@ const MultipleColor = () => {
       setColor("white");
     }
   };
+
   return (
     <>
       <p>is theme color is: {color}</p>
