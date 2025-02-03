@@ -1,64 +1,65 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 const SetintervalMultiple = () => {
   const [color, setColor] = useState("white");
-  const [intervalId, setIntervalId] = useState(null);
+  const [stop, setStop] = useState("white");
 
-  const handleMultipleColor = () => {
-    if (intervalId) {
-      clearInterval(intervalId);
-    }
-
-    const newIntervalId = setInterval(() => {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
       if (color === "white") {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
         setColor("black");
+        useState("black");
       } else if (color === "black") {
         document.body.style.backgroundColor = "red";
         document.body.style.color = "white";
         setColor("red");
+        useState("red");
       } else if (color === "red") {
         document.body.style.backgroundColor = "orange";
         document.body.style.color = "white";
         setColor("orange");
+        useState("orange");
       } else if (color === "orange") {
         document.body.style.backgroundColor = "green";
         document.body.style.color = "white";
         setColor("green");
-      } else if (color === "orange") {
-        document.body.style.backgroundColor = "pink";
-        document.body.style.color = "white";
-        setColor("pink");
-      } else if (color === "pink") {
-        document.body.style.backgroundColor = "blue";
-        document.body.style.color = "white";
-        setColor("blue");
-      } else if (color === "blue") {
+        useState("green");
+      } else if (color === "green") {
         document.body.style.backgroundColor = "brown";
         document.body.style.color = "white";
         setColor("brown");
-      } else {
+        useState("brown");
+      } else if (color === "brown") {
+        document.body.style.backgroundColor = "yellow";
+        document.body.style.color = "black";
+        setColor("yellow");
+        useState("yellow");
+      } else if (color === "yellow") {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
         setColor("white");
+        useState("white");
       }
     }, 3000);
-  };
 
-  useEffect(() => {
     return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
+      clearInterval(intervalId);
     };
   });
 
+  const handleStop = () => {
+    document.body.style.backgroundColor = " white";
+    document.body.style.color = "black";
+    setStop("white");
+
+  };
+
   return (
     <>
-      <p>Theme colors is! {color}</p>
-      <button onClick={handleMultipleColor}>Click</button>
-      {/* <button onClick={handleStopeColor}>Stop</button> */}
+      <p>Theme color is {color}</p>
+      <button onClick={handleStop}>Stop</button>
     </>
   );
 };
