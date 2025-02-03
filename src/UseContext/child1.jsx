@@ -8,4 +8,4 @@ const child1 = () => {
   )
 }
 
-export default child1
+export default child1;
