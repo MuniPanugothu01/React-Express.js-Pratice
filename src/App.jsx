@@ -23,10 +23,7 @@ import ProductsApi from "./UseEffect/ProductsApi.jsx";
 import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
-import StartColorStop from './UseEffect/StartColorStop.jsx';
-
-
-
+import StartColorStop from "./UseEffect/StartColorStop.jsx";
 
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -35,6 +32,9 @@ import ParentCount from "./UseContext/ParentCount.jsx";
 import BackgroundTheme from "./UseEffect/BackgroundTheme.jsx";
 import MultipleColor from "./UseEffect/MultipleColor.jsx";
 import ThemeBackground from "./UseContext/ThemeBackground.jsx";
+
+// InfiniteScrolling folder
+import InfiniteScrolling from "./InfiniteScroll/InfiniteScrolling.jsx";
 
 function App() {
   return (
@@ -77,17 +77,16 @@ function App() {
       {/* <BackgroundTheme/> */}
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
-<StartColorStop/>
-
-
-
-
+      <StartColorStop />
 
       {/* UseContext */}
       {/* <PropDriling/> */}
       {/* <Parent1/> */}
       {/* <ParentCount /> */}
       {/* <ThemeBackground /> */}
+
+      {/* infinite scrolling folder */}
+      <InfiniteScrolling />
     </>
   );
 }
