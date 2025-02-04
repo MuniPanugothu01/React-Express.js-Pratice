@@ -6,3 +6,8 @@
   margin: 15px;
   border-radius: 10px;
 }
+p{
+    text-align: center;
+    color: red;
+    border-radius: 20px;
+}
