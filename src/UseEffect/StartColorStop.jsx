@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-const App = () => {
-  const [color, setColor] = useState("rgba(255, 255, 255, 1)");
+const StartColorStop = () => {
   const [isChanging, setIsChanging] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
 
   useEffect(() => {
-    let interval;
     if (isChanging) {
-      interval = setInterval(() => {
-        // Random RGBA color generation (random R, G, B and Alpha value)
+      let newintervalId = setInterval(() => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
-        const a = Math.random().toFixed(2); 
-        setColor(`rgba(${r}, ${g}, ${b}, ${a})`);
-      }, 1000);
+        const a = Math.random().toFixed(2);
+        document.body.style.backgroundColor = `rgba (${r},${g}, ${b}, ${a})`;
+      }, 2000);
+      setIntervalId(newintervalId);
+      return clearInterval(newintervalId);
     } else {
-      clearInterval(interval);
-      setColor("rgba(255, 255, 255, 1)");
+      clearInterval(intervalId);
+      setIntervalId(null);
+      document.body.style.backgroundColor = 'rgba(255,255,255,1)';
     }
-
-    return () => clearInterval(interval);
   }, [isChanging]);
-
-  const handleStart = () => setIsChanging(true);
-  const handleStop = () => setIsChanging(false);
-
+  // handleStart
+  const handleStart = () => {
+    setIsChanging(true);
+  };
+  const handleStop = () => {
+    setIsChanging(false);
+  };
   return (
-    <div style={{ backgroundColor: color, height: "100vh", style }}>
+    <>
       <button onClick={handleStart}>Start</button>
       <button onClick={handleStop}>Stop</button>
-    </div>
+    </>
   );
 };
-
-export default App;
