@@ -6,12 +6,14 @@ const InfiniteScrolling = () => {
   const [dataScroll, setDataScroll] = useState(Array.from({ length: 20 }));
 
   const ScrollNext = () => {
-    setDataScroll();
+    setTimeout(() => {
+      setDataScroll(dataScroll.concat(Array.from({length:20})));
+    }, 1000);
   };
 
   return (
     <>
-      <InfiniteScroll dataLength={dataScroll.length} next={ScrollNext}>
+      <InfiniteScroll dataLength={dataScroll.length} next={ScrollNext} hasMore={true}>
         {dataScroll.map((item, index) => {
           return (
             <div className="div1Scrolling">
