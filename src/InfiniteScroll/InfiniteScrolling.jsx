@@ -17,6 +17,9 @@ const InfiniteScrolling = () => {
 
   return (
     <>
+      <h1>
+        <u>infinite Scroll Bar</u>
+      </h1>
       <InfiniteScroll
         dataLength={dataScroll.length}
         next={ScrollNext}
