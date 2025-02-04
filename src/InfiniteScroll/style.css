@@ -1,0 +1,8 @@
+.div1Scrolling {
+  border: 2px solid orange;
+  box-shadow: 2px 3px 5px green;
+  text-align: center;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 10px;
+}
