@@ -77,7 +77,7 @@ function App() {
       {/* <BackgroundTheme/> */}
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
-      <StartColorStop />
+      {/* <StartColorStop /> */}
 
       {/* UseContext */}
       {/* <PropDriling/> */}
