@@ -7,6 +7,8 @@ const InfiniteScrolling = () => {
   const [hasMoreData, setHasMoreData] = useState(true);
   const ScrollNext = () => {
     if (dataScroll.length < 200) {
+      // this is the condition where inifinite we want to set the condition
+      // without using this condition, the data will come countinously
       setTimeout(() => {
         setDataScroll(dataScroll.concat(Array.from({ length: 20 })));
       }, 3000);

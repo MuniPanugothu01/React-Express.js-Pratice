@@ -6,12 +6,12 @@
   margin: 15px;
   border-radius: 10px;
 }
-p{
-    text-align: center;
-    color: red;
-    border-radius: 20px;
+p {
+  text-align: center;
+  color: red;
+  border-radius: 20px;
 }
-h1{
-    text-align: center;
-    text-transform: capitalize;
+h1 {
+  text-align: center;
+  text-transform: capitalize;
 }
