@@ -36,6 +36,9 @@ import ThemeBackground from "./UseContext/ThemeBackground.jsx";
 // InfiniteScrolling folder
 import InfiniteScrolling from "./InfiniteScroll/InfiniteScrolling.jsx";
 
+// useRef importiong files
+import FocusInput from "./UseRef/useRef1.jsx";
+
 function App() {
   return (
     <>
@@ -86,7 +89,10 @@ function App() {
       {/* <ThemeBackground /> */}
 
       {/* infinite scrolling folder */}
-      <InfiniteScrolling />
+      {/* <InfiniteScrolling /> */}
+
+      {/* UseRef Component */}
+      <FocusInput />
     </>
   );
 }
