@@ -97,7 +97,7 @@ function App() {
       {/* UseRef Component */}
       {/* <FocusInput /> */}
       {/* <CountRef/> */}
-      {/* <InputRef/> */}
+      <InputRef />
       <UseEffectInput />
     </>
   );
