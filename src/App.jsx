@@ -40,15 +40,7 @@ import InfiniteScrolling from "./InfiniteScroll/InfiniteScrolling.jsx";
 import FocusInput from "./UseRef/useRef1.jsx";
 import CountRef from './UseRef/CountRef.jsx';
 import InputRef from './UseRef/InputRef.jsx';
-
-
-
-
-
-
-
-
-
+import UseEffectInput from './UseRef/UseEffectInput.jsx'
 
 
 
@@ -113,7 +105,8 @@ function App() {
       {/* UseRef Component */}
       {/* <FocusInput /> */}
       {/* <CountRef/> */}
-    <InputRef/>
+    {/* <InputRef/> */}
+    <UseEffectInput/>
     </>
   );
 }
