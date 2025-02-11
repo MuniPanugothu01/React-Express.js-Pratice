@@ -5,6 +5,7 @@ const InputRef = () => {
 
   const handleInput = () => {
     Input.current.focus();
+
   };
   return (
     <>
