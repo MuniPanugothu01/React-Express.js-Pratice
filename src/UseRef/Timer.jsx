@@ -26,7 +26,7 @@ const Timer = () => {
   // };
   const handleStopTimer = () => {
     clearInterval(timerRef.current);
-    timerRef.current = null;
+    // timerRef.current = null;
   };
 
   return (
