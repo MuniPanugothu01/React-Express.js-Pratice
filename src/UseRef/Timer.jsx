@@ -32,11 +32,11 @@ const Timer = () => {
   return (
     <>
       <h1>Stop Timer!</h1>
-      <p style={{ color: "red" }}>
+      <h2 style={{ color: "red" }}>
         {String(time.hours).padStart(2, "0")}:
         {String(time.minutes).padStart(2, "0")}:
         {String(time.seconds).padStart(2, "0")}
-      </p>
+      </h2>
 
       <button onClick={handleStartTimer}>StartTime</button>
       <button onClick={handleStopTimer}>StopTimer</button>
