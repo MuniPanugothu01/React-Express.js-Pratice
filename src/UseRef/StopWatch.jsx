@@ -16,9 +16,21 @@ const StopWatch = () => {
   return (
     <>
       <h1>Stop Watch while using the UseRef()</h1>
-      <h1>{count}</h1>
-      <button onClick={handleStartTimer}>Start</button>
-      <button onClick={handleStopTimer}>Stop</button>
+      <h1 style={{ color: "red" }}>{count}</h1>
+      <div style={{ textAlign: "center" }}>
+        <button
+          style={{ padding: "9px", width: "80px" }}
+          onClick={handleStartTimer}
+        >
+          Start
+        </button>
+        <button
+          style={{ padding: "9px", width: "80px", marginLeft: "10px" }}
+          onClick={handleStopTimer}
+        >
+          Stop
+        </button>
+      </div>
     </>
   );
 };
