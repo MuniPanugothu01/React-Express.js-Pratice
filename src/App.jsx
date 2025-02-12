@@ -41,7 +41,8 @@ import FocusInput from "./UseRef/useRef1.jsx";
 import CountRef from "./UseRef/CountRef.jsx";
 import InputRef from "./UseRef/InputRef.jsx";
 import UseEffectInput from "./UseRef/UseEffectInput.jsx";
-import Count2 from './UseRef/Count2.jsx'
+import Count2 from './UseRef/Count2.jsx';
+import StopWatch from './UseRef/StopWatch.jsx';
 function App() {
   return (
     <>
@@ -99,7 +100,8 @@ function App() {
       {/* <CountRef/> */}
       {/* <InputRef /> */}
       {/* <UseEffectInput /> */}
-      <Count2/>
+      {/* <Count2/> */}
+      <StopWatch/>
     </>
   );
 }
