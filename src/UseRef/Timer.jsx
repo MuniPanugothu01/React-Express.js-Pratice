@@ -6,7 +6,7 @@ const Timer = () => {
   const timerRef = useRef(null);
 
   const handleStartTimer = () => {
-    if (!timerRef.current) {
+    // if (!timerRef.current) {
       timerRef.current = setInterval(() => {
         setTime((preTime) => {
           let { hours, minutes, seconds } = preTime;
@@ -23,7 +23,7 @@ const Timer = () => {
         });
       }, 1000);
     }
-  };
+  // };
   const handleStopTimer = () => {
     clearInterval(timerRef.current);
     timerRef.current = null;
