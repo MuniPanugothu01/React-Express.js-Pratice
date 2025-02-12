@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 const Count2 = () => {
-  const CountRef = useRef(null);
+  const CountRef = useRef(0);
   const handleIncrement = () => {
     CountRef.current++;
     console.log("Count value is increment!", CountRef.current);
