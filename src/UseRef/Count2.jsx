@@ -4,7 +4,7 @@ const Count2 = () => {
   const CountRef = useRef(0);
   const handleIncrement = () => {
     CountRef.current++;
-    console.log("Count value is increment!", CountRef.current++);
+    console.log("Count value is increment!", CountRef.current);
   };
   return (
     <>
