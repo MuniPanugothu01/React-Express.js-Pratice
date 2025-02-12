@@ -43,6 +43,8 @@ import InputRef from "./UseRef/InputRef.jsx";
 import UseEffectInput from "./UseRef/UseEffectInput.jsx";
 import Count2 from './UseRef/Count2.jsx';
 import StopWatch from './UseRef/StopWatch.jsx';
+import Timer from './UseRef/Timer.jsx';
+
 function App() {
   return (
     <>
@@ -101,7 +103,8 @@ function App() {
       {/* <InputRef /> */}
       {/* <UseEffectInput /> */}
       {/* <Count2/> */}
-      <StopWatch/>
+      {/* <StopWatch/> */}
+      <Timer/>
     </>
   );
 }
