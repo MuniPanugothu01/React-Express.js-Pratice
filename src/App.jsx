@@ -32,7 +32,7 @@ import ParentCount from "./UseContext/ParentCount.jsx";
 import BackgroundTheme from "./UseEffect/BackgroundTheme.jsx";
 import MultipleColor from "./UseEffect/MultipleColor.jsx";
 import ThemeBackground from "./UseContext/ThemeBackground.jsx";
-
+import DataPass from "./UseContext/DataPass.jsx";
 // InfiniteScrolling folder
 import InfiniteScrolling from "./InfiniteScroll/InfiniteScrolling.jsx";
 
@@ -41,9 +41,9 @@ import FocusInput from "./UseRef/useRef1.jsx";
 import CountRef from "./UseRef/CountRef.jsx";
 import InputRef from "./UseRef/InputRef.jsx";
 import UseEffectInput from "./UseRef/UseEffectInput.jsx";
-import Count2 from './UseRef/Count2.jsx';
-import StopWatch from './UseRef/StopWatch.jsx';
-import Timer from './UseRef/Timer.jsx';
+import Count2 from "./UseRef/Count2.jsx";
+import StopWatch from "./UseRef/StopWatch.jsx";
+import Timer from "./UseRef/Timer.jsx";
 
 function App() {
   return (
@@ -93,6 +93,7 @@ function App() {
       {/* <Parent1/> */}
       {/* <ParentCount /> */}
       {/* <ThemeBackground /> */}
+      {/* <DataPass /> */}
 
       {/* infinite scrolling folder */}
       {/* <InfiniteScrolling /> */}
@@ -101,10 +102,10 @@ function App() {
       {/* <FocusInput /> */}
       {/* <CountRef/> */}
       {/* <InputRef /> */}
-      {/* <UseEffectInput /> */}
+      <UseEffectInput />
       {/* <Count2/> */}
       {/* <StopWatch/> */}
-      <Timer/>
+      {/* <Timer /> */}
     </>
   );
 }
