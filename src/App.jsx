@@ -48,6 +48,7 @@ import Timer from "./UseRef/Timer.jsx";
 // useReducer
 import TodoApp from "./UseReducer/CountReducer.jsx";
 import CountReducer from "./UseReducer/Count.jsx";
+import ReducerTodo from './UseReducer/ReducerTodo.jsx';
 function App() {
   return (
     <>
@@ -112,7 +113,8 @@ function App() {
 
       {/* useReducer component import */}
       {/* <TodoApp /> */}
-      <CountReducer />
+      {/* <CountReducer /> */}
+      <ReducerTodo/>
     </>
   );
 }
