@@ -8,4 +8,4 @@ const CountReducer = () => {
   )
 }
 
-export default CountReducer
+export default CountReducer;
