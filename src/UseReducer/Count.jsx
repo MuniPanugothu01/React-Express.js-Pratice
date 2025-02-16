@@ -1,8 +1,7 @@
 import React, { useReducer } from "react";
 
-const IntitailState = { count: 0 };
-
 const CountReducer = () => {
+  const IntitailState = { count: 0 };
   const [state, dispatch] = useReducer(reducer, IntitailState);
 
   function reducer(state, action) {
