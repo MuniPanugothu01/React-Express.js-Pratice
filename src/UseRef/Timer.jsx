@@ -10,7 +10,7 @@ const Timer = () => {
     timerRef.current = setInterval(() => {
       setTime((preTime) => {
         let { hours, minutes, seconds } = preTime;
-        seconds += 1;
+        seconds += 1
         if (seconds === 60) {
           seconds = 0;
           minutes += 1;
