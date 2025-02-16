@@ -8,11 +8,10 @@ const InitialState = [];
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return [...state, { id: Date.now(), inpupt: action.playload }];
-     
+      return [...state, { id: Date.now(), input: action.playload }];
 
     default:
-      break;
+return state;
   }
 }
 
@@ -27,6 +26,14 @@ const Crud = () => {
     setInput(event.target.value);
   };
 
+  // map() method to display the data
+
+  let Data = state.map((value, index) => {
+    <tr key={value.id}>
+      <td>{value.input}</td>
+    </tr>;
+  });
+
   return (
     <>
       <h1>TotoList with Crud Operation!</h1>
@@ -39,13 +46,20 @@ const Crud = () => {
         />
 
         <button
-          onClick={() => {
-            dispatch({ type: "ADD" });
-          }}
+          onClick={handleADD}
         >
           Add
         </button>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Text</th>
+            <th>Buttons</th>
+          </tr>
+        </thead>
+        <tbody>{Data}</tbody>
+      </table>
     </>
   );
 };
