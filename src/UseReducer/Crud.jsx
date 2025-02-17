@@ -13,7 +13,7 @@ function reducer(state, action) {
       return state.filter((value) => value.id !== action.id);
     case "EDIT":
       return state.map((value) => {
-        if (value.id !== action.id) {
+        if (value.id === action.id) {
           return { ...value, input: action.payload };
         }
         return value;
@@ -40,7 +40,7 @@ const Crud = () => {
   const handleADD = () => {
     if (input.trim() !== "") {
       if (isEdit) {
-        dispatch({ type: "EDIt", id: isEdit, payload: input });
+        dispatch({ type: "EDIT", id: isEdit, payload: input });
         setIsEdit(null);
       } else {
         dispatch({ type: "ADD", payload: input });
@@ -51,7 +51,7 @@ const Crud = () => {
 
   // map() method to display the data
 
-  let data = state.map((value, index) => {
+  let data = state.map((value) => {
     return (
       <li key={value.id}>
         {value.input}
