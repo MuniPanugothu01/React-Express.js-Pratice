@@ -1,85 +1,14 @@
-// import React, { useReducer, useState } from "react";
-
-// // InitialState to take as the empty array = []
-// const InitialState = [];
-
-// // reducer function()
-
-// function reducer(state, action) {
-//   switch (action.type) {
-//     case "ADD":
-//       return [...state, { id: Date.now(), input: action.playload }];
-//     case "REMOVE":
-//       return state.filter((value) => value.id !== action.id);
-//     default:
-//       return state;
-//   }
-// }
-
-// const Crud = () => {
-//   const [input, setInput] = useState("");
-
-//   // useReducer() function, reducer can return the array
-//   const [state, dispatch] = useReducer(reducer, InitialState);
-
-//   // handleInputval function
-//   const handleInputval = (event) => {
-//     setInput(event.target.value);
-//   };
-
-//   // handleADD function
-//   const handleADD = () => {
-//     if (input.trim() !== "") {
-//       dispatch({ type: "ADD", playload: input });
-//       setInput("");
-//     }
-//   };
-
-//   // map() method to display the data
-
-//   let data = state.map((value, index) => {
-//     return (
-//       <li key={value.id}>
-//         {value.input}
-//         <button onClick={() => dispatch({ type: "REMOVE", id: input.id })}>
-//           Delete
-//         </button>
-//         <button>Edit</button>
-//       </li>
-//     );
-//   });
-
-//   return (
-//     <>
-//       <h1>TotoList with Crud Operation!</h1>
-//       <div style={{ textAlign: "center" }}>
-//         <input
-//           type="text"
-//           placeholder="enter the text"
-//           value={input}
-//           onChange={handleInputval}
-//         />
-
-//         <button onClick={handleADD}>Add</button>
-//       </div>
-
-//       <ul>{data}</ul>
-//     </>
-//   );
-// };
-
-// export default Crud;
-
 import React, { useReducer, useState } from "react";
 
-// Initial state as an empty array
+// InitialState to take as the empty array = []
 const InitialState = [];
 
-// Reducer function
+// reducer function()
+
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return [...state, { id: Date.now(), input: action.payload }];
+      return [...state, { id: Date.now(), input: action.playload }];
     case "REMOVE":
       return state.filter((value) => value.id !== action.id);
     default:
@@ -90,15 +19,15 @@ function reducer(state, action) {
 const Crud = () => {
   const [input, setInput] = useState("");
 
-  // useReducer function
+  // useReducer() function, reducer can return the array
   const [state, dispatch] = useReducer(reducer, InitialState);
 
-  // Handle input value change
+  // handleInputval function
   const handleInputval = (event) => {
     setInput(event.target.value);
   };
 
-  // Handle ADD function
+  // handleADD function
   const handleADD = () => {
     if (input.trim() !== "") {
       dispatch({ type: "ADD", payload: input });
@@ -106,8 +35,9 @@ const Crud = () => {
     }
   };
 
-  // Display data using map()
-  let data = state.map((value) => {
+  // map() method to display the data
+
+  let data = state.map((value, index) => {
     return (
       <li key={value.id}>
         {value.input}
@@ -121,14 +51,15 @@ const Crud = () => {
 
   return (
     <>
-      <h1>Todo List with CRUD Operations!</h1>
+      <h1>TotoList with Crud Operation!</h1>
       <div style={{ textAlign: "center" }}>
         <input
           type="text"
-          placeholder="Enter the text"
+          placeholder="enter the text"
           value={input}
           onChange={handleInputval}
         />
+
         <button onClick={handleADD}>Add</button>
       </div>
 
