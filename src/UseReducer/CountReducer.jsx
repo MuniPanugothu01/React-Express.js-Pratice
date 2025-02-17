@@ -24,6 +24,8 @@ export default function TodoApp() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [text, setText] = useState("");
 
+
+
   return (
     <div>
       <h2>Todo List</h2>
