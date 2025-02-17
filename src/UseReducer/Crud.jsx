@@ -8,7 +8,7 @@ const InitialState = [];
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return [...state, { id: Date.now(), input: action.playload }];
+      return [...state, { id: Date.now(), input: action.payload }];
     case "REMOVE":
       return state.filter((value) => value.id !== action.id);
     case "EDIT":
