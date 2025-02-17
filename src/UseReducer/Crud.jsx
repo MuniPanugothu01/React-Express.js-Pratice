@@ -1,65 +1,138 @@
+// import React, { useReducer, useState } from "react";
+
+// // InitialState to take as the empty array = []
+// const InitialState = [];
+
+// // reducer function()
+
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "ADD":
+//       return [...state, { id: Date.now(), input: action.playload }];
+//     case "REMOVE":
+//       return state.filter((value) => value.id !== action.id);
+//     default:
+//       return state;
+//   }
+// }
+
+// const Crud = () => {
+//   const [input, setInput] = useState("");
+
+//   // useReducer() function, reducer can return the array
+//   const [state, dispatch] = useReducer(reducer, InitialState);
+
+//   // handleInputval function
+//   const handleInputval = (event) => {
+//     setInput(event.target.value);
+//   };
+
+//   // handleADD function
+//   const handleADD = () => {
+//     if (input.trim() !== "") {
+//       dispatch({ type: "ADD", playload: input });
+//       setInput("");
+//     }
+//   };
+
+//   // map() method to display the data
+
+//   let data = state.map((value, index) => {
+//     return (
+//       <li key={value.id}>
+//         {value.input}
+//         <button onClick={() => dispatch({ type: "REMOVE", id: input.id })}>
+//           Delete
+//         </button>
+//         <button>Edit</button>
+//       </li>
+//     );
+//   });
+
+//   return (
+//     <>
+//       <h1>TotoList with Crud Operation!</h1>
+//       <div style={{ textAlign: "center" }}>
+//         <input
+//           type="text"
+//           placeholder="enter the text"
+//           value={input}
+//           onChange={handleInputval}
+//         />
+
+//         <button onClick={handleADD}>Add</button>
+//       </div>
+
+//       <ul>{data}</ul>
+//     </>
+//   );
+// };
+
+// export default Crud;
+
 import React, { useReducer, useState } from "react";
 
-// InitialState to take as the empty array = []
+// Initial state as an empty array
 const InitialState = [];
 
-// reducer function()
-
+// Reducer function
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
-      return [...state, { id: Date.now(), input: action.playload }];
-
+      return [...state, { id: Date.now(), input: action.payload }];
+    case "REMOVE":
+      return state.filter((value) => value.id !== action.id);
     default:
-return state;
+      return state;
   }
 }
 
 const Crud = () => {
-  const [inpupt, setInput] = useState("");
+  const [input, setInput] = useState("");
 
-  // useReducer() function, reducer can return the array
+  // useReducer function
   const [state, dispatch] = useReducer(reducer, InitialState);
 
-  // handleInputval function
+  // Handle input value change
   const handleInputval = (event) => {
     setInput(event.target.value);
   };
 
-  // map() method to display the data
+  // Handle ADD function
+  const handleADD = () => {
+    if (input.trim() !== "") {
+      dispatch({ type: "ADD", payload: input });
+      setInput("");
+    }
+  };
 
-  let Data = state.map((value, index) => {
-    <tr key={value.id}>
-      <td>{value.input}</td>
-    </tr>;
+  // Display data using map()
+  let data = state.map((value) => {
+    return (
+      <li key={value.id}>
+        {value.input}
+        <button onClick={() => dispatch({ type: "REMOVE", id: value.id })}>
+          Delete
+        </button>
+        <button>Edit</button>
+      </li>
+    );
   });
 
   return (
     <>
-      <h1>TotoList with Crud Operation!</h1>
+      <h1>Todo List with CRUD Operations!</h1>
       <div style={{ textAlign: "center" }}>
         <input
           type="text"
-          placeholder="enter the text"
-          value={inpupt}
+          placeholder="Enter the text"
+          value={input}
           onChange={handleInputval}
         />
-
-        <button
-          onClick={handleADD}
-        >
-          Add
-        </button>
+        <button onClick={handleADD}>Add</button>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Text</th>
-            <th>Buttons</th>
-          </tr>
-        </thead>
-        <tbody>{Data}</tbody>
-      </table>
+
+      <ul>{data}</ul>
     </>
   );
 };
