@@ -88,7 +88,7 @@ function App() {
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
 
-      {/* <BackgroundTheme/> */}
+      <BackgroundTheme/>
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
@@ -116,7 +116,7 @@ function App() {
       {/* <TodoApp /> */}
       {/* <CountReducer /> */}
       {/* <ReducerTodo/> */}
-      <Crud/>
+      {/* <Crud/> */}
     </>
   );
 }
