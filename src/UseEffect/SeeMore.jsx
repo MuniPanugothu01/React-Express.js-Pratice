@@ -23,7 +23,7 @@ const SeeMore = () => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>Title!</th>
+              <th>Title</th>
               <th>price</th>
               <th>description</th>
               <th>category</th>
