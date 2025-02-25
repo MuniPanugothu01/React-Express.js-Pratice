@@ -21,9 +21,9 @@ const SeeMore = () => {
       {Object.keys(dataSee).length > 0 ? (
         <table>
           <thead>
-            <tr>
+            <tr>$
               <th>Id</th>
-              <th>Title</th>
+              <th>Title.</th>
               <th>price</th>
               <th>description</th>
               <th>category</th>
