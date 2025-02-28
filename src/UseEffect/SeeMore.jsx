@@ -28,7 +28,7 @@ const SeeMore = () => {
               <th>description</th>
               <th>category</th>
               <th>image</th>
-              <th>Rating Rate</th>
+              <th>Rating Rate!</th>
               <th>Rating Count!</th>
             </tr>
           </thead>
