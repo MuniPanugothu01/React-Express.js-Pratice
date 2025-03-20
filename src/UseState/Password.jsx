@@ -4,7 +4,6 @@ const Password = () => {
   const [password, setPassword] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
 
-
   const PasswordUpdate = (event) => {
     setPassword(event.target.value);
   };
@@ -22,7 +21,7 @@ const Password = () => {
       );
     } else {
       // setErrorPassword(`${password} is valid!`);
-      setErrorPassword('strong password!')
+      setErrorPassword("strong password!");
     }
   };
   return (
@@ -34,7 +33,6 @@ const Password = () => {
         value={password}
         onChange={PasswordUpdate}
       />
-      
 
       <p style={{ color: "red" }}>{errorPassword}</p>
       <button onClick={ValidPassword}>ValidPassword</button>
