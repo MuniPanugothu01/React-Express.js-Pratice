@@ -48,8 +48,13 @@ import Timer from "./UseRef/Timer.jsx";
 // useReducer
 import TodoApp from "./UseReducer/CountReducer.jsx";
 import CountReducer from "./UseReducer/Count.jsx";
-import ReducerTodo from './UseReducer/ReducerTodo.jsx';
-import Crud from './UseReducer/Crud.jsx';
+import ReducerTodo from "./UseReducer/ReducerTodo.jsx";
+import Crud from "./UseReducer/Crud.jsx";
+
+// classComponent
+
+import Counter2 from "./ClassComp/Counter.jsx";
+
 function App() {
   return (
     <>
@@ -88,7 +93,7 @@ function App() {
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
 
-      <BackgroundTheme/>
+      <BackgroundTheme />
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
@@ -117,7 +122,9 @@ function App() {
       {/* <CountReducer /> */}
       {/* <ReducerTodo/> */}
       {/* <Crud/> */}
-      
+
+      {/* Class component */}
+      <Counter2 />
     </>
   );
 }
