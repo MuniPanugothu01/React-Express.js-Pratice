@@ -5,9 +5,15 @@ class Counter2 extends React.Component {
     super();
     this.state = { count: 0 };
     this.UpdateCount = this.UpdateCount.bind(this);
+    this.Stop = this.Stop.bind(this); // Bind the Stop method
   }
+
   UpdateCount() {
     this.setState({ count: this.state.count + 1 });
+  }
+
+  Stop() {
+    this.setState({ count: 0 });
   }
 
   render() {
@@ -15,6 +21,7 @@ class Counter2 extends React.Component {
       <>
         <h1>{this.state.count}</h1>
         <button onClick={this.UpdateCount}>Increment</button>
+        <button onClick={this.Stop}>Stop</button>
       </>
     );
   }
