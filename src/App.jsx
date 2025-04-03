@@ -63,7 +63,7 @@ function App() {
       {/* <Form /> */}
       {/* <Profile /> */}
 
-      {/* <UserName/> */}
+      <UserName/>
       {/* <Password /> */}
 
       {/* <Count/> */}
@@ -93,7 +93,7 @@ function App() {
           <Route path="products/:id" element={<SeeMore/>} />
         </Routes> */}
 
-      <BackgroundTheme />
+      {/* <BackgroundTheme /> */}
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
@@ -124,7 +124,7 @@ function App() {
       {/* <Crud/> */}
 
       {/* Class component */}
-      <Counter2 />
+      {/* <Counter2 /> */}
     </>
   );
 }

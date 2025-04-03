@@ -14,8 +14,7 @@ const UserName = () => {
       setErrorName("userName can't be blank!");
     } else if (userName.length < 3 || userName.length > Infinity) {
       setErrorName(`${userName} can't be lessthan 3 characters!`);
-    } 
-    else {
+    } else {
       setErrorName(`healthy ${userName}`);
     }
   };
@@ -23,16 +22,16 @@ const UserName = () => {
   return (
     <>
       <label htmlFor="username"> </label>
-        UserName
-        <input
-          type="text"
-          name="username"
-          value={userName}
-          onChange={UserNameUpdate}
-        />
-        <span style={{ color: "red" }}>{errorName}</span>
-        <button onClick={ErrorValidate}>Validateusername</button>
-      <p>{errorName}</p>
+      UserName
+      <input
+        type="text"
+        name="username"
+        value={userName}
+        onChange={UserNameUpdate}
+      />
+      <button onClick={ErrorValidate}>Validateusername</button> <br />
+      <span style={{ color: "red", marginLeft: "20px" }}>{errorName}</span>
+      {/* <p>{errorName}</p> */}
     </>
   );
 };
