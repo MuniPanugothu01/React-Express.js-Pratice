@@ -32,6 +32,9 @@ const UserName = () => {
       <button onClick={ErrorValidate}>Validateusername</button> <br />
       <span style={{ color: "red", marginLeft: "20px" }}>{errorName}</span>
       {/* <p>{errorName}</p> */}
+      <h4>
+        UserName is: <span style={{color:'green',fontSize:'20px'}}>{userName}</span>{" "}
+      </h4>
     </>
   );
 };
