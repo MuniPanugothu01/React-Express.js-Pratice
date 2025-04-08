@@ -11,10 +11,14 @@ const PasswordValid = () => {
   };
 
   const HandleValid = (event) => {
+    const regExpression = 
     if (password === "" || password === null) {
       setErrorPassword("password cant empty");
     } else if (password.length < 3) {
       setErrorPassword("password more than 3 characters");
+    }
+    else if(!regExpression.test(password)){
+
     }
   };
 
