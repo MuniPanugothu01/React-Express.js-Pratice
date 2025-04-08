@@ -26,9 +26,12 @@ const FirstName = () => {
         name="firstName"
         value={firstName}
         onChange={HandleFirst}
-      />
+      /> 
+       <button onClick={ValidName}>Sbmit</button>
+       <br style={{marginLeft:'10px'}} />
+      
       <span style={{ color: "red" }}>{error}</span>
-      <button onClick={ValidName}>Sbmit</button>
+      
       <h2>
         {" "}
         FirstName: <span style={{ color: "green" }}>{firstName}</span>
