@@ -23,19 +23,19 @@ const ConfirmPasswordValid = () => {
       /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,5}$/;
     if (password === "" || password === null) {
       setError("password cant be empty");
-      setSuccess('')
+      setSuccess("");
     } else if (password.length < 3) {
       setError("password cant use lessthan 3 characters");
-      setSuccess('')
+      setSuccess("");
     } else if (regExpression.test(password)) {
       setError("passowrd contain uppercharacter special nd one digit");
-      setSuccess('')
+      setSuccess("");
     } else if (password == confirmPass) {
       setConfirmPass("password matched");
-      setSuccess('')
+      setSuccess("");
     } else {
       setError(" ");
-      setSuccess('password matched!')
+      setSuccess("password matched!");
     }
   };
 
@@ -49,8 +49,7 @@ const ConfirmPasswordValid = () => {
         onChange={HandlePassowrd}
       />{" "}
       <br />
-      <span style={{ color: "red" }}>{error}</span> 
-
+      <span style={{ color: "red" }}>{error}</span>
       <label htmlFor="ConfirmPass">Enter Confirm</label>
       <input
         type="password"
@@ -58,15 +57,12 @@ const ConfirmPasswordValid = () => {
         value={confirmPass}
         onChange={HandleConfirmPass}
       />{" "}
-
-
       <br />
       <button onClick={HandleValidPass}>PasswordValid</button>
       <br />
       <br />
       {error && <span style={{ color: "red" }}>{error}</span>}
       {success && <span style={{ color: "green" }}>{success}</span>}
-
       <h2>{password}</h2>
       <h2>{confirmPass}</h2>
     </>
@@ -74,5 +70,3 @@ const ConfirmPasswordValid = () => {
 };
 
 export default ConfirmPasswordValid;
-
-
