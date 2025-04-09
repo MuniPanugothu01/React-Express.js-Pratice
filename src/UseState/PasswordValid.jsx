@@ -17,7 +17,7 @@ const PasswordValid = () => {
       setErrorPassword("password cant empty");
     } else if (password.length < 3) {
       setErrorPassword("password more than 3 characters");
-    } else if (!regExpression.test(password)) {
+    } else if (regExpression.test(password)) {
       setErrorPassword(
         "Password must contain an uppercase letter, a number, and a special character"
       );
