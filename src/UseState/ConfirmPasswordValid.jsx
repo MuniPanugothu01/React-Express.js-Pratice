@@ -64,8 +64,8 @@ const ConfirmPasswordValid = () => {
       <button onClick={HandleValidPass}>PasswordValid</button>
       <br />
       <br />
-      {/* {error && <span style={{ color: "red" }}>{error}</span>}
-      {success && <span style={{ color: "green" }}>{success}</span>} */}
+      {error && <span style={{ color: "red" }}>{error}</span>}
+      {success && <span style={{ color: "green" }}>{success}</span>}
 
       <h2>{password}</h2>
       <h2>{confirmPass}</h2>
