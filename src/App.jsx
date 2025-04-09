@@ -9,6 +9,7 @@ import Password from "./UseState/Password";
 import Count from "./UseEffect/Count";
 import CompDidUpdate from "./UseEffect/CompDidUpdate";
 import PasswordValid from './UseState/PasswordValid.jsx';
+import ConfirmPasswordValid from  './UseState/ConfirmPasswordValid.jsx';
 // import Multiply from "./UseState/Multipletwo";
 import Twoinputs from "./UseState/Twoinputs.jsx";
 import Inputs from "./UseEffect/Inputs.jsx";
@@ -60,7 +61,8 @@ import Counter2 from "./ClassComp/Counter.jsx";
 function App() {
   return (
     <>
-<PasswordValid/>
+    <ConfirmPasswordValid/>
+{/* <PasswordValid/> */}
     {/* <FirstName/> */}
       {/* <Counter /> */}
       {/* <Counter1/> */}
