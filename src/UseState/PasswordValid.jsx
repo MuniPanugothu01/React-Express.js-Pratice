@@ -12,12 +12,12 @@ const PasswordValid = () => {
 
   const HandleValid = (event) => {
     const regExpression =
-      /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,8}$/;
+      /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,20}$/;
     if (password === "" || password === null) {
       setErrorPassword("password cant empty");
     } else if (password.length < 3) {
       setErrorPassword("password more than 3 characters");
-    } else if (regExpression.test(password)) {
+    } else if (!regExpression.test(password)) {
       setErrorPassword(
         "Password must contain an uppercase letter, a number, and a special character"
       );
@@ -37,7 +37,10 @@ const PasswordValid = () => {
       />
       <span style={{ color: "red" }}>{errorPassword}</span> <br /> <br />
       <button onClick={HandleValid}>Password valid</button>
-      <h3 style={{ color: "green" }}>{password}</h3>
+      <h3 style={{ color: "green" }}>
+        {" "}
+        <span style={{ color: "black" }}>Password is:</span> {password}
+      </h3>
     </>
   );
 };
