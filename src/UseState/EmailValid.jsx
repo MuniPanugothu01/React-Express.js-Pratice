@@ -11,7 +11,7 @@ setEmail(event.target.value);
     }
 
     const HandleValid = (event) =>{
-        const RegMail = 
+        const RegMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(email === '' || email === null){
             setError('mail cant be empty!')
         }
