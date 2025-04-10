@@ -68,5 +68,4 @@ const ConfirmPasswordValid = () => {
     </>
   );
 };
-
 export default ConfirmPasswordValid;
