@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const UserFormValid = () => {
-  return (
+// useState first name
+const [FirstName, setFirstName] = useState('');
+// first name error useState
+const [firstError, setFirstError] = useState('')
+
+    return (
     <>
-      
+<h1>Form validataion!</h1>
     </>
   )
 }
