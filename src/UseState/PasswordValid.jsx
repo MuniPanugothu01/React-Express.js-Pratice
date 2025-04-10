@@ -23,6 +23,7 @@ const PasswordValid = () => {
       );
     } else {
       setErrorPassword("");
+      
     }
   };
 
