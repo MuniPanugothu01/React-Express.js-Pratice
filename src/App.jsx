@@ -10,6 +10,7 @@ import Count from "./UseEffect/Count";
 import CompDidUpdate from "./UseEffect/CompDidUpdate";
 import PasswordValid from './UseState/PasswordValid.jsx';
 import ConfirmPasswordValid from  './UseState/ConfirmPasswordValid.jsx';
+import EmailValid from './UseState/EmailValid.jsx';
 // import Multiply from "./UseState/Multipletwo";
 import Twoinputs from "./UseState/Twoinputs.jsx";
 import Inputs from "./UseEffect/Inputs.jsx";
@@ -81,6 +82,7 @@ function App() {
       {/* <UserInput/> */}
 
       {/* <ThemeColor /> */}
+<EmailValid/>
 
       {/* UseEffect */}
 
