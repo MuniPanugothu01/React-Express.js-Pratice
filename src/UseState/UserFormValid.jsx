@@ -8,4 +8,4 @@ const UserFormValid = () => {
   )
 }
 
-export default UserFormValid
+export default UserFormValid;
