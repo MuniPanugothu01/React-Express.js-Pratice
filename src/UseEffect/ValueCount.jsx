@@ -3,16 +3,15 @@ import React, { useEffect, useState } from "react";
 const ValueCount = () => {
   const [count, setCount] = useState(0);
 
-  const HandleCount = () => {
-    useEffect(() => {
+  useEffect(() => {
+    setTimeout(() => {
       setCount(count + 1);
-    }, []);
-  };
+    }, 1000);
+  });
 
   return (
     <>
       <h1>Count value is: {count}</h1>
-      <button onClick={HandleCount}>Click</button>
     </>
   );
 };
