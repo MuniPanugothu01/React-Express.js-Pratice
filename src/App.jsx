@@ -30,6 +30,9 @@ import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
 import ValueCount from './UseEffect/ValueCount.jsx';
+import FakeDisplay from './UseEffect/FakeDisplay.jsx';
+
+
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
 import Parent1 from "./UseContext/Parent1.jsx";
@@ -97,7 +100,9 @@ function App() {
       {/* <FakeStore/> */}
       {/* <StopC /> */}
 
-<ValueCount/>
+{/* <ValueCount/> */}
+
+<FakeDisplay/>
 
       {/* <ProductsApi /> */}
       {/* <Routes>
