@@ -1,5 +1,5 @@
 import React from "react";
-import FirstName from './UseState/FirstName.jsx';
+import FirstName from "./UseState/FirstName.jsx";
 import Counter1 from "./UseState/classCount";
 import Counter from "./UseState/Counter";
 import Form from "./UseState/Form";
@@ -8,10 +8,10 @@ import UserName from "./UseState/UserName";
 import Password from "./UseState/Password";
 import Count from "./UseEffect/Count";
 import CompDidUpdate from "./UseEffect/CompDidUpdate";
-import PasswordValid from './UseState/PasswordValid.jsx';
-import ConfirmPasswordValid from  './UseState/ConfirmPasswordValid.jsx';
-import EmailValid from './UseState/EmailValid.jsx';
-import UserFormValid from './UseState/UserFormValid.jsx';
+import PasswordValid from "./UseState/PasswordValid.jsx";
+import ConfirmPasswordValid from "./UseState/ConfirmPasswordValid.jsx";
+import EmailValid from "./UseState/EmailValid.jsx";
+import UserFormValid from "./UseState/UserFormValid.jsx";
 // import Multiply from "./UseState/Multipletwo";
 import Twoinputs from "./UseState/Twoinputs.jsx";
 import Inputs from "./UseEffect/Inputs.jsx";
@@ -29,7 +29,7 @@ import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
-
+import ValueCount from './UseEffect/ValueCount.jsx';
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
 import Parent1 from "./UseContext/Parent1.jsx";
@@ -63,9 +63,9 @@ import Counter2 from "./ClassComp/Counter.jsx";
 function App() {
   return (
     <>
-    {/* <ConfirmPasswordValid/> */}
-{/* <PasswordValid/> */}
-    {/* <FirstName/> */}
+      {/* <ConfirmPasswordValid/> */}
+      {/* <PasswordValid/> */}
+      {/* <FirstName/> */}
       {/* <Counter /> */}
       {/* <Counter1/> */}
       {/* <Form /> */}
@@ -83,9 +83,8 @@ function App() {
       {/* <UserInput/> */}
 
       {/* <ThemeColor /> */}
-{/* <EmailValid/> */}
-<UserFormValid/>
-
+      {/* <EmailValid/> */}
+      {/* <UserFormValid /> */}
 
       {/* UseEffect */}
 
@@ -97,6 +96,8 @@ function App() {
 
       {/* <FakeStore/> */}
       {/* <StopC /> */}
+
+<ValueCount/>
 
       {/* <ProductsApi /> */}
       {/* <Routes>
