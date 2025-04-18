@@ -11,7 +11,6 @@ import CompDidUpdate from "./UseEffect/CompDidUpdate";
 import PasswordValid from "./UseState/PasswordValid.jsx";
 import ConfirmPasswordValid from "./UseState/ConfirmPasswordValid.jsx";
 import EmailValid from "./UseState/EmailValid.jsx";
-import UserFormValid from "./UseState/UserFormValid.jsx";
 // import Multiply from "./UseState/Multipletwo";
 import Twoinputs from "./UseState/Twoinputs.jsx";
 import Inputs from "./UseEffect/Inputs.jsx";
@@ -21,6 +20,8 @@ import TodoList from "./UseState/TodoList.jsx";
 import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
 import ThemeColor from "./UseState/ThemeColor.jsx";
+import UserFormValid from './UseState/UserFormValid.jsx';
+
 // useEffect
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from "./UseEffect/FakeStore.jsx";
@@ -84,10 +85,13 @@ function App() {
       {/* <TodoList/> */}
       {/* <Table_Todo/> */}
       {/* <UserInput/> */}
-
       {/* <ThemeColor /> */}
       {/* <EmailValid/> */}
       {/* <UserFormValid /> */}
+<UserFormValid/>
+
+
+
 
       {/* UseEffect */}
 
@@ -102,7 +106,7 @@ function App() {
 
 {/* <ValueCount/> */}
 
-<FakeDisplay/>
+{/* <FakeDisplay/> */}
 
       {/* <ProductsApi /> */}
       {/* <Routes>
