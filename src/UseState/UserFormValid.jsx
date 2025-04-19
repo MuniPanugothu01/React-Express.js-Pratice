@@ -36,7 +36,7 @@ const UserFormValid = () => {
   const handleSubmit = (event) => {
     let isValid = true;
     const regExpression =
-      /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,5}$/;
+      /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,}$/;
     if (!isValid) {
       setFirstError("first name cant be blank");
       isValid = false;
@@ -58,20 +58,23 @@ const UserFormValid = () => {
     }
 
     // password validate logic
+    // Password Validation
     if (!password) {
-      setPassError(`${PassError} password can't be blank`);
-      isValid = false;
-    } else if (password.length <= 3) {
-      setPassError("password greater than 3 characters!");
+      setPassError("Password can't be blank");
       isValid = false;
     } else if (regExpression.test(password)) {
-      setPassError("passowrd contain uppercharacter special nd one digit");
+      setPassError(
+        "Password must contain at least one uppercase letter, one special character, and one number"
+      );
+      isValid = false;
+    } else {
+      setPassError("");
     }
 
     // displaying the Users Name
     if (isValid) {
       setSuccess(`Useers First Name is ${firstName} Last Name ${lastName}
-        <br/>
+  
         User Password ${password}`);
     } else {
       setSuccess("");
