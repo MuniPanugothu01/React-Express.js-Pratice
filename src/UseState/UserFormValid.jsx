@@ -70,7 +70,9 @@ const UserFormValid = () => {
 
     // displaying the Users Name
     if (isValid) {
-      setSuccess(`Useers First Name is ${firstName} Last Name ${lastName}`);
+      setSuccess(`Useers First Name is ${firstName} Last Name ${lastName}
+        <br/>
+        User Password ${password}`);
     } else {
       setSuccess("");
     }
