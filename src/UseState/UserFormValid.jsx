@@ -3,15 +3,13 @@ import React, { useState } from "react";
 const UserFormValid = () => {
   // useState first name
   const [firstName, setFirstName] = useState("");
-  // first name error useState
   const [firstError, setFirstError] = useState("");
+
   const [lastError, setLastError] = useState("");
-  // last name useState()
   const [lastName, setLastName] = useState("");
 
   // password useState
   const [password, setPassword] = useState("");
-  // password Error
   const [PassError, setPassError] = useState("");
 
   // this useState for to display the success message to browser
@@ -37,21 +35,24 @@ const UserFormValid = () => {
     let isValid = true;
     const regExpression =
       /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,}$/;
+
+    // first anme validation
     if (!firstName) {
-      setFirstError("first name cant be blank");
+      setFirstError("First name can't be blank");
       isValid = false;
     } else if (firstName.length <= 3) {
-      setFirstError(`${firstName} more than 3 characters!`);
+      setFirstError("First name must be more than 3 characters");
       isValid = false;
     } else {
       setFirstError("");
     }
 
+    // lastname validation
     if (!lastName) {
-      setFirstError('last name cant be blank');
+      setLastError("Last name can't be blank");
       isValid = false;
     } else if (lastName.length <= 3) {
-      setFirstError(`${lastName} more than 3 charcters!`);
+      setLastError("Last name must be more than 3 characters");
       isValid = false;
     } else {
       setLastError("");
