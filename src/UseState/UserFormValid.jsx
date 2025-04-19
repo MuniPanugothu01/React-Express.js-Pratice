@@ -6,6 +6,11 @@ const UserFormValid = () => {
   // first name error useState
   const [firstError, setFirstError] = useState("");
 
+  // last name useState()
+  const [lastName, setLastName] = useState("");
+
+  // lastname error useState
+
   // this useState for to display the success message to browser
   const [success, setSuccess] = useState("");
 
