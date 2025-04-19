@@ -62,7 +62,7 @@ const UserFormValid = () => {
     if (!password) {
       setPassError("Password can't be blank");
       isValid = false;
-    } else if (regExpression.test(password)) {
+    } else if (!regExpression.test(password)) {
       setPassError(
         "Password must contain at least one uppercase letter, one special character, and one number"
       );
@@ -105,7 +105,7 @@ const UserFormValid = () => {
         onChange={HandleLast}
       />{" "}
       <br />
-      <span style={{ color: "red", marginLeft: "120px" }}>{lastName}</span>
+      <span style={{ color: "red", marginLeft: "120px" }}>{lastError}</span>
       <br />
       <label htmlFor="password">Enter Password:</label>
       <input
@@ -115,7 +115,7 @@ const UserFormValid = () => {
         onChange={HandlePassword}
       />{" "}
       <br />
-      <span style={{ color: "red", marginLeft: "120px" }}>{password}</span>{" "}
+      <span style={{ color: "red", marginLeft: "120px" }}>{PassError}</span>{" "}
       <br />
       <button onClick={handleSubmit}>Submit</button> <br /> <br />
       {success && <span style={{ color: "green" }}>{success}</span>}
