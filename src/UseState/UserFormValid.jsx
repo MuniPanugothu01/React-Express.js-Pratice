@@ -19,6 +19,11 @@ const UserFormValid = () => {
     setFirstName(event.target.value);
   };
 
+  // HandleLast name
+  const HandleLast = (event) => {
+    setLastName(event.target.value);
+  };
+
   // handle method for submit the data
   const handleSubmit = (event) => {
     if (firstName === "" || firstName === null) {
@@ -27,15 +32,21 @@ const UserFormValid = () => {
     } else if (firstName.length <= 3) {
       setFirstError(`${firstName} more than 3 characters!`);
       setSuccess("");
+    } else if (lastName === "" || lastName === null) {
+      setFirstError(`${lastName} can't be blank or empty`);
+      setSuccess("");
+    } else if (lastName.length <= 3) {
+      setFirstError(`${lastName} more than 3 charcters!`);
+      setSuccess("");
     } else {
       setFirstError(" ");
       setSuccess(`users is : ${firstName}`);
+      setSuccess(`User last Name is: ${lastName}`);
     }
   };
   return (
     <>
       <h1>Form validataion!</h1>
-
       {/* input box for first name */}
       <label htmlFor="fname">Enter First Name: </label>
       <input
@@ -47,9 +58,19 @@ const UserFormValid = () => {
       />
       <br />
       <span style={{ color: "red", marginLeft: "120px" }}>{firstError}</span>
-
       <br />
       <button onClick={handleSubmit}>Submit</button>
+      <br />
+      {/* last name inpu field */}
+      <label htmlFor="lanme">Enter Last Name: </label>
+      <input
+        type="text"
+        name="lname"
+        value={lastName}
+        onChange={HandleLast}
+      />{" "}
+      <br />
+      <span style={{ color: "red", marginLeft: "120px" }}>{firstError}</span>
       <br />
       {success && <span style={{ color: "green" }}>{success}</span>}
     </>
