@@ -115,7 +115,9 @@ const UserFormValid = () => {
         onChange={HandlePassword}
       />{" "}
       <br />
-      <span style={{ color: "red", marginLeft: "120px" }}>{PassError}</span>{" "}
+      <span style={{ color: "red", marginLeft: "120px" }}>
+        {PassError}
+      </span>{" "}
       <br />
       <button onClick={handleSubmit}>Submit</button> <br /> <br />
       {success && <span style={{ color: "green" }}>{success}</span>}
