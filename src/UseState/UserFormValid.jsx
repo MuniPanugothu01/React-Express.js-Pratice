@@ -37,7 +37,7 @@ const UserFormValid = () => {
     let isValid = true;
     const regExpression =
       /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,}$/;
-    if (!isValid) {
+    if (!firstName) {
       setFirstError("first name cant be blank");
       isValid = false;
     } else if (firstName.length <= 3) {
@@ -48,7 +48,7 @@ const UserFormValid = () => {
     }
 
     if (!lastName) {
-      setFirstError(`${lastName} can't be blank or empty`);
+      setFirstError('last name cant be blank');
       isValid = false;
     } else if (lastName.length <= 3) {
       setFirstError(`${lastName} more than 3 charcters!`);
@@ -57,7 +57,6 @@ const UserFormValid = () => {
       setLastError("");
     }
 
-    // password validate logic
     // Password Validation
     if (!password) {
       setPassError("Password can't be blank");
