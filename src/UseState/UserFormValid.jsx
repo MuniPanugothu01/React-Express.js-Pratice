@@ -40,7 +40,7 @@ const UserFormValid = () => {
       setSuccess("");
     } else {
       setFirstError(" ");
-      setSuccess(`users is : ${firstName}`);
+      // setSuccess(`users is : ${firstName}`);
       setSuccess(`User last Name is: ${lastName}`);
     }
   };
