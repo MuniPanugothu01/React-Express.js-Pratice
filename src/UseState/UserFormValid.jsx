@@ -9,7 +9,10 @@ const UserFormValid = () => {
   // last name useState()
   const [lastName, setLastName] = useState("");
 
-  // lastname error useState
+  // password useState
+  const [password, setPassword] = useState("");
+  // password Error
+  const [PassError, setPassError] = useState("");
 
   // this useState for to display the success message to browser
   const [success, setSuccess] = useState("");
@@ -24,9 +27,16 @@ const UserFormValid = () => {
     setLastName(event.target.value);
   };
 
+  // Handle Password
+  const HandlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
   // handle method for submit the data
   const handleSubmit = (event) => {
     let isValid = true;
+    const regExpression =
+      /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{4,5}$/;
     if (!isValid) {
       setFirstError("first name cant be blank");
       isValid = false;
@@ -45,6 +55,17 @@ const UserFormValid = () => {
       isValid = false;
     } else {
       setLastError("");
+    }
+
+    // password validate logic
+    if (!password) {
+      setPassError(`${PassError} password can't be blank`);
+      isValid = false;
+    } else if (password.length <= 3) {
+      setPassError("password greater than 3 characters!");
+      isValid = false;
+    } else if (regExpression.test(password)) {
+      setPassError("passowrd contain uppercharacter special nd one digit");
     }
 
     // displaying the Users Name
@@ -80,6 +101,14 @@ const UserFormValid = () => {
       />{" "}
       <br />
       <span style={{ color: "red", marginLeft: "120px" }}>{lastName}</span>
+      <br />
+      <label htmlFor="password">Enter Password:</label>
+      <input
+        type="password"
+        name="password"
+        value={password}
+        onChange={HandlePassword}
+      />{" "}
       <br />
       <button onClick={handleSubmit}>Submit</button>
       {success && <span style={{ color: "green" }}>{success}</span>}
