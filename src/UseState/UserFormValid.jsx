@@ -115,7 +115,9 @@ const UserFormValid = () => {
         onChange={HandlePassword}
       />{" "}
       <br />
-      <button onClick={handleSubmit}>Submit</button>
+      <span style={{ color: "red", marginLeft: "120px" }}>{password}</span>{" "}
+      <br />
+      <button onClick={handleSubmit}>Submit</button> <br /> <br />
       {success && <span style={{ color: "green" }}>{success}</span>}
     </>
   );
