@@ -59,7 +59,7 @@ const UserFormValid = () => {
       <br />
       <span style={{ color: "red", marginLeft: "120px" }}>{firstError}</span>
       <br />
-      <button onClick={handleSubmit}>Submit</button>
+      
       <br />
       {/* last name inpu field */}
       <label htmlFor="lanme">Enter Last Name: </label>
@@ -72,6 +72,8 @@ const UserFormValid = () => {
       <br />
       <span style={{ color: "red", marginLeft: "120px" }}>{firstError}</span>
       <br />
+
+      <button onClick={handleSubmit}>Submit</button>
       {success && <span style={{ color: "green" }}>{success}</span>}
     </>
   );
