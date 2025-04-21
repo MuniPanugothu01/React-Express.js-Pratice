@@ -1,7 +1,7 @@
 const http = require("http");
 
 const Myserver = http.createServer((req, res) => {
-  console.log(req);
+  console.log(res);
   res.write("http module!");
 //   res.end("we need to use to stop the server!");
 });
