@@ -19,7 +19,12 @@ const usersSchema = new mongoose.Schema({
 const Usermodel = mongoose.model("users", usersSchema);
 
 app.get("/getUsers", (req, res) => {
-  res.json(Usermodel.find());
+  Usermodel.find({}).then(function (users) {
+        res.json(users);
+      })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 let PORT = 3001;
