@@ -1,14 +1,9 @@
 const http = require("http");
 
 const Myserver = http.createServer((req, res) => {
+  console.log(req);
   res.write("http module!");
-  res.end("we need to use to stop the server!");
-});
-
-// another one server
-const Myserver2 = http.createServer((req, res) => {
-  res.write("second server!");
-  res.end("second server ended");
+//   res.end("we need to use to stop the server!");
 });
 
 let PORT = 3002;
