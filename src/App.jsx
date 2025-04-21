@@ -20,7 +20,7 @@ import TodoList from "./UseState/TodoList.jsx";
 import Table_Todo from "./UseState/Table_Todo.jsx";
 import UserInput from "./UseState/UserInput.jsx";
 import ThemeColor from "./UseState/ThemeColor.jsx";
-import UserFormValid from './UseState/UserFormValid.jsx';
+import UserFormValid from "./UseState/UserFormValid.jsx";
 
 // useEffect
 import StopC from "./UseEffect/StopC.jsx";
@@ -30,9 +30,8 @@ import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
-import ValueCount from './UseEffect/ValueCount.jsx';
-import FakeDisplay from './UseEffect/FakeDisplay.jsx';
-
+import ValueCount from "./UseEffect/ValueCount.jsx";
+import FakeDisplay from "./UseEffect/FakeDisplay.jsx";
 
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -53,7 +52,7 @@ import UseEffectInput from "./UseRef/UseEffectInput.jsx";
 import Count2 from "./UseRef/Count2.jsx";
 import StopWatch from "./UseRef/StopWatch.jsx";
 import Timer from "./UseRef/Timer.jsx";
-
+import RenderCount from './UseRef/RenderCount.jsx';
 // useReducer
 import TodoApp from "./UseReducer/CountReducer.jsx";
 import CountReducer from "./UseReducer/Count.jsx";
@@ -88,10 +87,7 @@ function App() {
       {/* <ThemeColor /> */}
       {/* <EmailValid/> */}
       {/* <UserFormValid /> */}
-<UserFormValid/>
-
-
-
+      {/* <UserFormValid /> */}
 
       {/* UseEffect */}
 
@@ -104,9 +100,9 @@ function App() {
       {/* <FakeStore/> */}
       {/* <StopC /> */}
 
-{/* <ValueCount/> */}
+      {/* <ValueCount/> */}
 
-{/* <FakeDisplay/> */}
+      {/* <FakeDisplay/> */}
 
       {/* <ProductsApi /> */}
       {/* <Routes>
@@ -137,6 +133,9 @@ function App() {
       {/* <Count2/> */}
       {/* <StopWatch/> */}
       {/* <Timer /> */}
+<RenderCount/>
+
+
 
       {/* useReducer component import */}
       {/* <TodoApp /> */}
