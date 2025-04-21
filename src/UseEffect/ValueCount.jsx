@@ -7,7 +7,7 @@ const ValueCount = () => {
     setTimeout(() => {
       setCount(count + 1);
     }, 1000);
-  },[]);
+  }, []);
 
   return (
     <>
