@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 const RenderCount = () => {
-  const Count = useRef(0);
+  const Count = useRef(null);
   const HandleFun = () => {
     // Count.current++;
     console.log("COunt value is: -", Count.current++);

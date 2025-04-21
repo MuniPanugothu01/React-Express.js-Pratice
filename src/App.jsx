@@ -53,6 +53,7 @@ import Count2 from "./UseRef/Count2.jsx";
 import StopWatch from "./UseRef/StopWatch.jsx";
 import Timer from "./UseRef/Timer.jsx";
 import RenderCount from './UseRef/RenderCount.jsx';
+import FieldBox from './UseRef/FieldBox.jsx';
 // useReducer
 import TodoApp from "./UseReducer/CountReducer.jsx";
 import CountReducer from "./UseReducer/Count.jsx";
@@ -135,7 +136,7 @@ function App() {
       {/* <Timer /> */}
 <RenderCount/>
 
-
+<FieldBox/>
 
       {/* useReducer component import */}
       {/* <TodoApp /> */}
