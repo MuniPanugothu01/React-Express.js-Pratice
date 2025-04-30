@@ -134,9 +134,9 @@ function App() {
       {/* <Count2/> */}
       {/* <StopWatch/> */}
       {/* <Timer /> */}
-<RenderCount/>
+{/* <RenderCount/> */}
 
-<FieldBox/>
+{/* <FieldBox/> */}
 
       {/* useReducer component import */}
       {/* <TodoApp /> */}
