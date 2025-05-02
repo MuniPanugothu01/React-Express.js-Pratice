@@ -64,6 +64,10 @@ import Crud from "./UseReducer/Crud.jsx";
 
 import Counter2 from "./ClassComp/Counter.jsx";
 
+// Router component
+import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
+
+
 function App() {
   return (
     <>
@@ -150,7 +154,7 @@ function App() {
 
 
       {/* Routing  */}
-      
+
     </>
   );
 }
