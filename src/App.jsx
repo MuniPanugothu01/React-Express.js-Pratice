@@ -26,7 +26,7 @@ import UserFormValid from "./UseState/UserFormValid.jsx";
 import StopC from "./UseEffect/StopC.jsx";
 import FakeStore from "./UseEffect/FakeStore.jsx";
 import ProductsApi from "./UseEffect/ProductsApi.jsx";
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import SeeMore from "./UseEffect/SeeMore.jsx";
 import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
@@ -102,7 +102,7 @@ function App() {
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
 
-      {/* <FakeStore/> */}
+      <FakeStore/>
       {/* <StopC /> */}
 
       {/* <ValueCount/> */}

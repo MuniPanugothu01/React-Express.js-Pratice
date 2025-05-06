@@ -3,6 +3,8 @@ import "./StyleFakeStore.css";
 const FakeStore = () => {
   const [display, setDisplay] = useState([]);
   const [filterFixed, setFilterFixed] = useState([]);
+  // asending UseState
+  const [sortData, setSortData] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -45,20 +47,46 @@ const FakeStore = () => {
     setDisplay(filter);
   };
 
+  // handle function sort asending and Descending order
+  const HandleSort = (evnet) => {
+    evnet.preventDefault();
+    let value = evnet.target.value;
+    setSortData(value);
+
+    let sorted = [...display];
+    if (value === "asc") {
+      sorted.sort((a, b) => a.price - b.price);
+    } else if (value === "des") {
+      sorted.sort((a, b) => b.price - a.price);
+    }
+    setDisplay(sorted);
+  };
+
   return (
     <>
       <h1>Fake store Data</h1>
 
-      <form action="" onSubmit={handleSubmit}>
-        <select name="" id="">
-          <option value="">None</option>
-          <option value="men's clothing">men's clothing</option>
-          <option value="women's clothing">women's clothing</option>
-          <option value="jewelery">jewelery</option>
-          <option value="electronics">electronics</option>
-        </select>
-        <input type="submit" value="submit" />
-      </form>
+      <div style={{ display: "flex" }}>
+        <form action="" onSubmit={handleSubmit}>
+          <select name="" id="">
+            <option value="">None</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="women's clothing">women's clothing</option>
+            <option value="jewelery">jewelery</option>
+            <option value="electronics">electronics</option>
+          </select>
+          <input type="submit" value="submit" />
+        </form>
+
+        <form action="" onSubmit={HandleSort} style={{ marginLeft: "10px" }}>
+          <select name="" id="">
+            <option value="">Select Catrgory</option>
+            <option value="asc">Asending</option>
+            <option value="des">Descending</option>
+          </select>
+          <input type="submit" value="submit" />
+        </form>
+      </div>
 
       <table>
         <thead>
