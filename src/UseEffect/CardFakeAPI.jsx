@@ -8,10 +8,11 @@ import Container from "react-bootstrap/Container";
 // Import custom styles
 import "./Card.css";
 
-
 const CardFakeAPI = () => {
   // useState to display the data
   const [display, setDisplay] = useState([]);
+  // FilterUseState
+  const [filterData, setFilterData] = useState([]);
 
   // useEffect for fetch the data
   useEffect(() => {
@@ -21,9 +22,29 @@ const CardFakeAPI = () => {
       })
       .then((res) => {
         console.log(res);
+        setFilterData(res);
         setDisplay(res);
       });
-  }, [display]);
+  }, []);
+
+  // HandleSubmit function
+
+  const HandleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target[0].value, "category ");
+    let seleted = event.target[0].value;
+
+    if (seleted === "all") {
+      setDisplay(filterData);
+    } else {
+      const FilterData = filterData.filter((value, index) => {
+        return value.category === seleted;
+      });
+      console.log(FilterData, "after filtered data");
+      setDisplay(FilterData);
+    }
+  };
+
   const Fakedata = display.map((item, index) => {
     return (
       <Col md={3} key={index} className="mb-4">
@@ -56,8 +77,19 @@ const CardFakeAPI = () => {
 
   return (
     <>
-  
       <h1 className="text-center my-4">Shopping Site</h1>
+
+      <form action="" onSubmit={HandleSubmit}>
+        <select name="" id="">
+          <option value="all">All</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="jewelery">jewelery</option>
+          <option value="electronics">electronics</option>
+        </select>
+        <input type="submit" value="submit" />
+      </form>
+
       <Container>
         <Row>{Fakedata}</Row>
       </Container>
