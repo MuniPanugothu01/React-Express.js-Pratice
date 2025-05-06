@@ -44,6 +44,9 @@ const CardFakeAPI = () => {
             <Button variant="success" size="sm" className="ms-2">
               Buy
             </Button>
+            <Button variant="danger" size="sm" className="ms-2">
+              SeeMore
+            </Button>
           </Card.Body>
         </Card>
       </Col>

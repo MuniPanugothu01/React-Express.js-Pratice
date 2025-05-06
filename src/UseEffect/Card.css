@@ -1,11 +1,20 @@
 .custom-card {
   height: 100%;
 }
+.custom-card:hover {
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
 
 .card-image {
   height: 180px;
   object-fit: contain;
   padding: 10px;
+}
+
+.card-image:hover{
+    box-shadow: 1px 2px 2px solid gray;
+    transition: box-shadow .2s ease;
 }
 
 .card-title {
