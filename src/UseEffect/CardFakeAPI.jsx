@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 // import the bootstrap
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+// Import custom styles
+import "./Card.css";
 
 const CardFakeAPI = () => {
   // useState to display the data
@@ -20,23 +25,37 @@ const CardFakeAPI = () => {
   }, [display]);
   const Fakedata = display.map((item, index) => {
     return (
-      <Card style={{ width: "18rem" }} >
-        <Card.Body>
-          <Card.Title> <img src={item.image} alt={item.image} height={120} width={120} /> </Card.Title>
-          <Card.Text>
-          {item.description}
-          </Card.Text>
-          <Button variant="primary">Add To Cart</Button>
-          <Button variant="primary" style={{marginLeft:'10px', textAlign:'center'}}>Buy</Button>
-        </Card.Body>
-      </Card>
+      <Col md={3} key={index} className="mb-4">
+        <Card className="custom-card">
+          <Card.Img
+            variant="top"
+            src={item.image}
+            alt={item.title}
+            className="card-image"
+          />
+          <Card.Body>
+            <Card.Title className="card-title">{item.title}</Card.Title>
+            <Card.Text className="card-description">
+              {item.description}
+            </Card.Text>
+            <Button variant="primary" size="sm">
+              Add To Cart
+            </Button>
+            <Button variant="success" size="sm" className="ms-2">
+              Buy
+            </Button>
+          </Card.Body>
+        </Card>
+      </Col>
     );
   });
 
   return (
     <>
-      <h1>Shopping Site</h1>
-      <p>{Fakedata}</p>
+      <h1 className="text-center my-4">Shopping Site</h1>
+      <Container>
+        <Row>{Fakedata}</Row>
+      </Container>
     </>
   );
 };

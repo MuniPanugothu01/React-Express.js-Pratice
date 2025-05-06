@@ -1,0 +1,19 @@
+.custom-card {
+  height: 100%;
+}
+
+.card-image {
+  height: 180px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 14px;
+}
+
+.card-description {
+  font-size: 12px;
+  height: 60px;
+  overflow: hidden;
+}
