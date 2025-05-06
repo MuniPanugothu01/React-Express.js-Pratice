@@ -78,9 +78,9 @@ const FakeStore = () => {
           <input type="submit" value="submit" />
         </form>
 
-        <form action="" onSubmit={HandleSort} style={{ marginLeft: "10px" }}>
+        <form style={{ marginLeft: "10px" }} onChange={HandleSort}>
           <select name="" id="">
-            <option value="">Select Catrgory</option>
+            <option value="">Select Category</option>
             <option value="asc">Asending</option>
             <option value="des">Descending</option>
           </select>
