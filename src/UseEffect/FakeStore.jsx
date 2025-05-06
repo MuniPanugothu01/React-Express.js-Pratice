@@ -50,7 +50,7 @@ const FakeStore = () => {
   // handle function sort asending and Descending order
   const HandleSort = (evnet) => {
     evnet.preventDefault();
-    let value = evnet.target.value;
+    let value = evnet.target[0].value;
     setSortData(value);
 
     let sorted = [...display];
@@ -78,8 +78,8 @@ const FakeStore = () => {
           <input type="submit" value="submit" />
         </form>
 
-        <form style={{ marginLeft: "10px" }} onChange={HandleSort}>
-          <select name="" id="">
+        <form style={{ marginLeft: "10px" }} onSubmit={HandleSort}>
+          <select name="" id="" >
             <option value="">Select Category</option>
             <option value="asc">Asending</option>
             <option value="des">Descending</option>
