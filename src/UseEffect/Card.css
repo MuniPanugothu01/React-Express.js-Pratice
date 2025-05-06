@@ -1,6 +1,7 @@
 
 .custom-card {
   height: 100%;
+  font-family: 'Times New Roman', Times, serif;
 }
 .custom-card:hover {
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);

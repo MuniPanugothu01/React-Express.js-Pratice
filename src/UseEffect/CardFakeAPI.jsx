@@ -49,7 +49,7 @@ const CardFakeAPI = () => {
 
   // HandleAscending function
 
-  const HandleAscending  = (event) => {
+  const HandleAscending = (event) => {
     console.log(event.target.value);
     let value = event.target.value;
     setDisplay(value);
@@ -58,8 +58,7 @@ const CardFakeAPI = () => {
       SortedPrice.sort((a, b) => a.price - b.price);
     } else if (value === "asc") {
       SortedPrice.sort((a, b) => a.price - b.price);
-    } 
-    else {
+    } else {
       SortedPrice = [...filterData];
     }
     setDisplay(SortedPrice);
@@ -68,7 +67,7 @@ const CardFakeAPI = () => {
   const Fakedata = display.map((item, index) => {
     return (
       <Col md={3} key={index} className="mb-4">
-        <Card className="custom-card">
+        <Card className="custom-card" >
           <Card.Img
             variant="top"
             src={item.image}
@@ -78,8 +77,12 @@ const CardFakeAPI = () => {
           <Card.Body>
             <Card.Title className="card-title">{item.title}</Card.Title>
             <Card.Text className="card-description">
-              <h4>From:{item.price}</h4>
+              <h4>From: ${item.price}</h4>
             </Card.Text>
+            <Card.Text className="card-description" style={{marginTop:'-40px'}}>
+              <h4>Rating:{item.rating.rate}</h4>
+            </Card.Text>
+
             <Button variant="primary" size="sm">
               Add To Cart
             </Button>
@@ -99,7 +102,7 @@ const CardFakeAPI = () => {
     <>
       <h1 className="text-center my-4">Shopping Site</h1>
 
-      <div style={{display:'flex',marginLeft:'113px'}}>
+      <div style={{ display: "flex", marginLeft: "113px" }}>
         <form action="" onSubmit={HandleSubmit}>
           <select name="" id="">
             <option value="all">All</option>
@@ -111,14 +114,19 @@ const CardFakeAPI = () => {
           <input type="submit" value="submit" />
         </form>
 
-        <select name="" id="" onChange={HandleAscending} style={{marginLeft:'10px'}}>
+        <select
+          name=""
+          id=""
+          onChange={HandleAscending}
+          style={{ marginLeft: "10px" }}
+        >
           <option value="all">All</option>
           <option value="asc">Low Cost</option>
           <option value="des">High Cost</option>
         </select>
       </div>
 
-      <Container style={{marginTop:'20px'}}>
+      <Container style={{ marginTop: "20px" }}>
         <Row>{Fakedata}</Row>
       </Container>
     </>
