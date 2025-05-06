@@ -58,7 +58,8 @@ const CardFakeAPI = () => {
       SortedPrice.sort((a, b) => a.price - b.price);
     } else if (value === "asc") {
       SortedPrice.sort((a, b) => a.price - b.price);
-    } else {
+    } 
+    else {
       SortedPrice = [...filterData];
     }
     setDisplay(SortedPrice);
