@@ -99,7 +99,7 @@ const CardFakeAPI = () => {
     <>
       <h1 className="text-center my-4">Shopping Site</h1>
 
-      <div>
+      <div style={{display:'flex',marginLeft:'113px'}}>
         <form action="" onSubmit={HandleSubmit}>
           <select name="" id="">
             <option value="all">All</option>
@@ -111,14 +111,14 @@ const CardFakeAPI = () => {
           <input type="submit" value="submit" />
         </form>
 
-        <select name="" id="" onChange={HandleAscending}>
+        <select name="" id="" onChange={HandleAscending} style={{marginLeft:'10px'}}>
           <option value="all">All</option>
           <option value="asc">Low Cost</option>
           <option value="des">High Cost</option>
         </select>
       </div>
 
-      <Container>
+      <Container style={{marginTop:'20px'}}>
         <Row>{Fakedata}</Row>
       </Container>
     </>
