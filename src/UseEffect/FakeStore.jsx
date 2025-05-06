@@ -84,7 +84,7 @@ const FakeStore = () => {
             <option value="asc">Asending</option>
             <option value="des">Descending</option>
           </select>
-          <input type="submit" value="submit" />
+          {/* <input type="submit" value="submit" /> */}
         </form>
       </div>
 
