@@ -32,6 +32,7 @@ import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
 import ValueCount from "./UseEffect/ValueCount.jsx";
 import FakeDisplay from "./UseEffect/FakeDisplay.jsx";
+import CardFakeAPI from './UseEffect/CardFakeAPI.jsx';
 
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -98,17 +99,12 @@ function App() {
 
       {/* <Twoinputs/> */}
       {/* <Inputs/> */}
-
       {/* <SwitchCase/> */}
       {/* <ThemeToggle/> */}
-
-      <FakeStore/>
+      {/* <FakeStore/> */}
       {/* <StopC /> */}
-
       {/* <ValueCount/> */}
-
       {/* <FakeDisplay/> */}
-
       {/* <ProductsApi /> */}
       {/* <Routes>
           <Route path="/" element={<ProductsApi/>}/>
@@ -119,6 +115,11 @@ function App() {
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
+<CardFakeAPI/>
+
+
+
+
 
       {/* UseContext */}
       {/* <PropDriling/> */}
