@@ -41,10 +41,10 @@ const CardFakeAPI = () => {
             <Button variant="primary" size="sm">
               Add To Cart
             </Button>
-            <Button variant="success" size="sm" className="ms-2">
+            <Button variant="success" size="sm" className="ms-2 button">
               Buy
             </Button>
-            <Button variant="danger" size="sm" className="ms-2">
+            <Button variant="danger" size="sm" className="ms-2 button">
               SeeMore
             </Button>
           </Card.Body>
