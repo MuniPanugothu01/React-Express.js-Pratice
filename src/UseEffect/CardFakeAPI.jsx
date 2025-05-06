@@ -67,7 +67,7 @@ const CardFakeAPI = () => {
   const Fakedata = display.map((item, index) => {
     return (
       <Col md={3} key={index} className="mb-4">
-        <Card className="custom-card" >
+        <Card className="custom-card">
           <Card.Img
             variant="top"
             src={item.image}
@@ -79,7 +79,10 @@ const CardFakeAPI = () => {
             <Card.Text className="card-description">
               <h4>From: ${item.price}</h4>
             </Card.Text>
-            <Card.Text className="card-description" style={{marginTop:'-40px'}}>
+            <Card.Text
+              className="card-description"
+              style={{ marginTop: "-40px" }}
+            >
               <h4>Rating: {item.rating.rate}</h4>
             </Card.Text>
 
