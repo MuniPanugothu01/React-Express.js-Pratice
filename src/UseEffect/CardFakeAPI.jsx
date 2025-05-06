@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 // Import custom styles
 import "./Card.css";
 
+
 const CardFakeAPI = () => {
   // useState to display the data
   const [display, setDisplay] = useState([]);
@@ -36,7 +37,7 @@ const CardFakeAPI = () => {
           <Card.Body>
             <Card.Title className="card-title">{item.title}</Card.Title>
             <Card.Text className="card-description">
-             <h4>From:{item.price}</h4> 
+              <h4>From:{item.price}</h4>
             </Card.Text>
             <Button variant="primary" size="sm">
               Add To Cart
@@ -55,6 +56,7 @@ const CardFakeAPI = () => {
 
   return (
     <>
+  
       <h1 className="text-center my-4">Shopping Site</h1>
       <Container>
         <Row>{Fakedata}</Row>
