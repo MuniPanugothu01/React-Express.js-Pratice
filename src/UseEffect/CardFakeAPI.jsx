@@ -80,7 +80,7 @@ const CardFakeAPI = () => {
               <h4>From: ${item.price}</h4>
             </Card.Text>
             <Card.Text className="card-description" style={{marginTop:'-40px'}}>
-              <h4>Rating:{item.rating.rate}</h4>
+              <h4>Rating: {item.rating.rate}</h4>
             </Card.Text>
 
             <Button variant="primary" size="sm">
