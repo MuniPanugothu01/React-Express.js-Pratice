@@ -36,7 +36,7 @@ const CardFakeAPI = () => {
           <Card.Body>
             <Card.Title className="card-title">{item.title}</Card.Title>
             <Card.Text className="card-description">
-              {item.description}
+             <h4>From:{item.price}</h4> 
             </Card.Text>
             <Button variant="primary" size="sm">
               Add To Cart
