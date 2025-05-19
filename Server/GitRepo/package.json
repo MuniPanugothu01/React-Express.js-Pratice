@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MuniPanugothu01/Dummy/issues"
   },
-  "homepage": "https://github.com/MuniPanugothu01/Dummy#readme"
+  "homepage": "https://github.com/MuniPanugothu01/Dummy#readme",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
