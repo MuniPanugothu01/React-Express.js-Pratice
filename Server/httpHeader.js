@@ -1,7 +1,7 @@
 const http = require('http');
 
 const server = http.createServer((req,res)=>{
-    res.writeHead(200,{'content-Type':'text/plain'});
+    res.writeHead(500,{'content-Type':'text/plain'});
     res.end('this server is end here!')
 })
 
