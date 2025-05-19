@@ -1,0 +1,19 @@
+{
+  "name": "gitrepo",
+  "version": "1.0.0",
+  "description": "this folder is for how to create the folder and to add the git repo this seperate folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuniPanugothu01/Dummy.git"
+  },
+  "author": "Muni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuniPanugothu01/Dummy/issues"
+  },
+  "homepage": "https://github.com/MuniPanugothu01/Dummy#readme"
+}
