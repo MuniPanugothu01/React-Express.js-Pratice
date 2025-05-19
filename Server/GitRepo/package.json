@@ -4,7 +4,8 @@
   "description": "this folder is for how to create the folder and to add the git repo this seperate folder",
   "main": "index.js",
   "scripts": {
-    "test": "tests"
+    "test": "tests",
+    "starts" :"nodemon index.js"
   },
   "repository": {
     "type": "git",
