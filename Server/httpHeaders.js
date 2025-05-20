@@ -18,7 +18,7 @@ const resData = {
 const server = http.createServer((req, res) => {
   res.writeHead(201, { "content-Type": "application/json" });
   // res.write(JSON.stringify(resData));
-  res.write(JSON.stringify([{data}]))
+  res.write(JSON.stringify({"Data1":[data]}))
   res.end();
 });
 
