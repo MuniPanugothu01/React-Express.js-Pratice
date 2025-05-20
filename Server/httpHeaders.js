@@ -37,7 +37,15 @@ const resData = {
 };
 
 // nested array
-const Details = [data, data1, data2, data3, data4, data5];
+const Details = [
+  { status: SuccessCode, message: messageCode },
+  data,
+  data1,
+  data2,
+  data3,
+  data4,
+  data5,
+];
 
 const server = http.createServer((req, res) => {
   res.writeHead(201, { "content-Type": "application/json" });
