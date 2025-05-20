@@ -5,10 +5,12 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 const Browser = () => {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
