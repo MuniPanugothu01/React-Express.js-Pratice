@@ -32,7 +32,7 @@ import SetintervalMultiple from "./UseEffect/SetintervalMultiple.jsx";
 import StartColorStop from "./UseEffect/StartColorStop.jsx";
 import ValueCount from "./UseEffect/ValueCount.jsx";
 import FakeDisplay from "./UseEffect/FakeDisplay.jsx";
-import CardFakeAPI from './UseEffect/CardFakeAPI.jsx';
+import CardFakeAPI from "./UseEffect/CardFakeAPI.jsx";
 
 // UseContext method
 import PropDriling from "./UseContext/PropDriling.jsx";
@@ -68,6 +68,8 @@ import Counter2 from "./ClassComp/Counter.jsx";
 // Router component
 import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 
+// Browser Component
+import Browser from "./BrowserRoutes/Browser.jsx";
 
 function App() {
   return (
@@ -115,12 +117,8 @@ function App() {
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
-   
-<CardFakeAPI/>
 
-
-
-
+      {/* <CardFakeAPI/> */}
 
       {/* UseContext */}
       {/* <PropDriling/> */}
@@ -153,10 +151,10 @@ function App() {
       {/* Class component */}
       {/* <Counter2 /> */}
 
-
-
       {/* Routing  */}
 
+      {/* BrowserRouters */}
+      <Browser />
     </>
   );
 }
