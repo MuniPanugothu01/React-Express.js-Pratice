@@ -1,6 +1,6 @@
 const http = require("http");
 const SuccessCode = 200;
-const messageCode = "data rectrived successfully"
+const messageCode = "data rectrived successfully";
 
 const data = {
   name: "Muni",
@@ -10,11 +10,10 @@ const data = {
 };
 // create the object to display in browser
 const resData = {
-    "status" : SuccessCode,
-    "message" : messageCode,
-    "res" : data 
-}
-
+  status: SuccessCode,
+  message: messageCode,
+  res: data,
+};
 
 const server = http.createServer((req, res) => {
   res.writeHead(201, { "content-Type": "application/json" });
