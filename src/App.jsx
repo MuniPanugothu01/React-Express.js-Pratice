@@ -90,7 +90,7 @@ function App() {
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
       {/* <TodoList/> */}
-      {/* <Table_Todo/> */}
+      <Table_Todo/>
       {/* <UserInput/> */}
       {/* <ThemeColor /> */}
       {/* <EmailValid/> */}

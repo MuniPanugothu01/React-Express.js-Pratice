@@ -37,7 +37,7 @@ const Table_Todo = () => {
 
   // handleEdit function
   const handleEdit = (item, index) => {
-    // let InputUpdate = prompt("enter the text!");
+    let InputUpdate = prompt("enter the text!");
     store.splice(index, 1, InputUpdate);
     setStore([...store]);
   };
