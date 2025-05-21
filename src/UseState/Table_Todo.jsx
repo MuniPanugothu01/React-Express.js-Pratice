@@ -21,8 +21,6 @@ const Table_Todo = () => {
       setStore([...store, input]);
     }
     setInput("");
-
-    setStore([...store, input]);
     setInput("");
   };
 
