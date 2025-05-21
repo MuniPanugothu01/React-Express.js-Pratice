@@ -118,7 +118,7 @@ function App() {
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
 
-      {/* <CardFakeAPI/> */}
+      <CardFakeAPI/>
 
       {/* UseContext */}
       {/* <PropDriling/> */}
