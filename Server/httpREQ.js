@@ -13,7 +13,6 @@ const Server = http.createServer((req, res) => {
   let Structure = url.parse(FullUrl);
   let pathName = Structure.pathname;
   console.log(pathName, "path name");
-
   console.log(req.headers.host);
   console.log(req.headers);
 
