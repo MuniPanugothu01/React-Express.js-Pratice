@@ -5,6 +5,7 @@ const Server = http.createServer((req, res) => {
   console.log(req.method,'this is methods on request');
   console.log(req.url,'this method can show the url on server');
 // http://localhost:3001/home i want thi entire url 
+console.log(`http://${req.headers.host}${req.url}`);
 
   console.log(url.parse(req.url));
   console.log(req.headers.host);
