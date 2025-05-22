@@ -7,7 +7,8 @@ const Server = http.createServer((req, res) => {
 // http://localhost:3001/home i want thi entire url 
 console.log(`http://${req.headers.host}${req.url}`);
 
-  console.log(url.parse(req.url));
+const FullUrl = `http://${req.headers.host}${req.url}`
+  console.log(url.parse(FullUrl)); 
   console.log(req.headers.host);
   console.log(req.headers);
   res.writeHead(200, { "content-Type": "application/json" });
