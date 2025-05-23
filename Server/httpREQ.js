@@ -1,6 +1,8 @@
 const http = require("http");
+const path = require("path");
 const url = require("url");
 const Server = http.createServer((req, res) => {
+  console.log(req.method, "we can known the metods");
   //   console.log(req, "resquest object");
   //   console.log(req.method,'this is methods on request');
   //   console.log(req.url,'this method can show the url on server');
@@ -15,6 +17,15 @@ const Server = http.createServer((req, res) => {
   console.log(pathName, "path name");
   console.log(req.headers.host);
   console.log(req.headers);
+
+  if (pathName === "/home") {
+    res.writeHead(200, { "content-Type": "text/plain" });
+  } else if (pathName === "/about") {
+    res.writeHead(2001, { "content-Type": "text/plain" });
+  } else {
+    res.writeHead(404, { "content-type": "text/plain" });
+  }
+  res.end();
 
   //   path name this is the one way to find the path name.
   //   above one is the another way to find the path name
