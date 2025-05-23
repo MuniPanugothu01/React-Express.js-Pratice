@@ -7,6 +7,8 @@ const {
   SuccessMessage,
   SuccessCodeInsted,
   SuccessMessageInstead,
+  InvalidCode,
+  InvalidMessage,
 } = require("./StatusCodes");
 
 // const Data Home Section
@@ -64,7 +66,7 @@ const Server = http.createServer((req, res) => {
       })
     );
   } else if (Parse.pathname === "/about") {
-    res.writeHead(2001, { "content-type": "application/json" });
+    res.writeHead(201, { "content-type": "application/json" });
     res.write(
       JSON.stringify({
         status: SuccessCodeInsted,
@@ -82,6 +84,8 @@ const Server = http.createServer((req, res) => {
       })
     );
   } else {
+    res.writeHead(404, { "content-Type": "application/json" });
+    res.write(JSON.stringify({ status: InvalidCode, message: InvalidMessage }));
   }
   res.end();
 });
