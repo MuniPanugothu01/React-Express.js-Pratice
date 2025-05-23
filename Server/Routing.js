@@ -12,6 +12,15 @@ const Server = http.createServer((req, res) => {
     age: 23,
     mail: "munipanugothu2001@gmail.com",
   };
+
+// contact information
+const InfoUser = {
+    name : 'User',
+    age : 23,
+    city : 'Hyd',
+    Role : "FullStack developer"
+}
+
   if (ParsedUrl.pathname === "/") {
     res.writeHead(200, { "content-Type": "text/plain" });
     res.write("well come to home page");
@@ -20,7 +29,7 @@ const Server = http.createServer((req, res) => {
     res.write(JSON.stringify(Data));
   } else if (ParsedUrl.pathname === "/contact") {
     res.writeHead(200, { "content-Type": "text/plain" });
-    res.write("contact page");
+    res.write(JSON.stringify(InfoUser));
   } else {
     res.writeHead(400, { "content-Type": "text/plain" });
     res.write("getting server error");
