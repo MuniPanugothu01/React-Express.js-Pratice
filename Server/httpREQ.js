@@ -20,10 +20,13 @@ const Server = http.createServer((req, res) => {
 
   if (pathName === "/home") {
     res.writeHead(200, { "content-Type": "text/plain" });
+    res.write("this is home");
   } else if (pathName === "/about") {
-    res.writeHead(2001, { "content-Type": "text/plain" });
+    res.writeHead(201, { "content-Type": "text/plain" });
+    res.write("this is about us");
   } else {
     res.writeHead(404, { "content-type": "text/plain" });
+    res.write("data not found");
   }
   res.end();
 
@@ -33,8 +36,7 @@ const Server = http.createServer((req, res) => {
   console.log(parsed);
   console.log(parsed.pathname);
 
-  res.writeHead(200, { "content-Type": "application/json" });
-  res.end("end the server");
+  // res.writeHead(200, { "content-Type": "application/json" });
 });
 let PORT = 3004;
 Server.listen(PORT, () => {
