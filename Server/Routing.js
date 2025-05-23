@@ -55,7 +55,7 @@ const Server = http.createServer((req, res) => {
     res.write("well come to home page");
   } else if (ParsedUrl.pathname === "/about") {
     res.writeHead(201, { "content-Type": "application/json" });
-    res.write(JSON.stringify(FullData));
+    res.write(JSON.stringify([FullData]));
   } else if (ParsedUrl.pathname === "/contact") {
     res.writeHead(200, { "content-Type": "text/plain" });
     res.write(JSON.stringify(UserInfo));
