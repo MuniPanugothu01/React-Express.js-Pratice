@@ -1,5 +1,8 @@
 let PORT = 3007;
-
+const SuccessCode = 200;
+const SuccessMessage = "data rectrived successfully";
+const SuccessCodeInsted = 201;
+const SuccessMessageInstead = "Data instead successfully";
 module.exports = {
-    PORT
+    PORT, SuccessCode, SuccessMessage, SuccessCodeInsted, SuccessMessageInstead
 }
