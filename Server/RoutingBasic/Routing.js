@@ -5,7 +5,7 @@ const {PORT} = require('./StatusCodes');
 const Server = http.createServer((req,res)=>{
     const Parse = url.parse(req.url);
     if(Parse.pathname === '/'){
-
+res.write('home section')
     }
     else if(Parse.pathname === '/about'){
 
