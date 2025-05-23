@@ -1,4 +1,5 @@
 const http = require("http");
+const { data } = require("react-router-dom");
 const url = require("url");
 
 const Server = http.createServer((req, res) => {
@@ -54,8 +55,10 @@ const Server = http.createServer((req, res) => {
     res.writeHead(200, { "content-Type": "text/plain" });
     res.write("well come to home page");
   } else if (ParsedUrl.pathname === "/about") {
-    res.writeHead(201, { "content-Type": "application/json" });
-    res.write(JSON.stringify([FullData]));
+    res.writeHead(201, { "content-type": "application/json" });
+    // res.write(JSON.stringify([FullData]));
+    // or anther way we can take inthis res.writeHead we can take
+    res.write(JSON.stringify({"status":200,FullData}))
   } else if (ParsedUrl.pathname === "/contact") {
     res.writeHead(200, { "content-Type": "text/plain" });
     res.write(JSON.stringify(UserInfo));
