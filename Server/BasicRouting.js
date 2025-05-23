@@ -81,7 +81,7 @@ const Server = http.createServer((req, res) => {
     );
   } else {
     res.writeHead(notFountCode);
-    res.write("user not found");
+    res.write(NotFoundMessage);
   }
   res.end();
 });
