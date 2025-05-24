@@ -17,9 +17,7 @@ const Server = http.createServer((req, res) => {
     res.write(JSON.stringify(data));
   } else {
     res.writeHead(404, { "content-Type": "application/json" });
-    res.write(
-      JSON.stringify({ status: "404", message: "data not found in url" })
-    );
+    res.write(JSON.stringify({status:"404",message:"data not found in url"}));
   }
 
   console.log(id, "id is");
