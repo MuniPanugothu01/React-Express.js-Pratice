@@ -22,7 +22,7 @@ const Server = http.createServer((req, res) => {
   if (NamePath === "") {
     res.writeHead(201, { "content-Type": "application" });
     res.write(
-      JSON.stringify({ status: SuccessCode2, message: SuccessMessage })
+      JSON.stringify({ status: SuccessCode, message: SuccessMessage })
     );
     res.end();
     return;
