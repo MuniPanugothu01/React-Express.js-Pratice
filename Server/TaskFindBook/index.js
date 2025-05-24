@@ -23,9 +23,13 @@ const Server = http.createServer((req, res) => {
     res.write(
       JSON.stringify({ status: SuccessCode2, message: SuccessMessage })
     );
+    res.end();
+    return;
   } else if (!isNaN(NamePath)) {
     res.writeHead(404, { "content-Type": "application/json" });
     res.write(JSON.stringify({ status: Invalid, message: MessageInvalid }));
+    res.end();
+    return;
   }
 
   // find the book name while enter in url
@@ -46,6 +50,8 @@ const Server = http.createServer((req, res) => {
         BookData: BookFind,
       })
     );
+    res.end();
+    return;
   } else {
     res.writeHead(404, { "content-Type": "application/json" });
     res.write(JSON.stringify({ status: Invalid, message: MessageInvalid }));
