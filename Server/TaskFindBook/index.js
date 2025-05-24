@@ -7,6 +7,7 @@ const {
   SuccessMessage,
   Invalid,
   MessageInvalid,
+  InvalidMessage,
   SuccessCode2,
   MessageSuccess,
 } = require("./SourceCode.js");
@@ -27,7 +28,7 @@ const Server = http.createServer((req, res) => {
     return;
   } else if (!isNaN(NamePath)) {
     res.writeHead(404, { "content-Type": "application/json" });
-    res.write(JSON.stringify({ status: Invalid, message: MessageInvalid }));
+    res.write(JSON.stringify({ status: Invalid, message: InvalidMessage }));
     res.end();
     return;
   }
