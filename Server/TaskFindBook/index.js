@@ -33,7 +33,6 @@ const Server = http.createServer((req, res) => {
     return;
   }
 
-  
 
   // find the book name while enter in url
   const BookFind = Books.find((BookName) => {
