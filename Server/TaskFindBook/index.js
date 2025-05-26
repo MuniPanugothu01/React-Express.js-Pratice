@@ -21,9 +21,7 @@ const Server = http.createServer((req, res) => {
 
   if (NamePath === "") {
     res.writeHead(201, { "content-Type": "application" });
-    res.write(
-      JSON.stringify({ status: SuccessCode, message: SuccessMessage })
-    );
+    res.write(JSON.stringify({ status: SuccessCode, message: SuccessMessage }));
     res.end();
     return;
   } else if (!isNaN(NamePath)) {
@@ -32,7 +30,6 @@ const Server = http.createServer((req, res) => {
     res.end();
     return;
   }
-
 
   // find the book name while enter in url
   const BookFind = Books.find((BookName) => {
