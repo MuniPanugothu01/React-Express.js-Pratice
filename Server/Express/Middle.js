@@ -34,18 +34,18 @@ app.use((req, res, next) => {
   if (success) {
     next();
   } else {
-    res.send("it is not able to handle the request");
+    res.status(500).send("it is not able to handle the request");
   }
 });
 
 app.get("/", (req, res) => {
-  res.writeHead(200, { "content-Type": "application/json" });
-  res.send(JSON.stringify(UserInfo));
+ 
+  res.status(200).json([UserInfo])
 });
-
+``
 app.post("/about", (req, res) => {
-  res.writeHead(201, { "content-Type": "application/json" });
-  res.send(JSON.stringify(UserAbout));
+  
+  res.status(201).json(UserAbout)
 });
 
 app.put("/contact", (req, res) => {
