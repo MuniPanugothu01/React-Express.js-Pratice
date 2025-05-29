@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json())
 // object data
 const Data = {
   Name: "Muni",
@@ -49,6 +50,22 @@ app.post("/about", (req, res) => {
 app.put("/contact", (req, res) => {
   res.send("contact section");
 });
+
+app.get("/ab\\?c", (req, res) => {
+  res.send("hello deleted");
+});
+
+// '/ab+c // we can add the multiple bbbbbb in url
+// app.get('/ab+c',(req,res)=>{
+//   res.send("well come Muno")
+// })
+
+app.get(/.*srtipt$/,(req,res)=>{
+
+  console.log(req.query.name)
+  let Detail = req.query.name
+  res.send({"name":Detail, message:`hello ${Detail}`})
+})
 
 let PORT = 3001;
 app.listen(PORT, () => {
