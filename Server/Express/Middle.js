@@ -30,7 +30,7 @@ const UserAbout = {
 };
 
 app.use((req, res, next) => {
-  let success = false;
+  let success = true;
   if (success) {
     next();
   } else {
@@ -39,13 +39,11 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
- 
-  res.status(200).json([UserInfo])
+  res.status(200).json([UserInfo]);
 });
-``
+``;
 app.post("/about", (req, res) => {
-  
-  res.status(201).json(UserAbout)
+  res.status(201).json(UserAbout);
 });
 
 app.put("/contact", (req, res) => {
