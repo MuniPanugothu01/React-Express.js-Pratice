@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 // create the useContext() and export it
-export const Context = React.createContext();
+export const Context = React.createContext(); // contentapi
 
 const DataPass = () => {
   let data = "this is the data to pass parent to child component!";
@@ -9,6 +9,7 @@ const DataPass = () => {
     <>
       <Context.Provider value={data}>
         <ChildComp />
+        
       </Context.Provider>
     </>
   );

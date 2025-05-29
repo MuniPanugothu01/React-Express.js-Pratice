@@ -90,7 +90,7 @@ function App() {
       {/* <Multiply /> */}
       {/* <Twoinputs/> */}
       {/* <TodoList/> */}
-      <Table_Todo/>
+      {/* <Table_Todo/> */}
       {/* <UserInput/> */}
       {/* <ThemeColor /> */}
       {/* <EmailValid/> */}
@@ -116,9 +116,9 @@ function App() {
       {/* <BackgroundTheme /> */}
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
-      {/* <StartColorStop /> */}
+      <StartColorStop />
 
-      <CardFakeAPI/>
+      {/* <CardFakeAPI/> */}
 
       {/* UseContext */}
       {/* <PropDriling/> */}
@@ -154,7 +154,7 @@ function App() {
       {/* Routing  */}
 
       {/* BrowserRouters */}
-      <Browser />
+      {/* <Browser /> */}
     </>
   );
 }

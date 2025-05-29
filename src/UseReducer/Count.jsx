@@ -18,6 +18,8 @@ const CountReducer = () => {
     }
   }
 
+
+
   return (
     <>
       <h1>Counter Button while using the UseReducer() method! </h1>

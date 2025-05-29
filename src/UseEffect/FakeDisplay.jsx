@@ -11,7 +11,7 @@ const FakeDisplay = () => {
       .then((data) => {
         setData(data);
       });
-  }, []);
+  }, [data]);
 
   //   map method to filter the data
 
