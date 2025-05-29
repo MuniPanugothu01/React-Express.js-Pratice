@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
         city : city
     }
     
-    res.send({status:200,"UserInfo":UserInfo})
+    res.send({status:200,"UserInfo":[UserInfo]})
 })
 
 let PORT = 3003;
