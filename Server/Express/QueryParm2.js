@@ -6,7 +6,7 @@ app.use((req,res,next)=>{
         next()
     }
     else{
-        res.status(500).send('server is not responding')
+        res.status(500).send('server is not responding!')
     }
 })
 
