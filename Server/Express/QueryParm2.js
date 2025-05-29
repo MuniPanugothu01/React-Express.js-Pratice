@@ -22,6 +22,7 @@ app.get('/',(req,res)=>{
         role : role,
         city : city
     }
+    
     res.send({status:200,"UserInfo":UserInfo})
 })
 
