@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 app.use((req,res,next)=>{
-    if(req.query.name){
+    if(req.query.name || req.query.city || req.query.role){
         next()
     }
     else{
