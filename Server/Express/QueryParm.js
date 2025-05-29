@@ -13,8 +13,19 @@ app.use((req, res, next) => {
 
 app.get("/home", (req, res) => {
   console.log(req.query);
+let name = req.query.name
+console.log('user name:',name);
 
-  res.send("home section");
+let city = req.query.city
+console.log('city is:',city);
+
+let role = req.query.role
+let UserInfo = {
+    name : name,
+    city : city,
+    role : role
+}
+  res.send({status:200,UserInfo});
 });
 
 let PORT = 3002;
