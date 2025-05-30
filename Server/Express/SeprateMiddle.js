@@ -29,12 +29,11 @@ app.get("/", Home, (req, res) => {
   res.send({ status: 200, Data: InputData });
 });
 
-
 // userData about section
 let UserData = {
-name : "Muni",
-age : 23,
-}
+  name: "Muni",
+  age: 23,
+};
 
 // middle for about section
 const about = (req, res, next) => {
@@ -46,7 +45,7 @@ const about = (req, res, next) => {
   }
 };
 app.post("/about", about, (req, res) => {
-  res.send({UserData});
+  res.send({ UserData });
 });
 const PORT = 3005;
 app.listen(PORT, () => {
