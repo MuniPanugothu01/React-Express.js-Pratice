@@ -2,10 +2,6 @@ const e = require("express");
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("started");
-});
-
 // middle ware for get home section
 const Home = (req, res, next) => {
   if (req.query.name) {
@@ -18,6 +14,10 @@ const Home = (req, res, next) => {
     res.status(500).send("server is not responding");
   }
 };
+
+app.get("/", Home, (req, res) => {
+  res.send("started");
+});
 
 const PORT = 3005;
 app.listen(PORT, () => {
