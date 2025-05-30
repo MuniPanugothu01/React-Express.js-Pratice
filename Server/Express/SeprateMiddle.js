@@ -28,8 +28,25 @@ app.get("/", Home, (req, res) => {
   };
   res.send({ status: 200, Data: InputData });
 });
-app.post("/about", (req, res) => {
-  res.send("about section");
+
+
+// userData about section
+let UserData = {
+name : "Muni",
+age : 23,
+}
+
+// middle for about section
+const about = (req, res, next) => {
+  let succes = true;
+  if (succes) {
+    next();
+  } else {
+    res.send("server is not responding");
+  }
+};
+app.post("/about", about, (req, res) => {
+  res.send({UserData});
 });
 const PORT = 3005;
 app.listen(PORT, () => {
