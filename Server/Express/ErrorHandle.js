@@ -1,9 +1,20 @@
 const express = require("express");
 const app = express();
 
+// error handling this is the one way to write the error handling
+// app.get("/home", (req, res) => {
+//   throw new Error("error occures here");
+// });
+
+// this is the another way to write the error handling try catch block
 app.get("/home", (req, res) => {
-  throw new Error("error occures here");
+  try {
+    throw new Error("this is thrown an error");
+  } catch (error) {
+    next(error);
+  }
 });
+
 // routing for admin side
 app.use("/admin", (req, res, next) => {
   if (req.query.user) {
