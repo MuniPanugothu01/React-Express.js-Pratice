@@ -18,7 +18,10 @@ const Home = (req, res, next) => {
 app.get("/", Home, (req, res) => {
   res.send("started");
 });
-w
+
+app.post("/about", (req, res) => {
+  res.send("about section");
+});
 const PORT = 3005;
 app.listen(PORT, () => {
   console.log(`port is connected ${PORT} here`);
