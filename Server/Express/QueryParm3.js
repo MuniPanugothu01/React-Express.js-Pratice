@@ -1,7 +1,7 @@
 const express = require("express");
 
 let app = express();
-
+// middle wares
 app.use((req, res, next) => {
   if (req.query.name) {
     if (/^[a-zA-Z]+$/.test(req.query.name)) {
