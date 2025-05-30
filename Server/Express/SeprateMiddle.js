@@ -16,9 +16,18 @@ const Home = (req, res, next) => {
 };
 
 app.get("/", Home, (req, res) => {
-  res.send("started");
+  let name = req.query.name;
+  console.log("name is:", name);
+  let city = req.query.city;
+  let role = req.query.role;
+  // inputData in object formate
+  const InputData = {
+    name: name,
+    city: city,
+    role: role,
+  };
+  res.send({ status: 200, Data: InputData });
 });
-
 app.post("/about", (req, res) => {
   res.send("about section");
 });
