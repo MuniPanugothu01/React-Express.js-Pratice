@@ -23,7 +23,6 @@ app.use("/admin", (req, res, next) => {
     res.status(401).send("server is not responding here!");
   }
 });
-
 // routers for admin side
 app.get("/admin/home", (req, res) => {
   let name = req.query.user;
