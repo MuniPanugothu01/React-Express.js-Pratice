@@ -38,7 +38,6 @@ app.get("/admin/home", (req, res) => {
 app.get("/admin/about", (req, res) => {
   res.send("wellcome admin to about page");
 });
-
 // error handling router, it will act like universal router for all above routers if error can find above routers then it will be display.
 app.use("/", (err, req, res, next) => {
   if (err) {
