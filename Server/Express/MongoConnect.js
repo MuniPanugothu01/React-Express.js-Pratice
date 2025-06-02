@@ -5,8 +5,8 @@ const { mongoose } = require("mongoose");
 // connect mongodb to node js.
 mongoose
   .connect("mongodb://localhost:27017/")
-  .then((res) => {
-    console.log(res, "mongodb is connected");
+  .then(() => {
+    console.log("mongodb is connected");
   })
   .catch((err) => {
     console.log("mongodb is not connected here");
