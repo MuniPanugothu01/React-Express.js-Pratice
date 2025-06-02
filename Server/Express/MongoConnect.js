@@ -27,7 +27,7 @@ let UserModel = mongoose.model("user", UserSchema);
 // create the router
 app.get("/getUser", (req, res) => {
   UserModel.find({})
-    .then((data) => {
+    .then((data) => { 
       res.json(data);
     })
     .catch((err) => {
