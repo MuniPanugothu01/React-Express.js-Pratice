@@ -18,13 +18,14 @@ const userSchema = new mongoose.Schema({
   role: String,
 });
 // model
-const UserModel = mongoose.model("Datas", userSchema);
+const UserModel = mongoose.model("users", userSchema);
 
 // routers
 app.get("/getData", async (req, res) => {
   try {
     let Data = await UserModel.find();
     res.json(Data);
+    console.log(Data, "userdaata");
   } catch (err) {
     res.status(500).json({ message: "error occured fetching the data" });
   }
