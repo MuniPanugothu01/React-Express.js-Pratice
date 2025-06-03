@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const { DbData } = require("./db.js");
 const { mongoose } = require("mongoose");
-const { use } = require("react");
-
 // middle wares
 app.use("/users", (req, res, next) => {
   console.log(req.path, "path name");
