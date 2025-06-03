@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
-
-function DbConnect(){
+// import the dotenv file
+const dotenv = require("dotenv");
+dotenv.config();
+function DbConnect() {
   mongoose
-  .connect("mongodb://localhost:27017/")
-  .then(() => {
-    console.log("mongodb connected");
-  })
-  .catch((err) => {
-    console.log("not connected mongoDB");
-  });
+    .connect(process.env.MONGO_DB_URL)
+    .then(() => {
+      console.log("mongodb connected");
+    })
+    .catch((err) => {
+      console.log("not connected ");
+    });
 }
 
-module.exports={
-  DbConnect
-}
+module.exports = {
+  DbConnect,
+};
