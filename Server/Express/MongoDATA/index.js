@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const { DbData } = require("./db.js");
 const { mongoose } = require("mongoose");
+const { use } = require("react");
 
 // middle wares
 app.use("/users", (req, res, next) => {
@@ -30,6 +31,21 @@ app.get("/users", async (req, res) => {
     res.json(Data);
   } catch (err) {
     res.status(500).json({ message: "error in rectriving the data" });
+  }
+});
+
+// create the another schema beacuse of we have antother collection
+const Schema = new mongoose.Schema({});
+const Model = mongoose.model("reels", Schema);
+
+app.post("/admin", async (req, res) => {
+  try {
+    const users = await Model.find({ age: { $gt: 10 } });
+    if (users.age >= 10) {
+      res.json(users);
+    }
+  } catch (err) {
+    res.status(401).json({ message: "error in rectriving data" });
   }
 });
 
