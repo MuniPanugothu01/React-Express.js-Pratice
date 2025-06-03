@@ -6,13 +6,12 @@ function DbConnect() {
   mongoose
     .connect(process.env.MONGO_DB_URL)
     .then(() => {
-      console.log("mongodb connected");
+      console.log("✅ MongoDB connected");
     })
     .catch((err) => {
-      console.log("not connected ");
+      console.error("❌ MongoDB connection error:", err);
     });
 }
-
 module.exports = {
   DbConnect,
 };
