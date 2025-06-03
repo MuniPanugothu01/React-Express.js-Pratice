@@ -7,7 +7,7 @@ app.use(express.json());
 
 // export file here db connect 
 dbConnect();
-
+let PORT = 3010
 app.listen(PORT,()=>{
     console.log(`port is connected ${PORT}`);
     
