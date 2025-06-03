@@ -3,6 +3,17 @@ const app = express();
 const { DbData } = require("./db.js");
 const { mongoose } = require("mongoose");
 
+// middle wares
+app.use("/users", (req, res, next) => {
+  console.log(req.path, "path name");
+  console.log(req.baseUrl, "base");
+  if (req.baseUrl === "/users") {
+    next();
+  } else {
+    res.status(404).send({ message: "unauthorised the users" });
+  }
+});
+
 DbData();
 // create the schema
 const UserSchema = new mongoose.Schema({
