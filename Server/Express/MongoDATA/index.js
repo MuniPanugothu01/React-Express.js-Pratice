@@ -41,9 +41,7 @@ const Model = mongoose.model("reels", Schema);
 app.post("/admin", async (req, res) => {
   try {
     const users = await Model.find({ age: { $gt: 10 } });
-    if (users.age >= 10) {
-      res.json(users);
-    }
+    res.json(users);
   } catch (err) {
     res.status(401).json({ message: "error in rectriving data" });
   }
