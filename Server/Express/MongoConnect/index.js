@@ -1,14 +1,15 @@
-const express = require('express');
-const {dbConnect} = require('./Database')
-
-const app = express()
+const express = require("express");
+const { dbConnect } = require("./Database");
+// import dotenv file
+const dotenv = require("dotenv");
+dotenv.config();
+const app = express();
 // middle ware we can use the express.json() beacuase of getting data json formate
 app.use(express.json());
 
-// export file here db connect 
+// export file here db connect
 dbConnect();
-let PORT = 3010
-app.listen(PORT,()=>{
-    console.log(`port is connected ${PORT}`);
-    
-})
+let Port = process.env.PORT;
+app.listen(Port, () => {
+  console.log(`port is connected ${Port}`);
+});
