@@ -22,9 +22,15 @@ const SchemaPost = new mongoose.Schema({
 });
 const ModelPost = mongoose.model("users", SchemaPost);
 // router
-app.post("/post", (req, res) => {
-  console.log(req.body, "body");
-  res.status(500).send('data');
+app.post("/post", async (req, res) => {
+  let Data = new ModelPost({
+    name: req.body.name,
+    age: req.body.age,
+    role: req.body.role,
+  });
+  await Data.save();
+  console.log(req.body);
+  res.status(200).send({ message: "data posted to body" });
 });
 
 app.get("/user", async (req, res) => {
