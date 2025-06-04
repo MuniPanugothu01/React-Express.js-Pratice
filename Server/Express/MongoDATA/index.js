@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const { DbData } = require("./db.js");
 const { mongoose } = require("mongoose");
+
+app.use(express.json());
+
 // middle wares
 app.use("/users", (req, res, next) => {
   console.log(req.path, "path name");
@@ -43,6 +46,27 @@ app.post("/admin", async (req, res) => {
   } catch (err) {
     res.status(401).json({ message: "error in rectriving data" });
   }
+});
+
+// create the Schema
+const SchemaPost = new mongoose.Schema({
+  name: String,
+  age: Number,
+  role: String,
+});
+// define the model, model can create the collections
+const ModelPost = mongoose.model("posts", SchemaPost);
+
+// post the data through body
+app.post("/post", async (req, res) => {
+  let Data = new ModelPost({
+    name: req.body.name,
+    age: req.body.age,
+    role: req.body.role,
+  });
+  await Data.save();
+  console.log(req.body);
+  res.status(200).send({ message: "data posted to body" });
 });
 
 let PORT = 3001;
