@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 
 const dotenv = require("dotenv");
-const { DbConnect } = require("./db.js");
-const { mongoose } = require("mongoose");
-DbConnect();
 dotenv.config();
+const { DbConnect } = require("./db.js");
+DbConnect();
+const { mongoose } = require("mongoose");
+app.use(express.json());
 
 const UserSchema = new mongoose.Schema({
   name: String,
@@ -13,6 +14,19 @@ const UserSchema = new mongoose.Schema({
   city: String,
 });
 const UserModel = mongoose.model("reels", UserSchema);
+// Post the data to mongodb using of POST Method
+const SchemaPost = new mongoose.Schema({
+  name: String,
+  age: Number,
+  city: String,
+});
+const ModelPost = mongoose.model("users", SchemaPost);
+// router
+app.post("/post", (req, res) => {
+  console.log(req.body, "body");
+  res.status(500).send('data');
+});
+
 app.get("/user", async (req, res) => {
   try {
     let DataFind = await UserModel.find();
