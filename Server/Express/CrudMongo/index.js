@@ -45,17 +45,25 @@ app.get("/user", async (req, res) => {
     res.status(500).send({ message: "server error" });
   }
 });
+// to find the specific id
+app.get("/post/:id", async (req, res) => {
+  try {
+    let FindData = await ModelPost.findById(req.params.id);
+    return res.json(FindData);
+  } catch (err) {
+    res.status(500).send("server error");
+  }
+});
 
 // PUT method
 app.put("/post/:id", async (req, res) => {
   try {
-    let UpdateData = ModelPost.findByIdAndUpdate(req.params.id, req.body, {
+    let UpdateData =await ModelPost.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-      overwrite: true,
     });
     res.send(UpdateData);
   } catch (err) {
-    res.status(500).json({ message: "error in id" });
+    res.status(500).json(req.params.id,'id');
   }
 });
 
@@ -63,7 +71,7 @@ app.put("/post/:id", async (req, res) => {
 
 app.delete("/post/:id", async (req, res) => {
   try {
-    let DeletData = await ModelPost.findByIdAndUpdate(req.params.id);
+    let DeletData = await ModelPost.findByIdAndDelete(req.params.id);
     res.send(DeletData);
   } catch (err) {
     res.status(500).send("Detele Error");
