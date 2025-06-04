@@ -58,17 +58,37 @@ app.get("/post/:id", async (req, res) => {
 // PUT method
 app.put("/post/:id", async (req, res) => {
   try {
-    let UpdateData =await ModelPost.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
+    let UpdateData = await ModelPost.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
     res.send(UpdateData);
   } catch (err) {
-    res.status(500).json(req.params.id,'id');
+    res.status(500).json(req.params.id, "id");
+  }
+});
+
+// PATCH Method
+app.patch("/post/:id", async (req, res) => {
+  try {
+    let UpdatePATCH = await ModelPost.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        overwrite: true,
+      }
+    );
+    res.send(UpdatePATCH);
+  } catch (err) {
+    res.status(500).send({ message: "data not upated by patch" });
   }
 });
 
 // DELETE Method
-
 app.delete("/post/:id", async (req, res) => {
   try {
     let DeletData = await ModelPost.findByIdAndDelete(req.params.id);
