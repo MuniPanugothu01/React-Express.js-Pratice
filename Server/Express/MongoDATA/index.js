@@ -54,6 +54,12 @@ const SchemaPost = new mongoose.Schema({
   age: Number,
   role: String,
 });
+const SchemaPost2 = new mongoose.Schema({
+  name: String,
+  age: Number,
+  role: String,
+});
+const ModelPost2 = mongoose.model("post2", SchemaPost2);
 // define the model, model can create the collections
 const ModelPost = mongoose.model("posts", SchemaPost);
 
@@ -67,6 +73,17 @@ app.post("/post", async (req, res) => {
   await Data.save();
   console.log(req.body);
   res.status(200).send({ message: "data posted to body" });
+});
+
+app.post("/userdata", async (req, res) => {
+  const Users = new ModelPost2({
+    name: req.body.name,
+    age: req.body.age,
+    role: req.body.role,
+  });
+  await Users.save();
+  console.log(req.body);
+  res.status(200).send({ message: "successfully posted data" }, Users);
 });
 
 let PORT = 3001;
