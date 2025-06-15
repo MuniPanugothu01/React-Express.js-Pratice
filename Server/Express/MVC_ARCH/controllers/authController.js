@@ -40,7 +40,7 @@ exports.SignUp = async (req, res) => {
     return res.status(409).send({ message: "Username already exists" });
   }
 
-  let encryptedPassword = await toEncrypt(password);
+  let encryptedPassword = await Encrypted(password);
 
   let SignupDate = new Modelsign({
     name: name,
