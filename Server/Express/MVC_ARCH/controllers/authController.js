@@ -1,5 +1,5 @@
-const { default: mongoose } = require("mongoose");
-const ModelImport = require("../models/signupModel.js");
+const { mongoose } = require("mongoose");
+const Modelsign = require("../models/signupModel.js");
 const bcrypt = require("bcrypt");
 
 // create the logical functions we can write in controllers
@@ -22,7 +22,7 @@ async function ComparedPass(password, hashedpass) {
 }
 
 // router logical part we can write here in Controllers
-exports.SignUp = async (req, res) => {
+exports.SignUpController = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
     return res.status(400).send({ message: "Please fill all details" });
@@ -52,3 +52,25 @@ exports.SignUp = async (req, res) => {
 
   res.status(200).send(SignupDate);
 };
+
+// login Api : /login
+const loginController = async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    res.status(404).send({ status: 404, message: "please enter all fileds!" });
+  }
+  // find the email is aleady user is alredy login or not i will check
+  const checkEmail = await Modelsign.findOne({ email });
+  if (!checkEmail) {
+    res.status(401).send({ status: 401, message: "Invalid Email Address!" });
+  }
+
+  // to check the password, throught compared function
+  const isValidpass = await ComparedPass(password, Modelsign.password);
+  if (!isValidpass) {
+    res.status(401).send({ status: true, message: "Incorrect Password!" });
+  }
+  res.send({ status: 200, message: "login successsfully❤️" });
+};
+
+module.exports = loginController;

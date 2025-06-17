@@ -7,6 +7,9 @@ dotenv.config();
 const { DbConnect } = require("./db.js");
 DbConnect();
 
+
+// app.use('/api',userRouter)
+
 let PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`port is connected ${PORT}`);
