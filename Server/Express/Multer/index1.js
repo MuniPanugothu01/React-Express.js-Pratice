@@ -28,8 +28,9 @@ const uploadImg = multer({
 
 // router
 app.post("/uploads", uploadImg.single("image"), (req, res) => {
+    const {name, email} = req.body
   console.log(req.file);
-  res.send({path:req.file.path});
+  res.send({path:req.file.path,user:name, email});
 });
 
 let PORT = 3003;
