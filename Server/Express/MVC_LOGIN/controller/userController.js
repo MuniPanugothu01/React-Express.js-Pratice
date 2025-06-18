@@ -63,7 +63,7 @@ const Login = async (req, res) => {
     res.status(401).send({ message: "invalid password" });
   }
 
-  res.status(200).send({ status: true, message: "login successfully" });
+  res.status(200).send({ status: true, message: "login successfully😊" });
 };
 
 module.exports = { Register, Login };
