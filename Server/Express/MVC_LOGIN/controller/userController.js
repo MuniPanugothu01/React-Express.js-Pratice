@@ -23,6 +23,9 @@ const comparedPass = async (password, hashedpassword) => {
 const Register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
+    const picture = req.file?.path;
+    console.log(picture, "pic");
+
     if (!name || !email || !password) {
       return res.status(400).send({ message: "fill all detials" });
     }
@@ -35,7 +38,12 @@ const Register = async (req, res) => {
 
     const passEncrypted = await Encryptedpass(password);
 
-    const newUser = new userModel({ email, name, password: passEncrypted });
+    const newUser = new userModel({
+      email,
+      name,
+      password: passEncrypted,
+      profilePic: picture,
+    });
     await newUser.save();
 
     res.status(200).send({ message: "register successfully", user: newUser });
