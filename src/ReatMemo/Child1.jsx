@@ -10,4 +10,4 @@ const Child1 = (props) => {
   )
 }
 
-export default memo(Child1)
+export default React.memo(Child1)

@@ -6,7 +6,7 @@ const Parent = () => {
   const [count, setCount] = useState(0);
 
   // handleClick function
-  const handleClick = () => {
+  const UpdateParent = () => {
     setCount(count + 1);
   };
 
@@ -18,10 +18,10 @@ const Parent = () => {
       <h1>Parent Component!</h1>
       <p>parent count: {count}</p>
 
-      <Child1 value={count}/>
-      <Child2 value={count}/>
+      <Child1 value={1}/>
+      <Child2 value={2}/>
 
-      <button onClick={handleClick}>Click</button>
+      <button onClick={UpdateParent}>UpdateParent</button>
     </>
   );
 };
