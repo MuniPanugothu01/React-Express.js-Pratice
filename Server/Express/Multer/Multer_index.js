@@ -1,21 +1,27 @@
-const express = require('express');
-const app = express()
+const express = require("express");
+const app = express();
+const multer = require("multer");
+// middle ware urlencoded
+app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/form.html'); // serve the HTML form
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, __dirname);
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({
+  storage: storage,
 });
 
-app.post('/upload',(req,res)=>{
-    console.log(req.body);
-    res.status(201).send(req.body)
-    
-})
+app.post("/upload", upload.single("image"), (req, res) => {
+  console.log(req.file);
+  res.send(req.file);
+});
 
-const PORT = 3002;
-app.listen(PORT,()=>{
-    console.log(`port is connected ${PORT}`);
-    
-})
+let PORT = 3002;
+app.listen(PORT, () => {
+  console.log(`port is connected ${PORT}`);
+});
