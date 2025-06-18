@@ -71,6 +71,12 @@ import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 // Browser Component
 import Browser from "./BrowserRoutes/Browser.jsx";
 
+
+
+
+// React.memo
+import Parent from "./ReatMemo/Parent.jsx";
+
 function App() {
   return (
     <>
@@ -116,7 +122,7 @@ function App() {
       {/* <BackgroundTheme /> */}
       {/* <MultipleColor/> */}
       {/* <SetintervalMultiple /> */}
-      <StartColorStop />
+      {/* <StartColorStop /> */}
 
       {/* <CardFakeAPI/> */}
 
@@ -155,6 +161,13 @@ function App() {
 
       {/* BrowserRouters */}
       {/* <Browser /> */}
+
+
+
+{/* Ract.memo */}
+<Parent/>
+
+
     </>
   );
 }
