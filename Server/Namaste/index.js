@@ -6,12 +6,17 @@ app.use(
   "/user",
   (req, res, next) => {
     console.log("response");
-    // res.send('response')
+    next();
+    // res.send("response");
+  },
+  (req, res, next) => {
+    console.log("response2");
+    // res.send("response2");
     next();
   },
-  (req, res) => {
-    console.log("response2");
-    res.send("response2");
+  (req, res, next) => {
+    console.log("response3");
+    res.send("response3");
   }
 );
 
