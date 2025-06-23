@@ -11,6 +11,10 @@ app.post("/admin/about", (req, res) => {
   res.status(201).send("about section");
 });
 
+app.get("/user/login", (req, res) => {
+  res.status(200).send({ status: 200, messsage: "login successfully!" });
+});
+
 let PORT = 3002;
 app.listen(PORT, () => {
   console.log(`port is connected ${PORT}`);

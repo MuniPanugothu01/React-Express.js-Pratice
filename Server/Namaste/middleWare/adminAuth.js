@@ -9,8 +9,16 @@ const adminAuth = (req, res, next) => {
   }
 };
 
+// user middleware
 const userAuth = (req, res, next) => {
   console.log("user auth is getting checked!");
+  const token = "xyz";
+  const userauthorized = token === "xyz";
+  if (!userauthorized) {
+    res.status(401).send("user is not authorized");
+  } else {
+    next();
+  }
 };
 
 module.exports = {
