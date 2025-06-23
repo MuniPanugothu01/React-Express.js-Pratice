@@ -1,5 +1,5 @@
 const express = require("express");
-const { adminAuth } = require("./middleWare/adminAuth");
+const { adminAuth, userAuth } = require("./middleWare/adminAuth");
 const app = express();
 
 app.use("/admin", adminAuth);
@@ -9,6 +9,14 @@ app.get("/admin/home", (req, res) => {
 });
 app.post("/admin/about", (req, res) => {
   res.status(201).send("about section");
+});
+
+app.get("/user/home", userAuth, (req, res) => {
+  res.status(200).send({ status: 200, messsage: "home section for user" });
+});
+
+app.put("/user/about", (req, res) => {
+  res.status(200).send({ status: 201, messsage: "about section for user" });
 });
 
 app.get("/user/login", (req, res) => {
