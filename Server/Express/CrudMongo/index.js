@@ -71,7 +71,6 @@ app.put("/post/:id", async (req, res) => {
   }
 });
 
-
 // PATCH Method
 app.patch("/post/:id", async (req, res) => {
   try {
