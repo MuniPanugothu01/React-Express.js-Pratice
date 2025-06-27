@@ -12,3 +12,7 @@ ConnectDB()
   .catch((err) => {
     console.log("mongodb is not connected!!");
   });
+
+  module.exports = {
+    ConnectDB
+  }
