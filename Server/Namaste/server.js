@@ -1,13 +1,16 @@
 const express = require("express");
 const app = express();
 const {ConnectDB} =  require("./config/database.js");
-const e = require("express");
 ConnectDB()
+
+// middleware
+app.use(express.json())
 
 
 app.post('/user',async(req,res)=>{
   let body = req.body
   console.log(body)
+  res.status(200).send({status:200,message:body})
 })
 
 
