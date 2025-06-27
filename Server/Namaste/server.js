@@ -9,7 +9,7 @@ const { UserModel } = require("./models/user.js");
 app.use(express.json());
 
 app.post("/user", async (req, res) => {
-  const { firstName, lastName, email, age, gender } = req.body;
+  const { firstName, lastName, email,password ,age, gender,_id } = req.body;
   try {
     const NewData = new UserModel({
       firstName,
@@ -17,6 +17,8 @@ app.post("/user", async (req, res) => {
       email,
       age,
       gender,
+      password,
+      _id
     });
     console.log("new data", NewData);
     await NewData.save();
