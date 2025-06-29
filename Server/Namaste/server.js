@@ -8,7 +8,7 @@ const { UserModel } = require("./models/user.js");
 // middleware
 app.use(express.json());
 
-app.post("/user", async (req, res) => {
+app.post("/signup", async (req, res) => {
   const { firstName, lastName, email,password ,age, gender, } = req.body;
   try {
     const NewData = new UserModel({
