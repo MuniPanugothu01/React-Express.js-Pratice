@@ -4,17 +4,18 @@ const { ConnectDB } = require("./config/database.js");
 ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
+const { get } = require("mongoose");
 
 // middleware
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  const { firstName, lastName, email, password, age, gender } = req.body;
+  const { firstName, lastName, emailId, password, age, gender } = req.body;
   try {
     const NewData = new UserModel({
       firstName,
       lastName,
-      email,
+      emailId,
       age,
       gender,
       password,
@@ -36,6 +37,22 @@ app.get("/signdata", async (req, res) => {
   } catch (error) {
     console.log(error.message);
     res.status(400).send({ status: 400, message: "data not found" });
+  }
+});
+
+// find the specific data with the help of email
+app.get("/userEmail", async (req, res) => {
+  // let userEmail = req.body.emailId;
+  try {
+    let getEmail = await UserModel.find({ emailId: req.body.emailId });
+    if (!getEmail) {
+      res.status(404).send({ status: 404, message: "user is not found here!" });
+    }
+    res.status(200).send(getEmail);
+    console.log("user mail", getEmail);
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ message: "something went wrong!" });
   }
 });
 
