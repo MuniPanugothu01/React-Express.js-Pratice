@@ -9,7 +9,7 @@ const { UserModel } = require("./models/user.js");
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  const { firstName, lastName, email,password ,age, gender, } = req.body;
+  const { firstName, lastName, email, password, age, gender } = req.body;
   try {
     const NewData = new UserModel({
       firstName,
@@ -25,6 +25,17 @@ app.post("/signup", async (req, res) => {
   } catch (error) {
     console.log("try block", error.message);
     res.status(500).send({ status: 500, message: "server error" });
+  }
+});
+
+// get the data from mongodb
+app.get("/signdata", async (req, res) => {
+  try {
+    const getData = await UserModel.find();
+    res.status(200).send({ status: 200, message: getData });
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ status: 400, message: "data not found" });
   }
 });
 
