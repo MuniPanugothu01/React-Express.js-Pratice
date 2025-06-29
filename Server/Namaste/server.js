@@ -44,12 +44,12 @@ app.get("/signdata", async (req, res) => {
 app.get("/userEmail", async (req, res) => {
   // let userEmail = req.body.emailId;
   try {
-    let getEmail = await UserModel.find({ emailId: req.body.emailId });
-    if (getEmail.length === 0) {
+    let Users = await UserModel.find({ emailId: req.body.emailId });
+    if (Users.length === 0) {
       res.status(404).send({ status: 404, message: "user is not found here!" });
     }
-    res.status(200).send(getEmail);
-    console.log("user mail", getEmail);
+    res.status(200).send(Users);
+    console.log("user mail", Users);
   } catch (error) {
     console.log(error.message);
     res.status(400).send({ message: "something went wrong!" });
