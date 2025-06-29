@@ -18,7 +18,6 @@ app.post("/signup", async (req, res) => {
       age,
       gender,
       password,
-   
     });
     console.log("new data", NewData);
     await NewData.save();
