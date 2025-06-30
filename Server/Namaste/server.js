@@ -4,8 +4,7 @@ const { ConnectDB } = require("./config/database.js");
 ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
-const { get } = require("mongoose");
-const { use } = require("react");
+const mongoose = require("mongoose");
 
 // middleware
 app.use(express.json());
@@ -65,10 +64,43 @@ app.get("/userOne", async (req, res) => {
   try {
     let user = await UserModel.findOne({ emailId: getEmail });
     res.status(200).send({ status: 200, message: user });
-    console.log('get the userOne',user)
+    console.log("get the userOne", user);
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ status: 500, message: "internal server error" });
+  }
+});
+
+// find the data through Id
+app.get("/userId/:id", async (req, res) => {
+  let Id = req.params.id;
+  // Validate ObjectId
+  if (!mongoose.Types.ObjectId.isValid(Id)) {
+    return res.status(400).send({ status: 400, message: "Invalid ID format" });
+  }
+  try {
+    let findId = await UserModel.findById(Id);
+    if (!findId) {
+      res.status(404).send({ status: 404, message: "data not found" });
+    } else {
+      res.status(200).send({ status: 200, message: findId });
+    }
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ status: 500, message: "server error" });
+  }
+});
+
+// Delete the data the user to mongodb, doing my way
+app.delete("/userDeleta/:id", async (req, res) => {
+  let dataDelete = req.params.id;
+  try {
+    const userDelete = await UserModel.findByIdAndDelete(dataDelete);
+    res.status(200).send({ status: 200, message: "user deleted successfully" });
+    console.log('deleted!',userDelete)
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ status: 400, message: "something went wrong!" });
   }
 });
 
