@@ -128,6 +128,9 @@ app.delete("/deleteUser", async (req, res) => {
 
 // PATCH method, update the data
 app.patch("/user/:id", async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).send({ status: 400, message: "invalid Id" });
+  }
   try {
     const updateData = await UserModel.findByIdAndUpdate(
       req.params.id,
@@ -136,10 +139,14 @@ app.patch("/user/:id", async (req, res) => {
         new: true,
       }
     );
-    console.log("before", updateData);
-    res
-      .status(200)
-      .send({ status: 200, message: "data updated successfully!" });
+    if (!updateData) {
+      res.status(200).send({ status: 200, message: "not found data" });
+    } else {
+      console.log("before", updateData);
+      res
+        .status(200)
+        .send({ status: 200, message: "data updated successfully!" });
+    }
   } catch (error) {
     console.log(error.message);
     res.status(400).send({ status: 400, message: "internal server error!" });
