@@ -5,6 +5,7 @@ ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
 const mongoose = require("mongoose");
+const { use } = require("react");
 
 // middleware
 app.use(express.json());
@@ -102,9 +103,7 @@ app.delete("/userDeleta/:id", async (req, res) => {
     if (!userDelete) {
       res.status(404).send({ status: 404, message: "user not found here!" });
     } else {
-      res
-        .status(200)
-        .send({ status: 200, message: "user deleted successfully" });
+      res.status(204).send({ status: 204, message: userDelete });
       console.log("deleted!", userDelete);
     }
   } catch (error) {
@@ -113,7 +112,19 @@ app.delete("/userDeleta/:id", async (req, res) => {
   }
 });
 
-// another way to send the userId to body thorugh delete the user
+// another way to send the userId to body thorugh delete the user, id we can send to body though we can delete the data
+app.delete("/deleteUser", async (req, res) => {
+  let userId = req.body.userId;
+  try {
+    const userDelete = await UserModel.findByIdAndDelete(userId);
+    // const userDelete = await UserModel.findByIdAndDelete({ _id: userId });
+    res.status(204).send({ status: 204, message: "user deleted successfully" });
+    console.log(userDelete);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ status: 500, message: "internal server error" });
+  }
+});
 
 let PORT = 3003;
 app.listen(PORT, () => {
