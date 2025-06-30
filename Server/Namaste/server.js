@@ -12,7 +12,10 @@ app.use(express.json());
 
 app.post("/signup", async (req, res) => {
   const { firstName, lastName, emailId, password, age, gender } = req.body;
+ 
+
   try {
+  
     const NewData = new UserModel({
       firstName,
       lastName,
@@ -21,12 +24,18 @@ app.post("/signup", async (req, res) => {
       gender,
       password,
     });
+
     console.log("new data", NewData);
-    await NewData.save();
+    const userSaved = await NewData.save();
+    if(!userSaved){
+        throw new Error("email should be uniquee")
+    }
     res.status(200).send({ status: 200, message: NewData });
   } catch (error) {
     console.log("try block", error.message);
-    res.status(500).send({ status: 500, message: "server error" });
+    res
+      .status(500)
+      .send({ status: 500, errorFacing: "server error" + error.message });
   }
 });
 
@@ -47,14 +56,15 @@ app.get("/userEmail", async (req, res) => {
   try {
     let Users = await UserModel.find({ emailId: req.body.emailId });
     if (Users.length === 0) {
+      //  throw new Error("User Not fround !")
       res.status(404).send({ status: 404, message: "user is not found here!" });
     } else {
       res.status(200).send(Users);
       console.log("user mail", Users);
     }
   } catch (error) {
-    console.log(error.message);
-    res.status(400).send({ status: 400, message: "something went wrong!" });
+    console.log("throw", error.message);
+    res.status(400).send(error.message);
   }
 });
 
@@ -176,7 +186,7 @@ app.patch("/useremail", async (req, res) => {
   try {
     const emailUpdate = await UserModel.findOneAndUpdate(
       { emailId: email },
-      data  
+      data
     );
     console.log("updated the email", emailUpdate);
     res.status(200).send({ status: 200, message: "data updated successfully" });
