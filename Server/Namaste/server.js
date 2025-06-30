@@ -29,10 +29,10 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// get the data from mongodb
+// get the all data from mongodb
 app.get("/signdata", async (req, res) => {
   try {
-    const getData = await UserModel.find();
+    const getData = await UserModel.find({});
     res.status(200).send({ status: 200, message: getData });
   } catch (error) {
     console.log(error.message);
@@ -40,7 +40,7 @@ app.get("/signdata", async (req, res) => {
   }
 });
 
-// find the specific data with the help of email
+// find the specific data with the help of email, while using the find()
 app.get("/userEmail", async (req, res) => {
   // let userEmail = req.body.emailId;
   try {
@@ -56,6 +56,10 @@ app.get("/userEmail", async (req, res) => {
     res.status(400).send({ status: 400, message: "something went wrong!" });
   }
 });
+
+// to get the while using the findOne() 
+
+
 
 let PORT = 3003;
 app.listen(PORT, () => {
