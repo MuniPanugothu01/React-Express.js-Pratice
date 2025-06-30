@@ -94,15 +94,26 @@ app.get("/userId/:id", async (req, res) => {
 // Delete the data the user to mongodb, doing my way
 app.delete("/userDeleta/:id", async (req, res) => {
   let dataDelete = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(dataDelete)) {
+    res.status(400).send({ status: 400, message: "invlaid id" });
+  }
   try {
     const userDelete = await UserModel.findByIdAndDelete(dataDelete);
-    res.status(200).send({ status: 200, message: "user deleted successfully" });
-    console.log('deleted!',userDelete)
+    if (!userDelete) {
+      res.status(404).send({ status: 404, message: "user not found here!" });
+    } else {
+      res
+        .status(200)
+        .send({ status: 200, message: "user deleted successfully" });
+      console.log("deleted!", userDelete);
+    }
   } catch (error) {
     console.log(error.message);
     res.status(400).send({ status: 400, message: "something went wrong!" });
   }
 });
+
+// another way to send the userId to body thorugh delete the user
 
 let PORT = 3003;
 app.listen(PORT, () => {
