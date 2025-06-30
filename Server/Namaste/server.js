@@ -5,6 +5,7 @@ ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
 const { get } = require("mongoose");
+const { use } = require("react");
 
 // middleware
 app.use(express.json());
@@ -57,9 +58,19 @@ app.get("/userEmail", async (req, res) => {
   }
 });
 
-// to get the while using the findOne() 
+// to get the while using the findOne()
 
-
+app.get("/userOne", async (req, res) => {
+  let getEmail = req.body.emailId;
+  try {
+    let user = await UserModel.findOne({ emailId: getEmail });
+    res.status(200).send({ status: 200, message: user });
+    console.log('get the userOne',user)
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ status: 500, message: "internal server error" });
+  }
+});
 
 let PORT = 3003;
 app.listen(PORT, () => {
