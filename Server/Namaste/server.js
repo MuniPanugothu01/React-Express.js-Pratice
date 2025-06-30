@@ -169,6 +169,23 @@ app.patch("/userUpdate", async (req, res) => {
   }
 });
 
+// Task-- update the user data through emailId
+app.patch("/useremail", async (req, res) => {
+  let email = req.body.emailId;
+  let data = req.body;
+  try {
+    const emailUpdate = await UserModel.findOneAndUpdate(
+      { emailId: email },
+      data  
+    );
+    console.log("updated the email", emailUpdate);
+    res.status(200).send({ status: 200, message: "data updated successfully" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ status: 400, message: "internal server error" });
+  }
+});
+
 let PORT = 3003;
 app.listen(PORT, () => {
   console.log(`port is running with ${PORT}`);
