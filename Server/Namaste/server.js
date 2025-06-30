@@ -126,10 +126,41 @@ app.delete("/deleteUser", async (req, res) => {
   }
 });
 
+// PATCH method, update the data
+app.patch("/user/:id", async (req, res) => {
+  try {
+    const updateData = await UserModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    console.log("before", updateData);
+    res
+      .status(200)
+      .send({ status: 200, message: "data updated successfully!" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ status: 400, message: "internal server error!" });
+  }
+});
 
-
-
-
+// another to update the data, PATCH
+app.patch("/userUpdate", async (req, res) => {
+  let userId = req.body.userId;
+  let data = req.body;
+  try {
+    let UpdateData = await UserModel.findByIdAndUpdate({ _id: userId }, data);
+    console.log("updated", UpdateData);
+    res
+      .status(204)
+      .send({ status: 204, message: "data updated successfully!" });
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({ status: 400, message: "internal server error" });
+  }
+});
 
 let PORT = 3003;
 app.listen(PORT, () => {
