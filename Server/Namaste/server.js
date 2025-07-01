@@ -150,17 +150,15 @@ app.delete("/deleteUser", async (req, res) => {
 // PATCH method, update the data
 app.patch("/user/:id", async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    return res.status(400).send({ status: 400, message: "invalid Id mongoId" });
+  return res.status(400).send({ status: 400, message: "invalid Id mongoId" });
   }
   try {
     const updateData = await UserModel.findByIdAndUpdate(
       req.params.id,
-      { $set: req.body },
+      req.body,
       {
         run: true,
         runValidators: true,
-        context: "query",
-        strict: true,
       }
     );
     if (!updateData) {
@@ -173,7 +171,7 @@ app.patch("/user/:id", async (req, res) => {
     }
   } catch (error) {
     console.log(error.message);
-    return res.status(400).send({
+    res.status(400).send({
       status: 400,
       errorFacing: "internal server error! " + error.message,
     });
