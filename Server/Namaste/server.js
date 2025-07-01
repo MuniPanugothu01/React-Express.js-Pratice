@@ -179,7 +179,9 @@ app.patch("/userUpdate", async (req, res) => {
   let userId = req.body.userId;
   let data = req.body;
   try {
-    let UpdateData = await UserModel.findByIdAndUpdate({ _id: userId }, data);
+    let UpdateData = await UserModel.findByIdAndUpdate({ _id: userId }, data,{
+      runValidators:true,
+    });
     console.log("updated", UpdateData);
     res
       .status(204)
