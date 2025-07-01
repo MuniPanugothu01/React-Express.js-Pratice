@@ -11,11 +11,19 @@ const { use } = require("react");
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  const { firstName, lastName, emailId, password, age, gender } = req.body;
- 
+  const {
+    firstName,
+    lastName,
+    emailId,
+    password,
+    age,
+    gender,
+    photoUrl,
+    about,
+    skills,
+  } = req.body;
 
   try {
-  
     const NewData = new UserModel({
       firstName,
       lastName,
@@ -23,12 +31,15 @@ app.post("/signup", async (req, res) => {
       age,
       gender,
       password,
+      photoUrl,
+      about,
+      skills,
     });
 
     console.log("new data", NewData);
     const userSaved = await NewData.save();
-    if(!userSaved){
-        throw new Error("email should be uniquee")
+    if (!userSaved) {
+      throw new Error("email should be uniquee");
     }
     res.status(200).send({ status: 200, message: NewData });
   } catch (error) {
