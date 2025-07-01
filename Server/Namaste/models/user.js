@@ -4,8 +4,8 @@ const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    minLength:2,
-    maxLength:10,
+    minLength: 2,
+    maxLength: 10,
   },
   lastName: {
     type: String,
@@ -14,9 +14,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    trim:true,
-    lowercase:true,
-  
+    trim: true,
+    lowercase: true,
   },
   password: {
     type: String,
@@ -28,6 +27,11 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
+    validate(value) {
+      if (!["male", "felame", "others"].includes(value)) {
+        throw new Error("gender is not validate");
+      }
+    },
   },
   photoUrl: {
     type: String,
