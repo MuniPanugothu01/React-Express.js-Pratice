@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    trim: true, // if user can give space it remove the spaces
   },
   age: {
     type: Number,
@@ -27,6 +28,8 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
+    lowercase: true,
+    trim: true,
     validate(value) {
       if (!["male", "felame", "others"].includes(value)) {
         throw new Error("gender is not validate");

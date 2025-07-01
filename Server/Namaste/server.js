@@ -170,7 +170,7 @@ app.patch("/user/:id", async (req, res) => {
     }
   } catch (error) {
     console.log(error.message);
-    res.status(400).send({ status: 400, message: "internal server error!" });
+    res.status(400).send({ status: 400, errorFacing: "internal server error!"+error.message });
   }
 });
 
