@@ -170,6 +170,11 @@ app.patch("/user/:id", async (req, res) => {
       throw new Error("cant update the fileds!");
     }
 
+    // skills validations
+    if (req.body?.skills.length > 10) {
+      throw new Error("cant give more than 10 skills");
+    }
+
     const updateData = await UserModel.findByIdAndUpdate(
       req.params?.id,
       req.body,
