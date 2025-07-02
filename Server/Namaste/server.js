@@ -150,9 +150,26 @@ app.delete("/deleteUser", async (req, res) => {
 // PATCH method, update the data
 app.patch("/user/:id", async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-  return res.status(400).send({ status: 400, message: "invalid Id mongoId" });
+    return res.status(400).send({ status: 400, message: "invalid Id mongoId" });
   }
   try {
+    // API validation, user can't change the every validation
+    const ALLOWED_UPDATES = [
+      "lastName",
+      "about",
+      "gender",
+      "skills",
+      "age",
+      "photoUrl",
+    ];
+
+    const isUpdateAllowed = Object.keys(req.body).every((key) =>
+      ALLOWED_UPDATES.includes(key)
+    );
+    if (!isUpdateAllowed) {
+      throw new Error("cant update the fileds!");
+    }
+
     const updateData = await UserModel.findByIdAndUpdate(
       req.params?.id,
       req.body,
