@@ -68,7 +68,8 @@ app.get("/userEmail", async (req, res) => {
     let Users = await UserModel.find({ emailId: req.body.emailId });
     if (Users.length === 0) {
       //  throw new Error("User Not fround !")
-      res.status(404).send({ status: 404, message: "user is not found here!" });
+      // res.status(404).send({ status: 404, message: "user is not found here!" });
+    throw new Error("user is not found! Email")
     } else {
       res.status(200).send(Users);
       console.log("user mail", Users);
