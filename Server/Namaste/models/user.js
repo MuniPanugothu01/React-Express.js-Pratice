@@ -26,7 +26,9 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      trim: true, // if user can give space it remove the spaces
+      trim: true, // if user can give space it remove the spaces,
+      minLength: 3,
+      maxLength: 10,
     },
     age: {
       type: Number,

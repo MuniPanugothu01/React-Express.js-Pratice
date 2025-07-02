@@ -24,6 +24,15 @@ app.post("/signup", async (req, res) => {
   } = req.body;
 
   try {
+    // skills validation
+    if (req.body?.skills.length > 10) {
+      throw new Error("skills cant enter the more than 10!");
+    }
+    // password validation
+    // if (!req.body?.password || req.body.password.length <= 3) {
+    //   throw new Error("password length must greater than 3 characters");
+    // }
+
     const NewData = new UserModel({
       firstName,
       lastName,
@@ -69,7 +78,7 @@ app.get("/userEmail", async (req, res) => {
     if (Users.length === 0) {
       //  throw new Error("User Not fround !")
       // res.status(404).send({ status: 404, message: "user is not found here!" });
-    throw new Error("user is not found! Email")
+      throw new Error("user is not found! Email");
     } else {
       res.status(200).send(Users);
       console.log("user mail", Users);
@@ -172,9 +181,9 @@ app.patch("/user/:id", async (req, res) => {
     }
 
     // skills validations
-    if (req.body?.skills.length > 10) {
-      throw new Error("cant give more than 10 skills");
-    }
+    // if (req.body?.skills.length > 10) {
+    //   throw new Error("cant give more than 10 skills");
+    // }
 
     const updateData = await UserModel.findByIdAndUpdate(
       req.params?.id,
