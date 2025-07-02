@@ -5,7 +5,7 @@ ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
 const mongoose = require("mongoose");
-const { use } = require("react");
+
 
 // middleware
 app.use(express.json());
