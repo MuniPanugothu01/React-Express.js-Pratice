@@ -36,6 +36,25 @@ const userSchema = new mongoose.Schema(
       trim: true, // if user can give space it remove the spaces,
       minLength: 3,
       maxLength: 10,
+      minLowercase: 1,
+      minUppercase: 1,
+      minNumbers: 1,
+      maxNumbers: 3,
+      minSymbols: 1,
+      maxSymbols: 2,
+      validate(value) {
+        if (!validator.isStrongPassword(value, options)) {
+          throw new Error(
+            `Please enter a valid password! Requirements:
+      - Min lowercase: ${options.minLowercase}
+      - Min uppercase: ${options.minUppercase}
+      - Min numbers: ${options.minNumbers}
+      - Min symbols: ${options.minSymbols}
+      - Min length: ${options.minLength}
+      \nEntered password: ${value}`
+          );
+        }
+      },
     },
     age: {
       type: Number,
