@@ -154,7 +154,7 @@ app.patch("/user/:id", async (req, res) => {
   }
   try {
     const updateData = await UserModel.findByIdAndUpdate(
-      req.params.id,
+      req.params?.id,
       req.body,
       {
         run: true,
