@@ -7,6 +7,13 @@ const userSchema = new mongoose.Schema(
       required: true,
       minLength: 2,
       maxLength: 10,
+      validate(value) {
+        if (!validator.isAlpha(value, "en-US")) {
+          throw new Error(
+            "value must contains only in letters A-Z or a-z" + value
+          );
+        }
+      },
     },
     lastName: {
       type: String,
@@ -19,7 +26,7 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       validate(value) {
         if (!validator.isEmail(value)) {
-          throw new Error("Invalid Email address!");
+          throw new Error("Invalid Email address!" + value);
         }
       },
     },
@@ -50,6 +57,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       default:
         "https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740",
+      validate(value) {
+        if (!validator.isURL(value)) {
+          throw new Error("Invalid Url address!" + value);
+        }
+      },
     },
     about: {
       type: String,
