@@ -7,15 +7,13 @@ const { UserModel } = require("./models/user.js");
 const mongoose = require("mongoose");
 // import the utils
 const { valideSignUpData } = require("./utils/validations.js");
+// Validator function
+const validator = require("validator");
 // bcrypt
 const bcrypt = require("bcrypt");
 
 // middleware
 app.use(express.json());
-
-
-
-
 
 app.post("/signup", async (req, res) => {
   try {
@@ -69,6 +67,30 @@ app.post("/signup", async (req, res) => {
   } catch (error) {
     console.log("try block", error.message);
     res.status(500).send("Error: " + error.message);
+  }
+});
+
+// Login API
+app.post("/login", async (req, res) => {
+  const { emailId, password } = req.body;
+  try {
+    if (!emailId) {
+      throw new Error("enter the all fields");
+    }
+
+    if (!validator.isEmail(emailId)) {
+      throw new Error("Invalid emailId");
+    }
+    // Check if user exists
+    const MailCheck = await UserModel.findOne({ emailId });
+    if (!MailCheck) {
+      throw new Error("Invalid mail address!");
+    }
+
+    res.send({ status: 200, message: "login successfully" });
+  } catch (error) {
+    console.log("Login ERROR:", error.message);
+    res.send("ERROR:" + error.message);
   }
 });
 
