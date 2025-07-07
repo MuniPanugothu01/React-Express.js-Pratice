@@ -13,6 +13,10 @@ const validator = require("validator");
 const bcrypt = require("bcrypt");
 // cookieparser
 const cookieparser = require("cookie-parser");
+// jwt
+const jwt = require("jsonwebtoken")
+
+
 
 // middleware
 app.use(express.json());
@@ -93,9 +97,11 @@ app.post("/login", async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, users.password);
     if (isPasswordValid) {
       // create the jwt token
+      const token = await jwt.sign({ _id: users._id }, "dev@tendirproject");
+      console.log("toke generated!", token);
 
       // add the token to cookies and send the response back to the user
-      res.cookie("token", "askljdhfoiueyrohmxidfeworygfcmsdyfng");
+      res.cookie("token", token);
       res.status(200).send({ status: 200, message: "login successfully!🎉" });
     } else {
       throw new Error("password is not Valid!");
