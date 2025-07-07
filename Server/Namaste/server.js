@@ -11,10 +11,15 @@ const { valideSignUpData } = require("./utils/validations.js");
 const validator = require("validator");
 // bcrypt
 const bcrypt = require("bcrypt");
-const { use } = require("react");
+// cookieparser
+const cookieparser = require("cookie-parser");
+
 
 // middleware
 app.use(express.json());
+app.use(cookieparser())
+
+
 
 app.post("/signup", async (req, res) => {
   try {
