@@ -12,24 +12,24 @@ const { valideSignUpData } = require("./utils/validations.js");
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  // validation of data
-  valideSignUpData(req);
-
-  // Encrypet the password
-
-  const {
-    firstName,
-    lastName,
-    emailId,
-    password,
-    age,
-    gender,
-    photoUrl,
-    about,
-    skills,
-  } = req.body;
-
   try {
+    // validation of data
+    valideSignUpData(req);
+
+    // Encrypet the password
+
+    const {
+      firstName,
+      lastName,
+      emailId,
+      password,
+      age,
+      gender,
+      photoUrl,
+      about,
+      skills,
+    } = req.body;
+
     // skills validation
     if (req.body?.skills.length > 10) {
       throw new Error("skills cant enter the more than 10!");
