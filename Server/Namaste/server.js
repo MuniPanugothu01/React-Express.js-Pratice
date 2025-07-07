@@ -12,8 +12,10 @@ const { valideSignUpData } = require("./utils/validations.js");
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  // validation
+  // validation of data
   valideSignUpData(req);
+
+  // Encrypet the password
 
   const {
     firstName,
@@ -57,9 +59,7 @@ app.post("/signup", async (req, res) => {
     res.status(200).send({ status: 200, message: NewData });
   } catch (error) {
     console.log("try block", error.message);
-    res
-      .status(500)
-      .send({ status: 500, errorFacing: "server error" + error.message });
+    res.status(500).send("Error: " + error.message);
   }
 });
 
