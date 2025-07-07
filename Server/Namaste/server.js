@@ -14,12 +14,9 @@ const bcrypt = require("bcrypt");
 // cookieparser
 const cookieparser = require("cookie-parser");
 
-
 // middleware
 app.use(express.json());
 app.use(cookieparser());
-
-
 
 app.post("/signup", async (req, res) => {
   try {
@@ -94,18 +91,24 @@ app.post("/login", async (req, res) => {
     }
     // compare password
     const isPasswordValid = await bcrypt.compare(password, users.password);
-    // if (isPasswordValid) {
-    //   res.send({ status: 200, message: "login successfully" });
-    // } else {
-    //   throw new Error("password is not Valid!");
-    // }
+    if (isPasswordValid) {
+
+// create the jwt token
+
+
+
+      // add the token to cookies and send the response back to the user
+      res.cookie("token", "askljdhfoiueyrohmxidfeworygfcmsdyfng");
+      res.status(200).send({ status: 200, message: "login successfully!🎉" });
+    } else {
+      throw new Error("password is not Valid!");
+    }
 
     // another to find the passowrd logic
-    if (!isPasswordValid) {
-      throw new Error("Invalid Passowrd credentials!");
-    }
-    res.cookie("token", "askljdhfoiueyrohmxidfeworygfcmsdyfng");
-    res.status(200).send({ status: 200, message: "login successfully!🎉" });
+    // if (!isPasswordValid) {
+    //   throw new Error("Invalid Passowrd credentials!");
+    // }
+    // res.status(200).send({ status: 200, message: "login successfully!🎉" });
   } catch (error) {
     console.log("Login ERROR:", error.message);
     res.send("ERROR:" + error.message);
@@ -113,16 +116,13 @@ app.post("/login", async (req, res) => {
 });
 
 // get the profile
-app.get('/profile',async(req,res)=>{
-  const cookies = req.cookies
-  console.log(cookies)
+app.get("/profile", async (req, res) => {
+  const cookies = req.cookies;
+  console.log(cookies);
   // validate the tokens
-  const {token} = cookies;
-  res.send("reading the cookies")
-})
-
-
-
+  const { token } = cookies;
+  res.send("reading the cookies");
+});
 
 // get the all data from mongodb
 app.get("/signdata", async (req, res) => {
