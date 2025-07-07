@@ -107,6 +107,16 @@ app.post("/login", async (req, res) => {
   }
 });
 
+// get the profile
+app.get('/profile',async(req,res)=>{
+  const cookie = req.cookies
+  console.log(cookie)
+  res.send("reading the cookies")
+})
+
+
+
+
 // get the all data from mongodb
 app.get("/signdata", async (req, res) => {
   try {
