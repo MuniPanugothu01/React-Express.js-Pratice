@@ -99,6 +99,7 @@ app.post("/login", async (req, res) => {
     if (!isPasswordValid) {
       throw new Error("Invalid Passowrd credentials!");
     }
+    res.cookie("token", "askljdhfoiueyrohmxidfeworygfcmsdyfng");
     res.status(200).send({ status: 200, message: "login successfully!🎉" });
   } catch (error) {
     console.log("Login ERROR:", error.message);
