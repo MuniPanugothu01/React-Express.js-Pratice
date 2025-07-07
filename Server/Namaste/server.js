@@ -97,7 +97,7 @@ app.post("/login", async (req, res) => {
 
     // another to find the passowrd logic
     if (!isPasswordValid) {
-      throw new Error("Invalid Password");
+      throw new Error("Password is not correct!");
     }
     res.status(200).send({ status: 200, message: "login successfully!🎉" });
   } catch (error) {
