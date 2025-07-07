@@ -5,12 +5,16 @@ ConnectDB();
 // import model
 const { UserModel } = require("./models/user.js");
 const mongoose = require("mongoose");
-
+// import the utils
+const { valideSignUpData } = require("./utils/validations.js");
 
 // middleware
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
+  // validation
+  valideSignUpData(req);
+
   const {
     firstName,
     lastName,
