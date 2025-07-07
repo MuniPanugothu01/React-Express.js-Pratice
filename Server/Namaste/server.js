@@ -85,7 +85,7 @@ app.post("/login", async (req, res) => {
     // Check if user exists
     const users = await UserModel.findOne({ emailId });
     if (!users) {
-      throw new Error("EmailId is not present in mongoDB!");
+      throw new Error("EmailId credentials!");
     }
     // compare password
     const isPasswordValid = await bcrypt.compare(password, users.password);
@@ -97,7 +97,7 @@ app.post("/login", async (req, res) => {
 
     // another to find the passowrd logic
     if (!isPasswordValid) {
-      throw new Error("Password is not correct!");
+      throw new Error("Invalid Passowrd credentials!");
     }
     res.status(200).send({ status: 200, message: "login successfully!🎉" });
   } catch (error) {
