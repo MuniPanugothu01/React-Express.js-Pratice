@@ -11,6 +11,7 @@ const { valideSignUpData } = require("./utils/validations.js");
 const validator = require("validator");
 // bcrypt
 const bcrypt = require("bcrypt");
+const { use } = require("react");
 
 // middleware
 app.use(express.json());
@@ -82,12 +83,23 @@ app.post("/login", async (req, res) => {
       throw new Error("Invalid emailId");
     }
     // Check if user exists
-    const MailCheck = await UserModel.findOne({ emailId });
-    if (!MailCheck) {
-      throw new Error("Invalid mail address!");
+    const users = await UserModel.findOne({ emailId });
+    if (!users) {
+      throw new Error("EmailId is not present in mongoDB!");
     }
+    // compare password
+    const isPasswordValid = await bcrypt.compare(password, users.password);
+    // if (isPasswordValid) {
+    //   res.send({ status: 200, message: "login successfully" });
+    // } else {
+    //   throw new Error("password is not Valid!");
+    // }
 
-    res.send({ status: 200, message: "login successfully" });
+    // another to find the passowrd logic
+    if (!isPasswordValid) {
+      throw new Error("Invalid Password");
+    }
+    res.status(200).send({ status: 200, message: "login successfully!🎉" });
   } catch (error) {
     console.log("Login ERROR:", error.message);
     res.send("ERROR:" + error.message);
