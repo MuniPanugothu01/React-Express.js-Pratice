@@ -17,7 +17,7 @@ const cookieparser = require("cookie-parser");
 
 // middleware
 app.use(express.json());
-app.use(cookieparser())
+app.use(cookieparser());
 
 
 
@@ -114,8 +114,10 @@ app.post("/login", async (req, res) => {
 
 // get the profile
 app.get('/profile',async(req,res)=>{
-  const cookie = req.cookies
-  console.log(cookie)
+  const cookies = req.cookies
+  console.log(cookies)
+  // validate the tokens
+  const {token} = cookies;
   res.send("reading the cookies")
 })
 
