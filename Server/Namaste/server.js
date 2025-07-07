@@ -7,16 +7,20 @@ const { UserModel } = require("./models/user.js");
 const mongoose = require("mongoose");
 // import the utils
 const { valideSignUpData } = require("./utils/validations.js");
+// bcrypt
+const bcrypt = require("bcrypt");
 
 // middleware
 app.use(express.json());
+
+
+
+
 
 app.post("/signup", async (req, res) => {
   try {
     // validation of data
     valideSignUpData(req);
-
-    // Encrypet the password
 
     const {
       firstName,
@@ -29,6 +33,11 @@ app.post("/signup", async (req, res) => {
       about,
       skills,
     } = req.body;
+
+    // Encrypet the password
+
+    const hashPassword = await bcrypt.hash(password, 10);
+    console.log("encrypted!", hashPassword);
 
     // skills validation
     if (req.body?.skills.length > 10) {
@@ -45,7 +54,7 @@ app.post("/signup", async (req, res) => {
       emailId,
       age,
       gender,
-      password,
+      password: hashPassword,
       photoUrl,
       about,
       skills,
