@@ -329,6 +329,66 @@ app.patch("/useremail", async (req, res) => {
   }
 });
 
+// task Login and cookies validate the in login api and Profile api
+
+app.post("/praticeLogin", async (req, res) => {
+  try {
+    const { emailId, password } = req.body;
+    if (!emailId || !password) {
+      throw new Error("Enter the all fields in login!");
+    }
+    // validate the emailId, if can enter the worng mailId this condition will execute
+    if (!validator.isEmail(emailId)) {
+      throw new Error("Invalid mailId");
+    }
+    // find the mail is present in mongoDb or not
+    const User = await UserModel.findOne({ emailId });
+    if (!User) {
+      throw new Error("MailIs is not Valid!");
+    }
+    // compare password
+    const PasswordComp = await bcrypt.compare(password, User.password);
+    if (PasswordComp) {
+      // create the jwt token
+      const token = await jwt.sign({ _id: User._id }, "dev@Tinder");
+      console.log("token is:", token);
+      res.cookie("jwttokens", token);
+      res.status(200).send({ status: 200, message: "login successfully!" });
+    } else {
+      throw new Error("Invalid Password!");
+    }
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ stuatus: 500, "ERROR:": error.message });
+  }
+});
+// get profile API Task
+app.get("/TaskProfile", async (req, res) => {
+  try {
+    const cookies = req.cookies;
+    console.log(cookies);
+    // access the jwt token
+    const  token  = cookies.jwttokens;
+    if (!token) {
+      throw new Error("Invalid Tokens!");
+    }
+    // verifyu the tokens
+    const DecodedMesage = await jwt.verify(token, "dev@Tinder");
+    console.log("decoderMsg", DecodedMesage);
+    // to find if the user is present in mongodb or not
+    const { _id } = DecodedMesage;
+    // find user in mongodb
+    const user = await UserModel.findById(_id);
+    if (!user) {
+      throw new Error("user is not present in mongodb");
+    }
+    res.status(200).send({ status: 200, message: user });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ status: 500, "ERROR: ": error.message });
+  }
+});
+
 let PORT = 3003;
 app.listen(PORT, () => {
   console.log(`port is running with ${PORT}`);
