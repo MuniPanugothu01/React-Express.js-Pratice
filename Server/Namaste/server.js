@@ -124,6 +124,11 @@ app.get("/profile", async (req, res) => {
   console.log(cookies);
   // validate the tokens
   const { token } = cookies;
+    const decodedMessage = await jwt.verify(token,"dev@tendirproject");
+    console.log('decodedMessageId', decodedMessage);
+    // find the which user can logged in 
+    const {_id} = decodedMessage;
+    console.log('logged user is:', _id)
   res.send("reading the cookies");
 });
 

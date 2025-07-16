@@ -124,7 +124,7 @@ function App() {
       {/* <SetintervalMultiple /> */}
       {/* <StartColorStop /> */}
 
-      {/* <CardFakeAPI/> */}
+      <CardFakeAPI/>
 
       {/* UseContext */}
       {/* <PropDriling/> */}
@@ -165,7 +165,7 @@ function App() {
 
 
 {/* Ract.memo */}
-<Parent/>
+{/* <Parent/> */}
 
 
     </>
