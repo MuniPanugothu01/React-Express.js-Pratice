@@ -132,11 +132,11 @@ app.get("/profile", async (req, res) => {
     const { _id } = decodedMessage;
     console.log("logged user is:", _id);
     // find the user in mongoDB
-    const user = await User.find(_id);
+    const user = await UserModel.find({ _id });
     if (!user) {
       throw new Error("user is not found!");
     }
-    res.send("reading the cookies");
+    res.status(200).send({ status: 200, "user is:": user });
   } catch (error) {
     console.log(error.message);
     res.status(500).send("Error: " + error.message);
