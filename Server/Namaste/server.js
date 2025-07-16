@@ -14,9 +14,7 @@ const bcrypt = require("bcrypt");
 // cookieparser
 const cookieparser = require("cookie-parser");
 // jwt
-const jwt = require("jsonwebtoken")
-
-
+const jwt = require("jsonwebtoken");
 
 // middleware
 app.use(express.json());
@@ -120,16 +118,29 @@ app.post("/login", async (req, res) => {
 
 // get the profile
 app.get("/profile", async (req, res) => {
-  const cookies = req.cookies;
-  console.log(cookies);
-  // validate the tokens
-  const { token } = cookies;
-    const decodedMessage = await jwt.verify(token,"dev@tendirproject");
-    console.log('decodedMessageId', decodedMessage);
-    // find the which user can logged in 
-    const {_id} = decodedMessage;
-    console.log('logged user is:', _id)
-  res.send("reading the cookies");
+  try {
+    const cookies = req.cookies;
+    console.log(cookies);
+    // validate the tokens
+    const { token } = cookies;
+    if (!token) {
+      throw new Error("Invalid token");
+    }
+    const decodedMessage = await jwt.verify(token, "dev@tendirproject");
+    console.log("decodedMessageId", decodedMessage);
+    // find the which user can logged in
+    const { _id } = decodedMessage;
+    console.log("logged user is:", _id);
+    // find the user in mongoDB
+    const user = await User.find(_id);
+    if (!user) {
+      throw new Error("user is not found!");
+    }
+    res.send("reading the cookies");
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Error: " + error.message);
+  }
 });
 
 // get the all data from mongodb
