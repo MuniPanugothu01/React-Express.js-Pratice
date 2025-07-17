@@ -2,6 +2,7 @@
 const jwt = require("jsonwebtoken");
 // import the UserModel
 const UserModel = require("../models/user.js");
+const { use } = require("react");
 
 const userAuth = async (req, res, next) => {
   try {
@@ -20,6 +21,7 @@ const userAuth = async (req, res, next) => {
     if (!user) {
       throw new Error("User is not found!");
     }
+    req.user = user
     next();
   } catch (error) {
     console.log(error.message);

@@ -15,6 +15,8 @@ const bcrypt = require("bcrypt");
 const cookieparser = require("cookie-parser");
 // jwt
 const jwt = require("jsonwebtoken");
+// userAuth middle ware
+const { userAuth } = require("./middleWare/adminAuth.js");
 
 // middleware
 app.use(express.json());
@@ -117,25 +119,9 @@ app.post("/login", async (req, res) => {
 });
 
 // get the profile
-app.get("/profile", async (req, res) => {
+app.get("/profile", userAuth, async (req, res) => {
   try {
-    const cookies = req.cookies;
-    console.log(cookies);
-    // validate the tokens
-    const { token } = cookies;
-    if (!token) {
-      throw new Error("Invalid token");
-    }
-    const decodedMessage = await jwt.verify(token, "dev@tendirproject");
-    console.log("decodedMessageId", decodedMessage);
-    // find the which user can logged in
-    const { _id } = decodedMessage;
-    console.log("logged user is:", _id);
-    // find the user in mongoDB
-    const user = await UserModel.find({ _id });
-    if (!user) {
-      throw new Error("user is not found!");
-    }
+    const user = req.user;
     res.status(200).send({ status: 200, "user is:": user });
   } catch (error) {
     console.log(error.message);
@@ -329,9 +315,6 @@ app.patch("/useremail", async (req, res) => {
   }
 });
 
-
-
-
 // task Login and cookies validate the in login api and Profile api
 
 app.post("/praticeLogin", async (req, res) => {
@@ -371,7 +354,7 @@ app.get("/TaskProfile", async (req, res) => {
     const cookies = req.cookies;
     console.log(cookies);
     // access the jwt token
-    const  token  = cookies.jwttokens;
+    const token = cookies.jwttokens;
     if (!token) {
       throw new Error("Invalid Tokens!");
     }
