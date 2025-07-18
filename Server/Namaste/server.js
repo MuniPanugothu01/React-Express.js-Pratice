@@ -128,6 +128,11 @@ app.get("/profile", userAuth, async (req, res) => {
     res.status(500).send("Error: " + error.message);
   }
 });
+// sendConnectionRequest to the server
+app.post("/sendConnectionRequest", userAuth, async (req, res) => {
+  console.log("sending the connection request");
+  res.send("user send the connection request");
+});
 
 let PORT = 3003;
 app.listen(PORT, () => {
