@@ -130,8 +130,9 @@ app.get("/profile", userAuth, async (req, res) => {
 });
 // sendConnectionRequest to the server
 app.post("/sendConnectionRequest", userAuth, async (req, res) => {
+  const user = req.user;
   console.log("sending the connection request");
-  res.send("user send the connection request");
+  res.send({User:user.firstName + " this user is sending the request!"})
 });
 
 let PORT = 3003;
