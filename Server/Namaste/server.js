@@ -97,9 +97,7 @@ app.post("/login", async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, users.password);
     if (isPasswordValid) {
       // create the jwt token
-      const token = await jwt.sign({ _id: users._id }, "dev@tendirproject", {
-        expiresIn: "1d",
-      });
+      const token = await users.getJWT();
       console.log("toke generated!", token);
 
       // add the token to cookies and send the response back to the user

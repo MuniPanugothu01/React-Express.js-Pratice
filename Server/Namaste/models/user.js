@@ -89,6 +89,15 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+userSchema.methods.getJWT = async function () {
+  // this key refers to the current employee
+  const user = this;
+  const token = await jwt.sign({ _id: user._id }, "dev@tendirproject", {
+    expiresIn: "1d",
+  });
+  return token;
+};
+
 const UserModel = mongoose.model("user", userSchema);
 module.exports = {
   UserModel,
