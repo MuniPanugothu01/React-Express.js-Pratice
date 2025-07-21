@@ -84,7 +84,7 @@ app.post("/login", async (req, res) => {
     if (!emailId) {
       throw new Error("enter the all fields");
     }
-
+ 
     if (!validator.isEmail(emailId)) {
       throw new Error("Invalid emailId");
     }
