@@ -97,11 +97,16 @@ app.post("/login", async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, users.password);
     if (isPasswordValid) {
       // create the jwt token
-      const token = await jwt.sign({ _id: users._id }, "dev@tendirproject",{expiresIn:"1d"});
+      const token = await jwt.sign({ _id: users._id }, "dev@tendirproject", {
+        expiresIn: "1d",
+      });
       console.log("toke generated!", token);
 
       // add the token to cookies and send the response back to the user
-      res.cookie("token", token);
+      res.cookie("token", token, {
+        expires: new Date(Date.now() + 1 * 3600000),
+        httpOnly: true,
+      });
       res.status(200).send({ status: 200, message: "login successfully!🎉" });
     } else {
       throw new Error("password is not Valid!");
@@ -132,7 +137,7 @@ app.get("/profile", userAuth, async (req, res) => {
 app.post("/sendConnectionRequest", userAuth, async (req, res) => {
   const user = req.user;
   console.log("sending the connection request");
-  res.send({User:user.firstName + " this user is sending the request!"})
+  res.send({ User: user.firstName + " this user is sending the request!" });
 });
 
 let PORT = 3003;
